@@ -1,0 +1,1075 @@
+# RupeeValcore Old Website Content Catalog
+> This document serves as the raw content source for RupeeValcore V2.1. Do not use its layout or design, only migrate the text.
+## Component: CurriculumSection-YCkwSO8W
+- ./index-BA63keUf.js
+- ./book-open-BfuIt--P.js
+- M6 12h.01M18 12h.01
+- M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z
+- M21.21 15.89A10 10 0 1 1 8 2.83
+- M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z
+- 22 7 13.5 15.5 8.5 10.5 2 17
+- Personal Finance Basics
+- Income and expense tracking
+- Building an emergency fund
+- Budget planning and management
+- Debt management strategies
+- Money Management Basics
+- Understanding financial goals
+- Time value of money
+- Inflation and purchasing power
+- Interest and compound returns
+- Stock Market Fundamentals
+- How stock markets work
+- Stocks vs. bonds explained
+- Reading stock charts and data
+- Market indexes and benchmarks
+- Mutual Funds Introduction
+- What are mutual funds?
+- Types of mutual funds
+- NAV and scheme performance
+- SIP vs. lump sum investing
+- Insurance Basics
+- Life insurance fundamentals
+- Health insurance coverage
+- General insurance explained
+- Risk management essentials
+- Tax Awareness Basics
+- Understanding income tax
+- Tax-saving instruments
+- Filing returns and compliance
+- Deductions and exemptions
+- flip-card h-full cursor-pointer
+- flip-card-inner transition-transform duration-600 ${s?"[transform:rotateY(180deg)]":""}
+- transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)
+- flex items-center gap-3
+- rounded-full bg-amber-500/20 p-3
+- h-6 w-6 text-amber-400
+- text-xl font-bold text-white mb-3
+- text-sm text-slate-300 flex items-center gap-2
+- text-lg font-semibold text-white mb-4
+- space-y-3 text-sm text-slate-200
+- text-amber-400 font-semibold
+- section-padding relative overflow-hidden
+- mb-16 text-center
+- mb-4 text-3xl font-bold md:text-4xl lg:text-5xl
+- bg-gradient-to-r from-amber-400 to-yellow-200 bg-clip-text text-transparent
+- mx-auto max-w-2xl text-lg text-slate-300/85
+- Comprehensive finance education covering all essential topics from basics to advanced concepts.
+- mx-auto max-w-2xl text-sm text-slate-400 mt-2
+- Click or tap to explore topics
+- absolute top-0 right-0 -z-10 w-96 h-96 bg-gradient-to-br from-amber-500/20 to-transparent rounded-full blur-3xl opacity-20
+- absolute bottom-0 left-0 -z-10 w-96 h-96 bg-gradient-to-tr from-yellow-500/10 to-transparent rounded-full blur-3xl opacity-20
+
+## Component: book-open-BfuIt--P
+- M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z
+
+## Component: TrustSection-CuH7jCvM
+- ./shield-check-C-WWoilL.js
+- M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z
+- M22 14a8 8 0 0 1-8 8
+- M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2
+- M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1
+- M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10
+- M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15
+- M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z
+- M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z
+- border-transparent bg-primary text-primary-foreground hover:bg-primary/80
+- border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80
+- border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80
+- bg-primary text-primary-foreground hover:bg-primary/90
+- bg-destructive text-destructive-foreground hover:bg-destructive/90
+- border border-input bg-background hover:bg-accent hover:text-accent-foreground
+- bg-secondary text-secondary-foreground hover:bg-secondary/80
+- hover:bg-accent hover:text-accent-foreground
+- text-primary underline-offset-4 hover:underline
+- rovingFocusGroup.onEntryFocus
+- RovingFocusGroup
+- data-orientation
+- RovingFocusGroupItem
+- aria-orientation
+- ${e}-trigger-${a}
+- ${e}-content-${a}
+- inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground
+- mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+- shadcnblocks.com
+- A Collection of Components Built With Shadcn & Tailwind
+- Join us to build flawless web solutions.
+- h-auto w-4 shrink-0
+- Make your site a true standout.
+- Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.
+- Dashboard and analytics workspace
+- Higher Engagement
+- Boost your site with top-tier design.
+- Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.
+- Laptop workspace for modern web design
+- Stunning Layouts
+- Build an advanced web experience.
+- Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.
+- Team collaborating on digital product layout
+- max-w-2xl text-3xl font-semibold md:text-4xl
+- text-muted-foreground
+- mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16
+- w-fit bg-background
+- text-3xl font-semibold lg:text-5xl
+- text-muted-foreground lg:text-lg
+- mt-2.5 w-fit gap-2
+- relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full
+- aspect-square h-full w-full
+- flex h-full w-full items-center justify-center rounded-full bg-muted
+- bg-gradient-to-b from-muted/60 to-muted/10
+- p-3 text-start shadow-[0_12px_40px_rgba(0,0,0,0.22)] sm:p-6
+- transition-colors duration-300 hover:from-muted/70 hover:to-muted/20
+- h-10 w-10 shrink-0 border border-white/10 sm:h-12 sm:w-12
+- text-sm font-semibold leading-none text-foreground sm:text-base
+- text-xs text-muted-foreground sm:text-sm
+- mt-4 flex items-center gap-1 text-amber-400
+- ${r} out of 5 stars
+- mt-3 text-xs text-muted-foreground sm:mt-4 sm:text-sm lg:text-base line-clamp-5 sm:line-clamp-none
+- @keyframes mobileScrollRightToLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-33.333%);
+      }
+    }
+  
+    @media (max-width: 767px) {
+      .mobile-carousel-container {
+        overflow-x: hidden;
+        overflow-y: visible;
+        scroll-behavior: smooth;
+      }
+  
+      .mobile-carousel-track {
+        animation: mobileScrollRightToLeft 35s linear infinite;
+        will-change: transform;
+      }
+  
+      .mobile-carousel-track.paused {
+        animation-play-state: paused;
+      }
+    }
+- min(92vw, 340px)
+- translateX(-${O}%)
+- mobileScrollRightToLeft 35s linear infinite
+- group flex overflow-hidden p-2 [--duration:96s] [--gap:1rem] [gap:var(--gap)]
+- flex shrink-0 animate-marquee justify-around [gap:var(--gap)]
+- pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background sm:block
+- pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-background sm:block
+- mobile-carousel-track flex w-max items-stretch gap-[var(--gap)]
+- w-[var(--card-width)] max-w-none shrink-0 cursor-pointer transition-transform hover:scale-105
+- h-full max-w-none
+- max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight
+- max-w-[600px] text-base font-medium text-muted-foreground sm:text-xl
+- Michael Vasanth Selvam
+- 1-to-1 Session Attendee
+- Personally I attended a 1-to-1 session with the trainer Manikandan. He explained the complex concepts in a very easy manner, also with real-time examples. I am really happy and satisfied with the service provided by Rupeevalcore and team. Willing to learn more concepts in future.
+- Personal Finance Session
+- Thanks to Rupeevalcore for the personal finance session. After this session my view about money has changed. Excited to attend more sessions on other topics. Special mention for the trainer Manikandan, who explained the concept easily for a common person. Thanks.
+- Workshop Attendee
+- I have attended the workshop. It is a very useful session. My view about money has changed after this session. Special mention to trainer Manikandan C. Looking forward to more sessions.
+- Attended the Rupeevalcore session recently and found it really useful. The trainer explained finance basics in a very simple way. Easy to understand even for beginners.
+- The workshop was very informative. I liked the real-life examples used to explain financial concepts. It made the session interesting and easy to follow.
+- Rupeevalcore session romba useful ah irundhuchu. Finance basics simple ah explain pannanga. Easy ah understand panna mudinjiduchu.
+- Workshop nalla informative ah irundhuchu. Trainer real life examples kuduthu explain pannanga so concepts clear ah purinjiduchu.
+- First-Time Workshop Attendee
+- First time finance workshop attend panren. Surprisingly easy ah purinjiduchu. Trainer explain pannina style romba nalla irundhuchu.
+- Rupesh Saravanan
+- In this class I learned about investment and it was fun also. I like this class.
+- Session good ah irundhuchu. Trainer doubts ku patiently answer pannanga. Beginners ku helpful session.
+- Overall nalla learning experience. Finance topics simple language la explain pannanga. Easy ah follow panna mudinjiduchu.
+- Good session overall. The trainer explained the topics clearly and answered questions patiently. A few more practical examples would make it even better.
+- h-4 w-4 shrink-0
+- Simple Explanations
+- Finance concepts broken down without jargon.
+- Every workshop is designed for first-time learners. We use everyday language, relatable examples, and a step-by-step teaching flow so students, parents, and professionals can follow with confidence.
+- Explore Curriculum
+- Learners discussing ideas together during a workshop
+- Transparent Boundaries
+- No stock tips, no product pushing, no hidden agenda.
+- Rupeevalcore focuses on financial literacy and awareness, not advisory services. That means clear expectations, no commissions, and a learning experience built on trust rather than pressure.
+- See Learning Formats
+- Financial planning notes and calculator on a desk
+- Credible Delivery
+- Certified Instruction
+- Structured workshops led with clarity and credibility.
+- The sessions combine practical examples, patient doubt-clearing, and a certification-backed approach. The goal is not just to inform, but to help learners feel calm, capable, and ready to apply what they understood.
+- Instructor teaching a group with a laptop and presentation screen
+- section-padding relative overflow-hidden bg-[#08080F]
+- Why Trust Rupeevalcore
+- A calmer, clearer way to build financial confidence
+- We keep the learning practical, transparent, and beginner-friendly so people can understand money without sales pressure or unnecessary complexity.
+- mt-16 border-t border-white/5 pt-16
+- Reviews From Learners And Parents
+- A quick snapshot of the clarity, trust, and confidence people expect from Rupeevalcore.
+- absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-gradient-to-br from-amber-500/20 to-transparent blur-3xl opacity-20
+- absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full bg-gradient-to-tr from-yellow-500/10 to-transparent blur-3xl opacity-20
+
+## Component: LevelsSection-BMH761vK
+- ./usePrefersReducedMotion-DUSNSMiB.js
+- M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z
+- m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z
+- m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65
+- m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65
+- M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z
+- Default level for everyone. No prior knowledge needed.
+- Start from zero financial knowledge
+- Practical examples and simple language
+- Safe and judgment-free environment
+- Interactive Q&A sessions
+- For those who know basics and want to go deeper (Optional).
+- Deeper understanding of financial concepts
+- Understanding market dynamics
+- Building on foundational knowledge
+- Complex topics for experienced learners (Custom).
+- Advanced financial concepts
+- In-depth market awareness
+- Complex financial structures
+- Tailored learning programs
+- section-padding relative
+- absolute inset-0 pointer-events-none
+- absolute w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px] bottom-0 left-10
+- text-center mb-16
+- font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4
+- text-muted-foreground text-lg max-w-2xl mx-auto
+- Everyone starts at beginner level. Progress to intermediate and advanced at your own pace.
+- relative overflow-hidden rounded-2xl p-6 group ${a.recommended?"scale-[1.03]":""}
+- rgba(255,255,255,0.04)
+- 1px solid rgba(245,166,35,0.2)
+- 0 12px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06)
+- 3px solid #F5A623
+- absolute -top-3 left-6
+- linear-gradient(135deg, #F5A623 0%, #E8940A 100%)
+- absolute inset-0 rounded-full border border-amber-400 animate-ping opacity-40
+- w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 shadow-[0_-4px_20px_rgba(245,166,35,0.3)]
+- font-heading text-xl font-bold text-foreground mb-2
+- text-sm text-muted-foreground mb-5
+- text-sm text-muted-foreground flex items-start gap-2
+- w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0 shadow-[0_0_10px_rgba(245,166,35,0.6)]
+- absolute inset-x-0 top-0 h-[3px] shadow-[0_-4px_20px_rgba(245,166,35,0.3)]
+- absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#F5A623] to-transparent opacity-50
+
+## Component: usePrefersReducedMotion-DUSNSMiB
+- (prefers-reduced-motion: reduce)
+
+## Component: AudienceSection-CMl8-sJN
+- ./graduation-cap-C6b9ZWhN.js
+- ./users-1lVdYO30.js
+- M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16
+- M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3
+- Working professionals
+- Anyone confused about money basics
+- text-center mb-12
+- text-muted-foreground text-lg max-w-xl mx-auto
+- Understanding who benefits most from financial education.
+- glass relative overflow-hidden rounded-2xl p-5 text-center group cursor-default perspective-1000 preserve-3d sm:p-6
+- absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none
+- radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.1), transparent 70%)
+- w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors relative z-10
+- text-sm font-medium text-foreground relative z-10
+- absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-2/3 h-[2px] bg-primary transition-[width,opacity] duration-500 rounded-full
+
+## Component: graduation-cap-C6b9ZWhN
+- M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z
+- M6 12.5V16a6 3 0 0 0 12 0v-3.5
+
+## Component: users-1lVdYO30
+- M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2
+- M22 21v-2a4 4 0 0 0-3-3.87
+- M16 3.13a4 4 0 0 1 0 7.75
+
+## Component: FormatsSection-C4BNEQF2
+- M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2
+- font-heading text-2xl font-bold text-foreground
+- absolute w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] top-20 left-1/2 -translate-x-1/2
+- Choose the format that works best for you.
+- glass rounded-2xl p-8 relative overflow-hidden group perspective-1000 preserve-3d cursor-default
+- radial-gradient(circle at 30% 80%, hsl(var(--primary) / 0.08), transparent 60%)
+- flex gap-2 mb-4 relative z-10
+- Corporate Events
+- w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 relative z-10
+- font-heading text-xl font-bold text-foreground mb-2 relative z-10
+- text-sm text-muted-foreground mb-4 relative z-10
+- Perfect for colleges & corporates
+- space-y-2 mb-6 relative z-10
+- Interactive workshops for groups of 10 or more participants
+- Available both online and offline (in-person)
+- Customizable topics based on audience requirements
+- Q&A sessions and practical examples included
+- w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0
+- mb-6 relative z-10
+- text-xs text-muted-foreground
+- text-sm font-normal text-muted-foreground
+- noopener noreferrer
+- relative z-10 block
+- transform 0.2s ease
+- absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700
+- Book Group Session
+- absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-[2px] bg-primary transition-[width,opacity] duration-500 rounded-full
+- glass rounded-2xl p-8 relative overflow-hidden border border-accent/20 group perspective-1000 preserve-3d cursor-default
+- radial-gradient(circle at 70% 80%, hsl(var(--accent) / 0.08), transparent 60%)
+- absolute top-4 right-4 z-10
+- w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 relative z-10
+- One-to-One Sessions
+- text-sm text-muted-foreground mb-1 relative z-10
+- Personalized learning experience
+- text-xs text-accent font-medium mb-4 relative z-10
+- Custom · Based on your requirements
+- Flexible scheduling at your convenience
+- Ongoing support and follow-up guidance
+- w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0
+- Book One-to-One Session
+- absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-[2px] bg-accent transition-[width,opacity] duration-500 rounded-full
+
+## Component: TrustedBySection-C9tzCajK
+- BriefcaseBusiness
+- M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2
+- M22 13a18.15 18.15 0 0 1-20 0
+- M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z
+- M14 2v4a2 2 0 0 0 2 2h4
+- M14 22v-4a2 2 0 1 0-4 0v4
+- m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10
+- m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6
+- School Partnerships
+- Saravalokaa International School onboarded. More school collaborations coming soon.
+- from-amber-300/30 via-amber-500/10 to-transparent
+- Career Readiness Workshops
+- Finance + AI Learning Programs
+- from-emerald-300/25 via-emerald-500/10 to-transparent
+- Employee Financial Wellness
+- AI Productivity Sessions
+- from-yellow-200/25 via-emerald-400/10 to-transparent
+- Download AI Workshop Proposal
+- /pdfs/ai-workshop-proposal.pdf
+- Download School Partnership Proposal
+- /pdfs/school-partnership-proposal.pdf
+- pointer-events-none absolute inset-0
+- absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-amber-400/10 blur-[110px]
+- absolute bottom-10 right-[8%] h-72 w-72 rounded-full bg-emerald-400/10 blur-[120px]
+- absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent
+- absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent
+- mx-auto max-w-3xl text-center
+- Institutional Trust
+- font-heading text-3xl font-bold text-white md:text-4xl lg:text-5xl
+- Trusted By Schools, Colleges & Workplaces
+- mx-auto mt-5 max-w-2xl text-base leading-7 text-zinc-400 md:text-lg
+- Institutions choosing RupeeValcore for financial literacy and AI learning experiences.
+- group relative min-h-[260px] overflow-hidden rounded-[20px] border border-white/10 bg-[#151515] p-7 shadow-2xl shadow-black/30 transition-colors duration-300 hover:border-amber-200/30
+- absolute inset-0 bg-gradient-to-br ${t.accent} opacity-0 transition-opacity duration-500 group-hover:opacity-100
+- absolute -right-14 -top-14 h-40 w-40 rounded-full border border-white/10 bg-white/[0.02]
+- mb-9 flex items-center justify-between
+- flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-amber-200 shadow-lg shadow-amber-500/10
+- font-heading text-2xl font-semibold leading-tight text-white
+- mt-4 text-sm leading-6 text-zinc-400
+- transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5
+
+## Component: AboutSection-4SJZgh6g
+- ./award-Co4WVugj.js
+- M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0
+- Simple explanations with clear structure, examples, and Q&A.
+- Awareness-focused sessions with SEBI-safe wording and no recommendations.
+- Hands-on explanations and space to ask questions without pressure.
+- Clear scope: literacy and awareness—not advisory services.
+- Rupeevalcore delivers hands-on finance education through structured workshops that simplify everyday money concepts.
+- w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center shrink-0
+- font-heading font-semibold text-foreground
+- Certified Instructor
+- text-sm text-muted-foreground
+- NISM Series XII Certified
+- text-xs text-muted-foreground mt-1
+- Securities Markets · SEBI-backed certification
+- glass rounded-2xl p-6 group cursor-default perspective-1000
+- w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors
+- font-heading font-semibold text-foreground mb-2
+- text-sm text-muted-foreground leading-relaxed
+- glass rounded-2xl p-6 mt-8 max-w-3xl mx-auto
+- NISM Series-XII Certified
+- Trainer holds NISM-Series-XII: Securities Markets Foundation certification—conducted by NISM, an educational institution established by SEBI to promote securities market education standards.
+
+## Component: award-Co4WVugj
+- m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526
+
+## Component: TeamSection-cANU1oT5
+- Shanthi Chitrarasu
+- Operations & Administration
+- Coordination and operations support for workshops and schedules.
+- Educational session delivery and facilitation with structured explanations and Q&A.
+- Dedicated to financial education and awareness.
+- glass rounded-2xl p-6 relative overflow-hidden
+- w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-heading font-bold text-white shadow-[0_0_20px_rgba(245,166,35,0.4)]
+- 3px solid transparent
+- linear-gradient(#09090b, #09090b) padding-box, linear-gradient(135deg, #F5A623, #F59E0B) border-box
+- 0 0 20px rgba(245,166,35,0.4)
+- w-12 h-12 rounded-full flex items-center justify-center
+- linear-gradient(135deg, rgba(245,166,35,0.25), rgba(59,130,246,0.25))
+- font-heading text-lg font-bold text-foreground text-center
+- text-sm text-accent text-center font-medium mb-3
+- overflow-hidden transition-[max-height,opacity] duration-300 ease-out
+- text-sm text-muted-foreground leading-relaxed text-center mt-2
+- flex justify-center mt-4
+- font-semibold text-foreground
+- – Securities Markets · SEBI-backed certification
+
+## Component: main-bundle
+- assets/CurriculumSection-YCkwSO8W.js
+- assets/book-open-BfuIt--P.js
+- assets/TrustSection-CuH7jCvM.js
+- assets/shield-check-C-WWoilL.js
+- assets/LevelsSection-BMH761vK.js
+- assets/usePrefersReducedMotion-DUSNSMiB.js
+- assets/AudienceSection-CMl8-sJN.js
+- assets/graduation-cap-C6b9ZWhN.js
+- assets/users-1lVdYO30.js
+- assets/FormatsSection-C4BNEQF2.js
+- assets/TrustedBySection-C9tzCajK.js
+- assets/AboutSection-4SJZgh6g.js
+- assets/award-Co4WVugj.js
+- assets/TeamSection-cANU1oT5.js
+- read from private field
+- Cannot add the same private member more than once
+- write to private field
+- access private method
+- link[rel="modulepreload"]
+- react.strict_mode
+- react.forward_ref
+- setState(...): takes an object of state variables to update or a function which returns an object of state variables.
+- Objects are not valid as a React child (found:
+- object with keys {
+- ). If you meant to render a collection of children, use an array instead.
+- act(...) is not supported in production builds of React.
+- React.Children.only expected to receive a single React element child.
+- React.cloneElement(...): The argument must be a React element, but you passed
+- forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported
+- Minified React error #
+- for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+- children dangerouslySetInnerHTML defaultValue defaultChecked innerHTML suppressContentEditableWarning suppressHydrationWarning style
+- externalResourcesRequired
+- allowFullScreen async autoFocus autoPlay controls default defer disabled disablePictureInPicture disableRemotePlayback formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope
+- accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height
+- xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type
+- react.suspense_list
+- DehydratedFragment
+- font-face-format
+- onDoubleClickCapture
+- onMouseDownCapture
+- onMouseMoveCapture
+- onMouseUpCapture
+- mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset submit
+- gotpointercapture
+- lostpointercapture
+- compositionstart
+- compositionupdate
+- fullscreenchange
+- CompositionEvent
+- onpropertychange
+- AnimationIteration
+- animationiteration
+- abort auxClick cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel
+- onAnimationIteration
+- onAnimationStart
+- change click focusin focusout input keydown keyup selectionchange
+- focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange
+- onCompositionEnd
+- compositionend focusout keydown keypress keyup mousedown
+- onCompositionStart
+- compositionstart focusout keydown keypress keyup mousedown
+- onCompositionUpdate
+- compositionupdate focusout keydown keypress keyup mousedown
+- abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting
+- cancel close invalid load scroll toggle
+- __reactContainer$
+- __reactListeners$
+- Error generating stack:
+- dangerouslySetInnerHTML
+- suppressContentEditableWarning
+- suppressHydrationWarning
+- <script><\/script>
+- react-mount-point-unstable
+- 18.3.1-next-f1338f8080-20240426
+- \`${d}\` must be used within \`${s}\`
+- __scope${e.scopeName}
+- CollectionProvider
+- CollectionItemSlot
+- data-radix-collection-item
+- CollectionConsumer
+- DismissableLayer
+- dismissableLayer.update
+- dismissableLayer.pointerDownOutside
+- dismissableLayer.focusOutside
+- DismissableLayerBranch
+- unmountSuspended
+- useInsertionEffect
+- ${i} is changing from ${d?"controlled":"uncontrolled"} to ${a?"controlled":"uncontrolled"}. Components should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled value for the lifetime of the component.
+- rect(0, 0, 0, 0)
+- Invalid prop \`label\` supplied to \`${nm}\`. Expected non-empty \`string\`.
+- toast.viewportPause
+- toast.viewportResume
+- Notifications ({hotkey})
+- toast.swipeStart
+- toast.swipeCancel
+- --radix-toast-swipe-move-x
+- --radix-toast-swipe-move-y
+- --radix-toast-swipe-end-x
+- --radix-toast-swipe-end-y
+- data-swipe-direction
+- ToastDescription
+- Invalid prop \`altText\` supplied to \`${O1}\`. Expected non-empty \`string\`.
+- data-radix-toast-announce-exclude
+- data-radix-toast-announce-alt
+- M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z
+- M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z
+- M21 12a9 9 0 1 1-6.219-8.56
+- m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7
+- M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0
+- M7.9 20A9 9 0 1 0 4 16.1L2 22Z
+- M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z
+- M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z
+- m21.854 2.147-10.94 10.939
+- m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3
+- M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17
+- gradientColorStops
+- gradientColorStopPositions
+- table-column-group
+- table-footer-group
+- table-header-group
+- subpixel-antialiased
+- fvn-slashed-zero
+- proportional-nums
+- diagonal-fractions
+- stacked-fractions
+- list-style-position
+- placeholder-color
+- placeholder-opacity
+- text-decoration-style
+- text-decoration-thickness
+- underline-offset
+- text-decoration-color
+- gradient-from-pos
+- gradient-via-pos
+- ring-offset-color
+- backdrop-brightness
+- backdrop-contrast
+- backdrop-grayscale
+- backdrop-hue-rotate
+- backdrop-opacity
+- backdrop-saturate
+- border-spacing-x
+- border-spacing-y
+- transform-origin
+- touch-pinch-zoom
+- forced-color-adjust
+- group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full
+- border bg-background text-foreground
+- destructive group border-destructive bg-destructive text-destructive-foreground
+- absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity group-hover:opacity-100 group-[.destructive]:text-red-300 hover:text-foreground group-[.destructive]:hover:text-red-50 focus:opacity-100 focus:outline-none focus:ring-2 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600
+- text-sm font-semibold
+- text-sm opacity-90
+- (prefers-color-scheme: dark)
+- var d=document.documentElement,c=d.classList;${
+- var d=document.documentElement,n='${n}',s='setAttribute';
+- if(e==='light'||e==='dark'||!e)d.style.colorScheme=e||'${s}'
+- if(e==='light'||e==='dark')d.style.colorScheme=e
+- d.style.colorScheme = '${g}';
+- !function(){${u}${f(t)}}()
+- !function(){try{${u}var e=localStorage.getItem('${e}');if('system'===e||(!e&&${c})){var t='${W2}',m=window.matchMedia(t);if(m.media!==t||m.matches){${f("dark")}}else{${f("light")}}}else if(e){${o?
+- :""}${f(o?"x[e]":"e",!0)}}${c?"":"else{"+f(s,!1,!1)+"}"}${d}}catch(e){}}()
+- !function(){try{${u}var e=localStorage.getItem('${e}');if(e){${o?
+- :""}${f(o?"x[e]":"e",!0)}}else{${f(s,!1,!1)};}${d}}catch(t){}}();
+- sonner-loading-wrapper
+- sonner-loading-bar
+- spinner-bar-${i}
+- M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z
+- M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z
+- M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z
+- M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z
+- visibilitychange
+- HTTP error! status: ${l.status}
+- data-sonner-toast
+- data-rich-colors
+- data-dismissible
+- ${fi?td:fs.current}px
+- --initial-height
+- --swipe-amount-x
+- --swipe-amount-y
+- data-close-button
+- data-description
+- data-sonner-toaster
+- --front-toast-height
+- ${((J=O[0])==null?void 0:J.height)||0}px
+- group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg
+- group-[.toast]:text-muted-foreground
+- group-[.toast]:bg-primary group-[.toast]:text-primary-foreground
+- group-[.toast]:bg-muted group-[.toast]:text-muted-foreground
+- clippingAncestors
+- initialPlacement
+- -webkit-backdrop-filter
+- --radix-popper-available-width
+- --radix-popper-available-height
+- --radix-popper-anchor-width
+- --radix-popper-anchor-height
+- data-radix-popper-content-wrapper
+- translate(0, -200%)
+- --radix-popper-transform-origin
+- translateY(100%)
+- translateY(50%) rotate(90deg) translateX(-50%)
+- translateY(50%) rotate(-90deg) translateX(50%)
+- ${i.floating.height+l}px
+- ${i.floating.width+l}px
+- aria-describedby
+- --radix-tooltip-content-transform-origin
+- var(--radix-popper-transform-origin)
+- --radix-tooltip-content-available-width
+- var(--radix-popper-available-width)
+- --radix-tooltip-content-available-height
+- var(--radix-popper-available-height)
+- --radix-tooltip-trigger-width
+- var(--radix-popper-anchor-width)
+- --radix-tooltip-trigger-height
+- var(--radix-popper-anchor-height)
+- Missing queryFn: '${t.queryHash}'
+- ${this.queryHash} data is undefined
+- No mutationFn found
+- No window.location.(origin|href) available to create URL for href:
+- A history only accepts one active listener
+- Absolute route path "
+- " nested under path
+- " is not valid. An absolute child route path
+- must start with the combined path of all its parent routes.
+- Index routes must not have child routes. Please remove
+- all child routes from route path "
+- " will be treated as if it were
+- " because the `*` character must
+- always follow a `/` in the pattern. To get rid of this warning,
+- please change the route path to "
+- (?:\\/(.+)|\\/*)$
+- " could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent
+- Cannot include a '
+- ' character in a manually specified
+- ].  Please separate it out to the
+- ` field. Alternatively you may provide the full path as
+- a string in <Link to="..."> and the router will parse it for you.
+- rgba(200,200,200, 0.5)
+- Unexpected Application Error!
+- React Router caught the following error during render
+- useRouteLoaderData
+- preventScrollReset
+- useScrollRestoration
+- useSubmitFetcher
+- useViewTransitionState
+- contactrupeevalcore@gmail.com
+- ${It}/#organization
+- schema-local-business
+- ${It}/#localbusiness
+- Beginner-friendly financial literacy workshops in Chennai and online covering money management, stock market basics, tax, and insurance awareness.
+- schema-education-organization
+- EducationOrganization
+- ${It}/#educationorganization
+- Beginner-friendly financial literacy workshops covering money management, stock market basics, tax basics, and insurance awareness.
+- schema-organization
+- customer support
+- application/ld+json
+- fixed bottom-24 right-6 z-[45] flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-all duration-200 hover:scale-105 hover:bg-green-600 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-300
+- Chat with us on WhatsApp
+- M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.384-2.853 1.083l-.204.166-.212-.04c-.662-.125-1.362-.129-2.041.016l-.739.138.531.737c.769 1.068 1.19 2.356 1.19 3.703 0 3.327-2.651 6.03-5.909 6.03-1.052 0-2.082-.384-2.853-1.083l-.204-.166-.212.04c-.662.125-1.362.129-2.041-.016l-.739-.138.531-.737c.769-1.068 1.19-2.356 1.19-3.703 0-3.327 2.651-6.03 5.909-6.03 1.052 0 2.082.384 2.853 1.083l.204.166.212-.04c.662-.125 1.362-.129 2.041.016l.739.138-.531.737c-.769 1.068-1.19 2.356-1.19 3.703 0 3.327-2.651 6.03-5.909 6.03z
+- meta[property=csp-nonce]
+- [rel="stylesheet"]
+- link[href="${l}"]${u}
+- Unable to preload CSS for ${l}
+- vite:preloadError
+- [data-motion-pop-id="${n}"] {
+              position: absolute !important;
+              width: ${o}px !important;
+              height: ${a}px !important;
+              top: ${l}px !important;
+              left: ${c}px !important;
+            }
+- resolveKeyframes
+- onPanSessionStart
+- transformTemplate
+- onBeforeLayoutMeasure
+- onAnimationComplete
+- onMeasureDragConstraints
+- onDragTransitionEnd
+- @emotion/is-prop-valid
+- motionComponentSymbol
+- data-framer-portal-id
+- motion.${typeof r=="string"?r:
+- transformPerspective
+- stroke-dashoffset
+- stroke-dasharray
+- strokeDashoffset
+- kernelUnitLength
+- limitingConeAngle
+- specularConstant
+- specularExponent
+- gradientTransform
+- pan-${t.drag==="x"?"y":"x"}
+- linear(${i.substring(0,i.length-2)})
+- cubic-bezier(${t}, ${e}, ${n}, ${i})
+- AnimationComplete
+- _drag${e.toUpperCase()}
+- animationComplete
+- borderTopLeftRadius
+- borderTopRightRadius
+- borderBottomLeftRadius
+- borderBottomRightRadius
+- border${gC[o]}Radius
+- translate3d(${r}px, ${s}px, ${o}px)
+- scale(${1/e.x}, ${1/e.y})
+- perspective(${c}px) ${i}
+- rotateX(${d}deg)
+- rotateY(${f}deg)
+- scale(${a}, ${l})
+- projectionUpdate
+- ${h.origin*100}% ${g.origin*100}% 0
+- BeforeLayoutMeasure
+- (prefers-reduced-motion)
+- LayoutAnimationStart
+- LayoutAnimationComplete
+- Learning Options
+- fixed left-0 right-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-amber-400 to-yellow-300
+- fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${n?"border-b border-white/5 bg-black/60 backdrop-blur-xl":"border-b border-transparent bg-transparent"}
+- group inline-flex items-center gap-3 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400
+- Rupeevalcore logo
+- h-10 w-10 rounded-xl object-cover shadow-[0_0_18px_rgba(245,166,35,0.35)]
+- block text-lg font-semibold text-white
+- block -mt-1 text-[10px] tracking-[0.12em] text-white/60
+- Finance Education
+- hidden items-center gap-4 lg:flex xl:gap-6
+- group relative pb-1 text-xs text-white/75 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 xl:text-sm
+- absolute bottom-0 left-0 h-0.5 w-full origin-center scale-x-0 bg-amber-400 transition-transform duration-300 group-hover:scale-x-100
+- 0 0 25px rgba(234,179,8,0.5)
+- Register Interest
+- rounded-md p-2 text-white lg:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400
+- Close navigation menu
+- Open navigation menu
+- fixed inset-0 z-[52] bg-black/40 lg:hidden
+- fixed right-0 top-0 z-[53] h-screen w-[min(88vw,360px)] border-l border-white/10 bg-black/90 backdrop-blur-2xl lg:hidden
+- tsParticles - Error
+- ${Qt} Vector3d not initialized correctly
+- ${e??"400"} 36px '${t??"Verdana"}'
+- rgba(${t.r}, ${t.g}, ${t.b}, ${e??ng})
+- hsla(${t.h}, ${t.s}%, ${t.l}%, ${e??ng})
+- containerStarted
+- containerStopped
+- containerDestroyed
+- particleDestroyed
+- ${Qt} particle is overlapping and can't be placed
+- ${Qt} adding particle: ${l}
+- ${Qt} in animation loop
+- ${Qt} - Export plugin with type ${e} not found
+- ${Qt} ${n.status} while retrieving config file
+- The tsParticles version is different from the loaded plugins version. Engine version: ${this.version}. Plugin version: ${e}
+- tsparticles${Math.floor(ce()*dz)}
+- ${Qt} can only set click handlers after calling tsParticles.load()
+- counter-clockwise
+- ease-in-out-back
+- ease-in-out-circ
+- ease-in-out-cubic
+- ease-in-out-linear
+- ease-in-out-quad
+- ease-in-out-quart
+- ease-in-out-quint
+- ease-in-out-expo
+- ease-in-out-sine
+- "Twemoji Mozilla", Apple Color Emoji, "Segoe UI Emoji", "Noto Color Emoji", "EmojiOne Color"
+- 400 ${d*2}px ${a}
+- ${i.substring(N5,s)} fill="${r}"${i.substring(s)}
+- ${Qt} loading image: ${t.source}
+- ${Qt} Image not found
+- RestoreBackground
+- ApplicationExtension
+- GraphicsControlExtension
+- PlainTextExtension
+- CommentExtension
+- plain text extension without global color table
+- GIF frame size is to large
+- undefined block found
+- not a supported GIF file
+- error while parsing frame ${m} "${S.message}"
+- could not create offscreen canvas context
+- ${Qt} image shape not initialized
+- ${Qt} no image source provided
+- ${Qt} ${e.name??e.src} not found
+- particlesAttract
+- particlesCollisions
+- counterClockwise
+- (max-width: ${bf-1}px)
+- hero-keep relative min-h-screen overflow-hidden bg-[#0A0A0F] pt-28
+- absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(245,158,11,0.18),transparent_35%),radial-gradient(circle_at_82%_72%,rgba(255,255,255,0.08),transparent_30%)]
+- absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:70px_70px]
+- order-2 lg:order-1
+- h-4 w-4 text-amber-300
+- Workshops in Chennai & Online
+- text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl
+- Financial Literacy
+- mb-6 max-w-lg text-base md:text-lg leading-relaxed text-slate-400
+- Practical finance workshops in Chennai covering money basics, stock market fundamentals, tax and insurance awareness - designed for beginners, with optional intermediate and advanced sessions.
+- 0 0 0px rgba(34,197,94,0)
+- 0 0 20px rgba(34,197,94,0.2)
+- animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75
+- relative inline-flex rounded-full h-3 w-3 bg-green-400
+- text-green-400 text-xs font-bold uppercase tracking-widest leading-none
+- hidden sm:block text-green-500/60 text-xs
+- text-green-300 text-sm font-medium leading-tight
+- Next batch registrations open
+- Chennai & Online
+- Register for Workshop
+- Follow us on Instagram @rupeevalcore_
+- tel:+918248589694
+- inline-flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-slate-200
+- mailto:contactrupeevalcore@gmail.com
+- order-1 lg:order-2
+- group transition-all duration-700 ease-out [transform:perspective(1000px)_rotateX(10deg)_rotateY(-15deg)] hover:[transform:perspective(1000px)_rotateX(0deg)_rotateY(0deg)]
+- rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-[0_0_60px_rgba(234,179,8,0.15)] sm:p-8
+- mb-6 flex items-center justify-between pb-6 border-b border-white/10
+- text-sm font-medium text-slate-400
+- Portfolio Growth
+- flex items-center gap-2
+- inline-block h-2 w-2 rounded-full bg-cyan-400
+- text-sm font-bold text-cyan-400
+- text-4xl font-black text-amber-400
+- rounded-xl bg-[#1A1A2E] p-4
+- mb-3 text-sm font-semibold text-white
+- Understanding Stock Market
+- mb-2 h-1.5 w-full rounded-full bg-slate-700
+- h-1.5 rounded-full bg-cyan-400
+- text-xs text-slate-400
+- mb-2 text-xs font-medium text-slate-400
+- text-xl font-bold text-cyan-400
+- rounded-xl bg-[#1A1A2E] p-3 text-center
+- mb-1 text-xs text-slate-400
+- text-sm font-bold text-white
+- text-sm font-bold text-amber-400
+- ${Wx}${o.pathname==="/"?"":o.pathname}
+- meta[name="description"]
+- link[rel="canonical"]
+- meta[property="${f}"]
+- summary_large_image
+- twitter:description
+- meta[name="${f}"]
+- meta[name="robots"]
+- ${Go}/#course-financial-literacy
+- Financial Literacy Workshop in Chennai and Online
+- Beginner-friendly workshop covering money management, stock market basics, tax basics, and insurance awareness.
+- ${Go}/#organization
+- Who should attend this financial literacy workshop?
+- Beginners including students, first-time earners, young professionals, and families who want practical money education.
+- Are the workshops available in Chennai and online?
+- Yes. Rupeevalcore offers both Chennai classroom sessions and online workshop options.
+- Do you provide stock tips or investment advice?
+- No. The sessions focus on financial literacy and awareness only, not advisory services.
+- Which topics are covered?
+- Topics include money basics, budgeting, stock market fundamentals, tax basics, and insurance awareness.
+- How can I register for the next batch?
+- You can register using the workshop form on the site or contact the team on WhatsApp.
+- ${Go}/#workshop-topics
+- Financial Literacy Workshop Topics
+- Stock Market Basics
+- Insurance Awareness
+- What’s your full name?
+- What’s your WhatsApp number?
+- Are you from a college or a company?
+- How would you like to connect?
+- What’s your email ID?
+- Which workshop are you interested in?
+- Personal Finance & Money Management
+- Insurance & Tax Awareness
+- Investment Planning
+- College Financial Literacy Program
+- 🎓 Complete Course (All Modules + Certificate)
+- If you have any questions, type them here (or say “No questions”).
+- Your questions (optional)
+- Hi, I’m RupeeBot 👋 I’ll help you register for a Rupeevalcore workshop.
+- Please fill this to continue.
+- Enter a valid WhatsApp number (8-15 digits).
+- Enter a valid email.
+- Here’s what I captured. Please confirm if it looks correct.
+- College / Company
+- Preferred Contact
+- application/json
+- Thank you! Rupeevalcore will contact you soon.
+- Something went wrong. Please try again or contact us directly.
+- ${n} self-end bg-accent text-accent-foreground shadow-lg
+- ${n} self-center bg-[#111113] text-slate-100 border border-white/10
+- ${n} bg-[#111113] text-slate-100 border border-white/10 shadow-inner
+- [RupeeBot] Already submitted, skipping duplicate
+- [RupeeBot] VITE_GOOGLE_SHEET_WEBHOOK_URL not configured - data will NOT be saved to sheet
+- ⚠️ Please enter a valid 10-digit WhatsApp number
+- 0 0 24px rgba(56,189,248,0.4)
+- M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z
+- fixed inset-0 bg-black/60 z-40 sm:hidden
+- font-semibold text-sm
+- RupeeBot – Workshop Assistant
+- RupeeBot is typing…
+- text-xs text-slate-300
+- text-sm text-white break-words
+- flex items-center justify-center gap-2
+- flex items-start gap-2 text-emerald-300 text-xs sm:text-sm
+- ✅ You're registered! We'll contact you on WhatsApp or email soon. Thank you for choosing Rupeevalcore! 🎉
+- Thanks! Our team will reach you soon. Have a nice day.
+- max(0.75rem, env(safe-area-inset-bottom))
+- text-rose-300 text-xs mb-2
+- Type your answer
+- text-xs text-center font-medium transition-colors ${j===10?"text-emerald-400":"text-slate-400"}
+- ✓ Valid number (
+- pointer-events-none absolute inset-0 opacity-30
+- absolute -left-32 bottom-0 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]
+- absolute -bottom-10 right-0 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[120px]
+- glass mx-auto mb-10 max-w-4xl rounded-xl p-5
+- flex items-start gap-3
+- mt-0.5 shrink-0 text-accent
+- w-full space-y-2
+- flex w-full items-center justify-between text-sm font-semibold text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary
+- important-note-points
+- transition-transform duration-200
+- space-y-1 overflow-hidden text-xs text-muted-foreground transition-[max-height,opacity] duration-300 ease-out
+- - All sessions are conducted strictly for educational purposes
+- - No financial, legal, or investment advice is provided
+- mb-3 flex items-center gap-2
+- flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground
+- font-heading font-bold text-foreground
+- Financial literacy focus only. No investment advice, stock tips, or recommendations.
+- mb-3 font-heading text-sm font-semibold text-foreground
+- transition-colors hover:text-foreground
+- /financial-literacy-workshop-chennai
+- Financial Literacy Chennai
+- mt-1 flex items-center gap-3
+- glass btn-ripple h-9 w-9 rounded-full transition-transform duration-200 hover:glow-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary
+- flex h-full w-full items-center justify-center
+- Education-first. No products. No commissions.
+- Financial Literacy Workshop Chennai
+- A focused page for learners searching local beginner-friendly finance workshops.
+- Stock Market Basics Chennai
+- Understand stock market fundamentals with practical and non-advisory guidance.
+- /stock-market-basics-workshop-chennai
+- Corporate Finance Workshops
+- Financial wellness workshops for organizations, colleges, and learning communities.
+- /corporate-finance-workshop-chennai
+- section-padding border-t border-white/5
+- mx-auto mb-10 max-w-3xl text-center
+- mb-4 text-3xl font-bold text-white md:text-4xl
+- Explore Learning Resources
+- text-sm text-slate-400 md:text-base
+- Browse pages built for common search intents around finance workshops and literacy programs.
+- rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-amber-300/40 hover:bg-white/[0.05]
+- mb-2 text-lg font-semibold text-white
+- text-sm leading-relaxed text-slate-300
+- Students, first-time earners, young professionals, and families who want to learn practical money basics with simple explanations.
+- Are sessions available in Chennai and online?
+- Yes. We conduct workshops in Chennai and also run online sessions for learners across India.
+- Do you give stock tips or investment recommendations?
+- No. Rupeevalcore is education-first and focuses only on financial literacy and awareness.
+- What topics are included in beginner sessions?
+- Money management, stock market fundamentals, tax basics, and insurance awareness with practical examples.
+- How do I register for the next batch?
+- Use the workshop registration form or message the team on WhatsApp to reserve your seat.
+- Financial Literacy Workshop FAQ
+- mb-10 text-sm text-slate-400 md:text-base
+- Common questions from learners exploring finance workshops in Chennai and online.
+- mx-auto max-w-3xl space-y-3
+- rounded-xl border border-white/10 bg-white/[0.03] p-5
+- cursor-pointer list-none pr-6 text-base font-semibold text-white
+- mt-3 text-sm leading-relaxed text-slate-300
+- ./CurriculumSection-YCkwSO8W.js
+- ./TrustSection-CuH7jCvM.js
+- ./LevelsSection-BMH761vK.js
+- ./AudienceSection-CMl8-sJN.js
+- ./FormatsSection-C4BNEQF2.js
+- ./TrustedBySection-C9tzCajK.js
+- ./AboutSection-4SJZgh6g.js
+- ./TeamSection-cANU1oT5.js
+- ./CTASection-oX4uwiyE.js
+- min-h-[400px] animate-pulse bg-gradient-to-b from-[#08080F] to-[#0A0A15]
+- min-h-screen overflow-x-hidden bg-background text-foreground
+- Financial Literacy Workshops in Chennai and Online
+- Beginner-friendly financial literacy workshops in Chennai and online. Learn money management, stock market basics, tax, and insurance awareness with Rupeevalcore.
+- College students who want strong money basics early
+- First-time earners building their first financial system
+- Young professionals seeking beginner-friendly stock market awareness
+- Families looking for practical tax and insurance literacy
+- Budgeting and money management for daily life
+- Stock market fundamentals for first-time learners
+- Tax basics and filing awareness
+- Insurance concepts and decision frameworks
+- Financial Literacy Workshop in Chennai
+- Join Rupeevalcore's financial literacy workshop in Chennai. Learn money management, stock market basics, tax, and insurance awareness in beginner-friendly sessions.
+- section-padding border-b border-white/5
+- mb-4 text-sm uppercase tracking-[0.14em] text-amber-300
+- Chennai Focused Program
+- mb-5 max-w-4xl text-4xl font-black leading-tight text-white md:text-6xl
+- Financial Literacy Workshop in Chennai for Beginners
+- max-w-3xl text-base leading-relaxed text-slate-300 md:text-lg
+- Rupeevalcore helps Chennai learners understand money in practical steps. Sessions are designed for clarity, confidence, and real-world decisions without advisory pressure.
+- Register for Next Batch
+- Chat on WhatsApp
+- rounded-2xl border border-white/10 bg-white/[0.03] p-6
+- mb-4 text-2xl font-bold text-white
+- Who This Program Is For
+- space-y-2 text-sm leading-relaxed text-slate-300
+- What You Will Learn
+- mb-4 text-2xl font-bold text-white md:text-3xl
+- Related Learning Pages
+- rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200 transition-colors hover:border-amber-300/40
+- Stock Market Basics Workshop Chennai
+- Corporate Financial Wellness Workshops
+- How the stock market works in simple terms
+- Core terms every beginner should understand
+- Risk awareness and common beginner mistakes
+- How to evaluate information without falling for hype
+- Beginner-friendly stock market basics workshop in Chennai by Rupeevalcore. Learn market fundamentals, risk awareness, and practical financial literacy concepts.
+- Stock Market Basics Workshop in Chennai
+- Learn market fundamentals through structured financial literacy sessions. The focus is education and awareness, not stock tips or advisory services.
+- Reserve Workshop Seat
+- max-w-3xl rounded-2xl border border-white/10 bg-white/[0.03] p-6
+- Session Outcomes
+- Continue Learning
+- /online-finance-workshop-india
+- Online Finance Workshop India
+- Employee financial wellness initiatives
+- College financial awareness programs
+- Community and professional association workshops
+- Custom beginner sessions in English and Tamil
+- Corporate Finance Workshop Chennai
+- Book corporate financial literacy workshops in Chennai for teams, colleges, and communities. Practical beginner modules by Rupeevalcore.
+- Corporate Finance Workshop in Chennai
+- Build financial confidence for teams and student groups with structured, practical literacy sessions. Programs are awareness-focused and easy to follow for beginners.
+- Request Group Workshop
+- mailto:contactrupeevalcore@gmail.com?subject=Corporate%20Financial%20Literacy%20Workshop%20Inquiry
+- Email for Proposal
+- Common Corporate and Campus Use Cases
+- Related Resources
+- Financial Literacy Workshops
+- Online Delivery Format
+- Attend from anywhere in India without travel
+- Beginner-friendly explanations with practical examples
+- Interactive sessions that keep concepts easy to follow
+- Coverage of money basics, stock market fundamentals, tax, and insurance awareness
+- Join Rupeevalcore's online financial literacy workshop across India. Learn money management, stock market basics, tax, and insurance through practical beginner sessions.
+- Remote Friendly Program
+- Online Financial Literacy Workshop in India
+- Learn practical personal finance concepts from anywhere. The online format keeps learning accessible while maintaining clarity, structure, and beginner comfort.
+- Join Upcoming Online Batch
+- Ask for Schedule
+- Why Learners Choose the Online Format
+- Chennai Offline Workshops
+- 404 Error: User attempted to access non-existent route:
+- flex min-h-screen items-center justify-center bg-muted
+- The requested page could not be found.
+- noindex, nofollow
+- mb-4 text-4xl font-bold
+- mb-4 text-xl text-muted-foreground
+- Oops! Page not found
+- text-primary underline hover:text-primary/90
+- loading-skeleton-overlay fixed inset-0 z-[120] pointer-events-none bg-[#08080F]
+- absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(245,158,11,0.18),transparent_42%),radial-gradient(circle_at_84%_70%,rgba(255,255,255,0.08),transparent_38%)]
+- w-full max-w-3xl space-y-5
+- h-4 w-40 rounded-full bg-white/10
+- h-12 w-full max-w-xl rounded-xl bg-white/8
+- h-12 w-[88%] max-w-lg rounded-xl bg-white/8
+- h-4 w-full max-w-2xl rounded-full bg-white/10
+- h-4 w-[92%] max-w-xl rounded-full bg-white/10
+- h-11 w-44 rounded-xl bg-amber-400/25
+- h-11 w-36 rounded-xl bg-sky-300/20
+

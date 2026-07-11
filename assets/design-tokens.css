@@ -1,0 +1,127 @@
+/* Design Tokens - Auto-generated */
+/* Do not edit directly - modify tokens.json instead */
+
+/* === PRIMITIVES === */
+:root {
+  --primitive-color-gray-50: #F8FAFC;
+  --primitive-color-gray-100: #F1F5F9;
+  --primitive-color-gray-200: #E2E8F0;
+  --primitive-color-gray-300: #CBD5E1;
+  --primitive-color-gray-400: #94A3B8;
+  --primitive-color-gray-500: #64748B;
+  --primitive-color-gray-600: #475569;
+  --primitive-color-gray-700: #334155;
+  --primitive-color-gray-800: #1E293B;
+  --primitive-color-gray-900: #0F172A;
+  --primitive-color-gray-950: #0B0F19;
+  --primitive-color-primary-50: #EEF2F6;
+  --primitive-color-primary-100: #E0E7FF;
+  --primitive-color-primary-200: #C7D2FE;
+  --primitive-color-primary-300: #A5B4FC;
+  --primitive-color-primary-400: #818CF8;
+  --primitive-color-primary-500: #635BFF;
+  --primitive-color-primary-600: #4F46E5;
+  --primitive-color-primary-700: #4338CA;
+  --primitive-color-primary-800: #3730A3;
+  --primitive-color-primary-900: #312E81;
+  --primitive-color-secondary-50: #F0FDF4;
+  --primitive-color-secondary-100: #DCFCE7;
+  --primitive-color-secondary-200: #BBF7D0;
+  --primitive-color-secondary-300: #86EFAC;
+  --primitive-color-secondary-400: #4ADE80;
+  --primitive-color-secondary-500: #00D4B2;
+  --primitive-color-secondary-600: #059669;
+  --primitive-color-secondary-700: #047857;
+  --primitive-color-secondary-800: #065F46;
+  --primitive-color-secondary-900: #064E3B;
+  --primitive-color-accent-50: #FEF3C7;
+  --primitive-color-accent-500: #F59E0B;
+  --primitive-color-accent-600: #D97706;
+  --primitive-color-accent-700: #B45309;
+  --primitive-color-white: #FFFFFF;
+  --primitive-spacing-0: 0px;
+  --primitive-spacing-2xs: 4px;
+  --primitive-spacing-xs: 8px;
+  --primitive-spacing-sm: 12px;
+  --primitive-spacing-md: 16px;
+  --primitive-spacing-lg: 24px;
+  --primitive-spacing-xl: 32px;
+  --primitive-spacing-2xl: 48px;
+  --primitive-spacing-3xl: 64px;
+  --primitive-fontSize-xs: 0.75rem;
+  --primitive-fontSize-sm: 0.875rem;
+  --primitive-fontSize-base: 1rem;
+  --primitive-fontSize-lg: 1.125rem;
+  --primitive-fontSize-xl: 1.25rem;
+  --primitive-fontSize-2xl: 1.5rem;
+  --primitive-fontSize-3xl: 1.875rem;
+  --primitive-fontSize-4xl: 2.25rem;
+  --primitive-fontSize-5xl: 3rem;
+  --primitive-fontSize-6xl: 3.5rem;
+  --primitive-radius-none: 0px;
+  --primitive-radius-sm: 4px;
+  --primitive-radius-md: 8px;
+  --primitive-radius-lg: 12px;
+  --primitive-radius-xl: 16px;
+  --primitive-radius-full: 9999px;
+  --primitive-shadow-none: none;
+  --primitive-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --primitive-shadow-default: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --primitive-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --primitive-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --primitive-duration-fast: 150ms;
+  --primitive-duration-normal: 200ms;
+  --primitive-duration-slow: 300ms;
+}
+
+/* === SEMANTIC === */
+:root {
+  --color-background: #F8FAFC;
+  --color-foreground: #0F172A;
+  --color-primary: #635BFF;
+  --color-primary-hover: #4F46E5;
+  --color-primary-active: #4338CA;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #00D4B2;
+  --color-secondary-foreground: #0F172A;
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
+  --color-destructive: #0F172A;
+  --color-destructive-foreground: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-ring: #818CF8;
+  --spacing-component: 16px;
+  --spacing-section: 48px;
+}
+
+/* === COMPONENTS === */
+:root {
+  --button-bg: #635BFF;
+  --button-fg: #FFFFFF;
+  --button-hover-bg: #4F46E5;
+  --button-padding-x: 16px;
+  --button-padding-y: 8px;
+  --button-radius: 8px;
+  --button-font-size: 0.875rem;
+  --input-bg: #FFFFFF;
+  --input-border: #E2E8F0;
+  --input-focus-ring: #818CF8;
+  --input-padding-x: 16px;
+  --input-padding-y: 8px;
+  --input-radius: 8px;
+  --card-bg: #FFFFFF;
+  --card-border: #E2E8F0;
+  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --card-padding: 24px;
+  --card-radius: 16px;
+}
+
+/* === DARK MODE === */
+.dark {
+  --color-background: #0B0F19;
+  --color-foreground: #F8FAFC;
+  --color-secondary: #1E293B;
+  --color-muted: #1E293B;
+  --color-muted-foreground: #94A3B8;
+  --color-border: #1E293B;
+}
