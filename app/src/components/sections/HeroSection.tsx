@@ -23,7 +23,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-white/10 shadow-lg text-accent text-sm font-medium mb-8 backdrop-blur-xl"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-white/10 shadow-lg text-accent text-sm font-medium mb-8 backdrop-blur-md"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
@@ -60,7 +60,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto p-2 glass rounded-2xl md:rounded-full border border-white/10 shadow-2xl backdrop-blur-xl relative overflow-hidden"
+          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto p-2 glass rounded-2xl md:rounded-full border border-white/10 shadow-2xl backdrop-blur-md relative overflow-hidden"
         >
           <GlowingEffect
             spread={40}

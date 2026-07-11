@@ -55,7 +55,7 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className={`inline-flex items-center px-4 py-2 rounded-full glass ${theme.border} shadow-lg ${theme.text} text-sm font-bold mb-8 uppercase tracking-wider backdrop-blur-xl`}
+                className={`inline-flex items-center px-4 py-2 rounded-full glass ${theme.border} shadow-lg ${theme.text} text-sm font-bold mb-8 uppercase tracking-wider backdrop-blur-md`}
               >
                 {badge}
               </motion.div>

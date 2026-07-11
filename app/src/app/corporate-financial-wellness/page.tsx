@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import AudienceHero, { AudienceHeroConfig } from "@/components/audience/AudienceHero";
 import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
 import AudienceMetrics from "@/components/audience/AudienceMetrics";
@@ -5,12 +6,14 @@ import LearningJourneyTimeline from "@/components/audience/LearningJourneyTimeli
 import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
-import ContextualDownloadCard from "@/components/audience/ContextualDownloadCard";
-import ComplianceBlock from "@/components/audience/ComplianceBlock";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import FAQSection from "@/components/sections/FAQSection";
-import CTASection from "@/components/sections/CTASection";
 import { AlertCircle, TrendingUp } from "lucide-react";
+
+const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
+const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
+const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
+const CTASection = dynamic(() => import("@/components/sections/CTASection"));
+const PricingCard = dynamic(() => import("@/components/audience/PricingCard"));
 
 const heroConfig: AudienceHeroConfig = {
   themeColor: "cyan",
@@ -168,6 +171,35 @@ export default function CorporatePage() {
 
       <TestimonialsSection context="corporate" />
       
+      <section className="section-padding bg-background">
+        <div className="container-rv">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4">
+              Corporate Investment
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Empower your workforce with the financial clarity they need to focus, engage, and thrive.
+            </p>
+          </div>
+          
+          <PricingCard 
+            title="Corporate Wellness Programmes"
+            price="Custom Pricing"
+            description="Scalable financial wellness workshops designed for modern workforces."
+            features={[
+              "Needs assessment and workforce profiling",
+              "Customized modules based on employee demographics",
+              "Interactive Q&A and 1-on-1 doubt clearing",
+              "Reference materials and planning templates provided",
+              "Strictly educational (No conflict of interest)"
+            ]}
+            buttonText="Request Corporate Proposal"
+            buttonLink={heroConfig.formUrl!}
+            themeColor="cyan"
+          />
+        </div>
+      </section>
+
       <section className="section-padding bg-background/50">
         <div className="container-rv">
           <div className="max-w-4xl mx-auto">

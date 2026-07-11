@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import AudienceHero, { AudienceHeroConfig } from "@/components/audience/AudienceHero";
 import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
 import AudienceMetrics from "@/components/audience/AudienceMetrics";
@@ -5,13 +6,15 @@ import LearningJourneyTimeline from "@/components/audience/LearningJourneyTimeli
 import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
-import ContextualDownloadCard from "@/components/audience/ContextualDownloadCard";
-import ComplianceBlock from "@/components/audience/ComplianceBlock";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import FAQSection from "@/components/sections/FAQSection";
-import CTASection from "@/components/sections/CTASection";
-import WorkshopGallery from "@/components/sections/WorkshopGallery";
 import { AlertCircle, TrendingUp } from "lucide-react";
+
+const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
+const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
+const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
+const CTASection = dynamic(() => import("@/components/sections/CTASection"));
+const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
+
 
 const heroConfig: AudienceHeroConfig = {
   themeColor: "emerald",
