@@ -14,6 +14,7 @@ const TestimonialsSection = dynamic(() => import("@/components/sections/Testimon
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
+const PricingCard = dynamic(() => import("@/components/audience/PricingCard"));
 
 
 const heroConfig: AudienceHeroConfig = {
@@ -183,6 +184,35 @@ export default function CollegesPage() {
 
       <TestimonialsSection context="colleges" />
       
+      <section className="section-padding bg-background">
+        <div className="container-rv">
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4">
+              Institutional Investment
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Equip your graduating students with the financial awareness they need to succeed in the real world.
+            </p>
+          </div>
+          
+          <PricingCard 
+            title="College Group Sessions"
+            price="Custom Pricing"
+            description="Tailored financial literacy programmes for final year and placement batches."
+            features={[
+              "Customized modules based on student background",
+              "Interactive Q&A and real-world case studies",
+              "Presentation materials and workbooks provided",
+              "Post-workshop doubt clearing session",
+              "Strictly educational (No financial products sold)"
+            ]}
+            buttonText="Request Custom Proposal"
+            buttonLink={heroConfig.formUrl!}
+            themeColor="sapphire"
+          />
+        </div>
+      </section>
+
       <section className="section-padding bg-background/50">
         <div className="container-rv">
           <div className="max-w-4xl mx-auto">
