@@ -8,12 +8,12 @@ import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
 
-const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"), { ssr: false });
-const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"), { ssr: false });
-const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"), { ssr: false });
-const FAQSection = dynamic(() => import("@/components/sections/FAQSection"), { ssr: false });
+const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
+const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
+const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
-const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"), { ssr: false });
+const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
 
 const heroConfig: AudienceHeroConfig = {
   themeColor: "orange",
