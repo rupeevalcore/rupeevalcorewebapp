@@ -40,7 +40,7 @@ export default function PageHero({ title, description, badge, themeColor = "acce
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`inline-flex items-center px-3 py-1.5 rounded-full glass border-white/10 shadow-lg ${theme.text} text-sm font-medium mb-6 uppercase tracking-wider backdrop-blur-xl`}
+            className={`inline-flex items-center px-3 py-1.5 rounded-full glass border-white/10 shadow-lg ${theme.text} text-sm font-medium mb-6 uppercase tracking-wider backdrop-blur-md`}
           >
             {badge}
           </motion.div>

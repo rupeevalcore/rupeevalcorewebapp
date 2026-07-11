@@ -43,7 +43,7 @@ export function ContextualDownload({ title, file, audience, className }: Context
             });
           }
         }}
-        className="flex items-center gap-4 p-5 glass rounded-2xl border border-white/10 hover:border-accent/40 hover:bg-white/5 transition-all group shadow-xl backdrop-blur-xl"
+        className="flex items-center gap-4 p-5 glass rounded-2xl border border-white/10 hover:border-accent/40 hover:bg-white/5 transition-all group shadow-xl backdrop-blur-md"
       >
         <div className="p-3 rounded-xl bg-primary/20 text-accent group-hover:scale-110 transition-transform">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

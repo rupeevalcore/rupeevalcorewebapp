@@ -121,7 +121,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-screen w-[min(88vw,360px)] border-l border-border bg-background/95 backdrop-blur-2xl transition-transform duration-300 lg:hidden ${
+        className={`fixed right-0 top-0 z-50 h-screen w-[min(88vw,360px)] border-l border-border bg-background/95 backdrop-blur-md transition-transform duration-300 lg:hidden ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-label="Mobile navigation"

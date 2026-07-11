@@ -21,7 +21,7 @@ export default function CTASection({
   return (
     <section id="contact" className={`py-24 relative overflow-hidden ${className}`}>
       {/* Background decorations */}
-      <div className="absolute inset-0 bg-accent/5 backdrop-blur-3xl" />
+      <div className="absolute inset-0 bg-accent/5 backdrop-blur-md" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/20 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto text-center">
