@@ -13,7 +13,6 @@ const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBl
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
-const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
 
 const heroConfig: AudienceHeroConfig = {
   themeColor: "orange",
