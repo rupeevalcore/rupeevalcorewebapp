@@ -1,0 +1,206 @@
+import AudienceHero, { AudienceHeroConfig } from "@/components/audience/AudienceHero";
+import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
+import AudienceMetrics from "@/components/audience/AudienceMetrics";
+import LearningJourneyTimeline from "@/components/audience/LearningJourneyTimeline";
+import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
+import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
+import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
+import ContextualDownloadCard from "@/components/audience/ContextualDownloadCard";
+import ComplianceBlock from "@/components/audience/ComplianceBlock";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import FAQSection from "@/components/sections/FAQSection";
+import CTASection from "@/components/sections/CTASection";
+import { AlertCircle, TrendingUp } from "lucide-react";
+
+const heroConfig: AudienceHeroConfig = {
+  themeColor: "emerald",
+  badge: "For Schools",
+  title: "Building Financial Confidence Early.",
+  subtitle: "Practical financial literacy programmes designed for school students to build responsible money habits, digital financial awareness and real-world financial understanding from an early age.",
+  primaryCta: "Request School Proposal",
+  secondaryCta: "Talk to Programme Advisor",
+  iconPath: "/schools_3d.png",
+  photoPosition: "top left",
+  formUrl: process.env.NEXT_PUBLIC_SCHOOLS_FORM_URL
+};
+
+const whyMatters = [
+  { title: "Rarely Taught", description: "Students learn mathematics but rarely learn money management.", icon: AlertCircle },
+  { title: "Digital Payments", description: "Digital payments are growing rapidly among younger generations.", icon: TrendingUp },
+  { title: "Early Habits", description: "Financial habits are formed early in life." },
+  { title: "Long-Term Impact", description: "Financial literacy supports better long-term decision making." },
+  { title: "Responsible Adulthood", description: "Financial awareness helps students become responsible adults." }
+];
+
+const challenges = [
+  { title: "Understanding spending but not saving." },
+  { title: "Using UPI but not understanding banking." },
+  { title: "Knowing brands but not budgeting." },
+  { title: "Missing from formal curriculums." },
+  { title: "Exposure to digital financial fraud." }
+];
+
+const timeline = [
+  { title: "Grade 3 – Grade 5", description: "Introduction to money, saving habits and responsible spending." },
+  { title: "Grade 6 – Grade 8", description: "Banking awareness, budgeting and digital payment literacy." },
+  { title: "Grade 9 – Grade 10", description: "Financial decision making, fraud awareness and financial responsibility." },
+  { title: "Grade 11 – Grade 12", description: "Banking, taxation awareness, insurance basics and introduction to investing concepts." }
+];
+
+const metrics = [
+  { label: "Target Audience", value: "Grade 3–12" },
+  { label: "Languages", value: "English & Tamil" },
+  { label: "Delivery", value: "Chennai & Online" }
+];
+
+const modules = [
+  "Money Basics", "Saving Habits", "Budgeting", "Banking Fundamentals", 
+  "Digital Payments", "UPI Safety", "Fraud Awareness", "Insurance Awareness", 
+  "Tax Awareness", "Goal Setting", "Financial Decision Making"
+];
+
+const deliveryModels = [
+  "Classroom Sessions", "Auditorium Sessions", "Financial Literacy Week",
+  "Annual Engagement Programmes", "Online Sessions", "Hybrid Sessions"
+];
+
+const outcomes = [
+  "Responsible spending", "Saving discipline", "Banking fundamentals",
+  "Fraud prevention", "Financial confidence", "Goal-oriented thinking", "Digital financial safety"
+];
+
+const formats = [
+  "60 Minute Awareness Session", "Half Day Workshop", "Full Day Workshop",
+  "Multi Session Programme", "Financial Literacy Club Model"
+];
+
+const testimonials = [
+  {
+    text: "The financial literacy session introduced practical money concepts in a simple and engaging format that resonated well with our students. The workshop encouraged meaningful discussions around saving, budgeting and responsible financial decision-making.",
+    author: "Saravaloka International School",
+    role: "Chennai"
+  }
+];
+
+const faqs = [
+  { q: "Do you conduct sessions in Chennai only?", a: "We conduct in-person sessions in Chennai and offer online sessions globally." },
+  { q: "Are online sessions available?", a: "Yes, fully interactive online sessions are available." },
+  { q: "Are programmes available in Tamil?", a: "Yes, we offer sessions in English, Tamil, or bilingual." },
+  { q: "Which grades can participate?", a: "Our modules are designed for students from Grade 3 through Grade 12." },
+  { q: "Can schools customize modules?", a: "Absolutely. We can tailor the curriculum to suit your specific requirements." },
+  { q: "Are certificates provided?", a: "Yes, participants receive a certificate of completion." },
+  { q: "What is the minimum participant requirement?", a: "We can accommodate groups as small as a single classroom or as large as an entire grade." }
+];
+
+export default function SchoolsPage() {
+  return (
+    <>
+      <AudienceHero config={heroConfig} />
+      
+      <section className="section-padding bg-background/50">
+        <div className="container-rv">
+          
+          <div className="mb-24">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
+              Why Financial Literacy Matters
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {whyMatters.map((item, idx) => (
+                <AudienceInsightCard 
+                  key={idx} 
+                  title={item.title} 
+                  description={item.description} 
+                  icon={item.icon ? <item.icon size={28} strokeWidth={1.5} /> : undefined}
+                  delay={idx * 0.1}
+                  themeColor="emerald"
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-24">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
+              Challenges Schools Face
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {challenges.map((item, idx) => (
+                <AudienceInsightCard 
+                  key={idx} 
+                  title={item.title}
+                  delay={idx * 0.1}
+                  themeColor="emerald"
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-24 grid lg:grid-cols-[1fr_400px] gap-16 items-start">
+            <div>
+              <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+                Who Can Attend
+              </h2>
+              <LearningJourneyTimeline items={timeline} themeColor="emerald" />
+            </div>
+            <div className="sticky top-24">
+              <AudienceMetrics metrics={metrics} themeColor="emerald" />
+            </div>
+          </div>
+
+          <div className="mb-24">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+              Programme Modules
+            </h2>
+            <ProgrammeModuleGrid modules={modules} themeColor="emerald" />
+          </div>
+
+          <div className="mb-24">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+              Delivery Models
+            </h2>
+            <DeliveryModelCards models={deliveryModels} themeColor="emerald" />
+          </div>
+
+          <div className="mb-24">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+              Learning Outcomes
+            </h2>
+            <LearningOutcomeGrid outcomes={outcomes} themeColor="emerald" />
+          </div>
+
+          <div className="mb-16">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+              Workshop Formats
+            </h2>
+            <DeliveryModelCards models={formats} themeColor="emerald" />
+          </div>
+
+        </div>
+      </section>
+
+      <TestimonialsSection testimonials={testimonials} />
+      
+      <section className="section-padding bg-background/50">
+        <div className="container-rv">
+          <div className="max-w-4xl mx-auto">
+            <ContextualDownloadCard 
+              title="School Financial Literacy Proposal"
+              description="Download our comprehensive proposal document designed for school principals and administrators."
+              pdfUrl="/downloads/School_Financial_Literacy_Programme.pdf"
+              category="Schools"
+              themeColor="emerald"
+            />
+          </div>
+          <ComplianceBlock />
+        </div>
+      </section>
+
+      <FAQSection faqs={faqs} />
+      
+      <CTASection 
+        headline="Prepare Students for a Financially Responsible Future."
+
+        secondaryButtonText="Schedule a Discussion"
+      />
+    </>
+  );
+}
