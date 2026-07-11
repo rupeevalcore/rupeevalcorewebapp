@@ -23,6 +23,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import PageProgress from '@/components/layout/PageProgress'
 import WhatsAppFAB from '@/components/layout/WhatsAppFAB'
+import { BeamsBackground } from '@/components/ui/beams-background'
 
 
 export default function RootLayout({
@@ -41,11 +42,25 @@ export default function RootLayout({
           enableSystem={true}
           disableTransitionOnChange
         >
-          <PageProgress />
-          <Navbar />
-          <main className="min-h-screen pt-16">
+          <BeamsBackground />
+          <a href="#main-content" className="skip-link relative z-50">
+            Skip to content
+          </a>
+          <div className="relative z-50">
+            <PageProgress />
+            <Navbar />
+          </div>
+          <main id="main-content" className="min-h-screen pt-16 pb-20 md:pb-0 relative z-10">
             {children}
           </main>
+          
+          {/* Mobile Sticky CTA */}
+          <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-md border-t border-border/50 z-40 md:hidden animate-in slide-in-from-bottom-full">
+            <a href="#contact" className="btn-accent w-full justify-center">
+              Request Proposal
+            </a>
+          </div>
+
           <Footer />
           <WhatsAppFAB />
           <Toaster theme="system" position="bottom-right" />

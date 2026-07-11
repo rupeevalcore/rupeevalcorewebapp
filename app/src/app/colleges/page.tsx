@@ -10,6 +10,7 @@ import ComplianceBlock from "@/components/audience/ComplianceBlock";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
+import WorkshopGallery from "@/components/sections/WorkshopGallery";
 import { AlertCircle, TrendingUp } from "lucide-react";
 
 const heroConfig: AudienceHeroConfig = {
@@ -172,6 +173,11 @@ export default function CollegesPage() {
         </div>
       </section>
 
+      <WorkshopGallery 
+        title="Inside a RupeeValcore Workshop"
+        subtitle="Interactive sessions designed to help students understand money, banking, financial decision making and real-world financial concepts."
+      />
+
       <TestimonialsSection context="colleges" />
       
       <section className="section-padding bg-background/50">
@@ -180,7 +186,7 @@ export default function CollegesPage() {
             <ContextualDownloadCard 
               title="College Financial Literacy Proposal"
               description="Download our comprehensive proposal document designed for placement officers, deans and HODs."
-              pdfUrl="/downloads/College_Financial_Literacy_Programme.pdf"
+              pdfUrl="/proposals/college-proposal-2026.pdf"
               category="Colleges"
               themeColor="sapphire"
             />

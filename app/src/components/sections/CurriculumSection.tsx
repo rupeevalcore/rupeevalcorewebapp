@@ -18,7 +18,7 @@ const modules = [
 
 export default function CurriculumSection() {
   return (
-    <section id="curriculum" className="section-padding bg-background/50">
+    <section id="curriculum" className="section-padding bg-transparent/50">
       <div className="container-rv">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.div
@@ -43,9 +43,12 @@ export default function CurriculumSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="glass p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-all duration-300 group flex flex-col items-center text-center hover:-translate-y-1"
+              className="glass p-6 rounded-2xl border-0 hover:border-accent/30 transition-all duration-300 group flex flex-col items-center text-center hover:-translate-y-1"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-accent mb-5 group-hover:scale-110 transition-transform">
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-accent mb-5 group-hover:scale-110 transition-transform"
+                style={{ background: "var(--icon-bg)" }}
+              >
                 <mod.icon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-heading font-bold text-foreground mb-3">{mod.title}</h3>

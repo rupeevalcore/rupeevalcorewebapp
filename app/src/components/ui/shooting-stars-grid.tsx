@@ -193,9 +193,7 @@ export function ShootingStarsGrid({
       ref={rootRef}
       onPointerMove={onPointerMove}
       className={cn(
-        "group/shooting-stars relative isolate min-h-[520px] w-full overflow-hidden border border-zinc-200 bg-zinc-950 text-white shadow-2xl shadow-cyan-950/20 dark:border-white/10",
-        "dark:bg-[linear-gradient(180deg,#07090f_0%,#0b1020_55%,#07090f_100%)]",
-        "bg-[linear-gradient(180deg,#f8fbff_0%,#eaf4ff_52%,#f8fbff_100%)] text-zinc-950 dark:text-white",
+        "group/shooting-stars relative isolate min-h-[520px] w-full overflow-hidden border-none text-zinc-950 dark:text-white bg-transparent",
         className,
       )}
       style={

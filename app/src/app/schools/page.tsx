@@ -10,6 +10,7 @@ import ComplianceBlock from "@/components/audience/ComplianceBlock";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
+import WorkshopGallery from "@/components/sections/WorkshopGallery";
 import { AlertCircle, TrendingUp } from "lucide-react";
 
 const heroConfig: AudienceHeroConfig = {
@@ -177,6 +178,13 @@ export default function SchoolsPage() {
         </div>
       </section>
 
+      <WorkshopGallery 
+        title="Representative learning session"
+        subtitle=""
+        limit={2}
+        showStats={false}
+      />
+
       <TestimonialsSection testimonials={testimonials} />
       
       <section className="section-padding bg-background/50">
@@ -185,7 +193,7 @@ export default function SchoolsPage() {
             <ContextualDownloadCard 
               title="School Financial Literacy Proposal"
               description="Download our comprehensive proposal document designed for school principals and administrators."
-              pdfUrl="/downloads/School_Financial_Literacy_Programme.pdf"
+              pdfUrl="/proposals/school-proposal-2026.pdf"
               category="Schools"
               themeColor="emerald"
             />

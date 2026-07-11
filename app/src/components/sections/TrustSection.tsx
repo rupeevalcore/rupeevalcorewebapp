@@ -2,18 +2,20 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2, Shield, GraduationCap, MapPin } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const stats = [
-  { label: "Schools", value: "2" },
-  { label: "Colleges", value: "2" },
-  { label: "Organizations", value: "3" },
-  { label: "Individual Sessions", value: "25+" },
+  { label: "Schools", value: 2, suffix: "", variant: "schools" as const },
+  { label: "Colleges", value: 2, suffix: "", variant: "colleges" as const },
+  { label: "Organizations", value: 3, suffix: "", variant: "corporate" as const },
+  { label: "Individual Sessions", value: 25, suffix: "+", variant: "individuals" as const },
 ];
 
 const visionStats = [
-  { label: "Schools", value: "50+" },
-  { label: "Colleges", value: "50+" },
-  { label: "Workplaces", value: "50+" },
+  { label: "Schools", value: 50, suffix: "+" },
+  { label: "Colleges", value: 50, suffix: "+" },
+  { label: "Workplaces", value: 50, suffix: "+" },
 ];
 
 const compliance = [
@@ -25,7 +27,7 @@ const compliance = [
 
 export default function TrustSection() {
   return (
-    <section id="trust" className="section-padding relative overflow-hidden bg-background">
+    <section id="trust" className="section-padding relative overflow-hidden bg-transparent">
       <div className="container-rv">
         
         {/* Compliance Badges Bar */}
@@ -37,7 +39,7 @@ export default function TrustSection() {
         >
           {compliance.map((item, i) => (
             <div key={i} className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
-              <item.icon className="text-accent" size={24} strokeWidth={1.5} />
+              <item.icon className="text-accent" size={24} strokeWidth={1.5} aria-hidden="true" />
               <span className="font-heading font-medium tracking-wide uppercase text-sm">{item.text}</span>
             </div>
           ))}
@@ -63,13 +65,31 @@ export default function TrustSection() {
             
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, i) => (
-                <div key={i} className="glass p-6 rounded-2xl border border-white/5 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="glass p-6 rounded-2xl relative overflow-hidden group"
+                >
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                    variant={stat.variant}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-0" />
                   <div className="relative z-10">
-                    <div className="text-4xl font-black font-heading text-foreground mb-1">{stat.value}</div>
+                    <div className="text-4xl font-black font-heading text-foreground mb-1">
+                      <AnimatedCounter target={stat.value} suffix={stat.suffix} duration={1600} />
+                    </div>
                     <div className="text-sm font-medium text-accent tracking-wide uppercase">{stat.label}</div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -90,7 +110,9 @@ export default function TrustSection() {
                 {visionStats.map((stat, i) => (
                   <div key={i} className="flex items-center justify-between border-b border-border/50 pb-6 last:border-0 last:pb-0">
                     <span className="text-xl font-heading text-foreground">{stat.label}</span>
-                    <span className="text-3xl font-black font-heading text-accent">{stat.value}</span>
+                    <span className="text-3xl font-black font-heading text-accent">
+                      <AnimatedCounter target={stat.value} suffix={stat.suffix} duration={1800} />
+                    </span>
                   </div>
                 ))}
               </div>

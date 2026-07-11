@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 interface AudienceInsightCardProps {
   title: string;
@@ -21,12 +22,12 @@ export default function AudienceInsightCard({
 
   const getThemeClasses = () => {
     switch(themeColor) {
-      case "emerald": return { text: "text-emerald-500", glow: "from-emerald-500/20", border: "group-hover:border-emerald-500/40" };
-      case "sapphire": return { text: "text-sapphire-500", glow: "from-sapphire-500/20", border: "group-hover:border-sapphire-500/40" };
-      case "cyan": return { text: "text-cyan-500", glow: "from-cyan-500/20", border: "group-hover:border-cyan-500/40" };
-      case "orange": return { text: "text-orange-500", glow: "from-orange-500/20", border: "group-hover:border-orange-500/40" };
-      case "purple": return { text: "text-purple-500", glow: "from-purple-500/20", border: "group-hover:border-purple-500/40" };
-      default: return { text: "text-accent", glow: "from-accent/20", border: "group-hover:border-accent/40" };
+      case "emerald": return { text: "text-emerald-500", border: "group-hover:border-emerald-500/40", variant: "schools" as const };
+      case "sapphire": return { text: "text-sapphire-500", border: "group-hover:border-sapphire-500/40", variant: "colleges" as const };
+      case "cyan": return { text: "text-cyan-500", border: "group-hover:border-cyan-500/40", variant: "corporate" as const };
+      case "orange": return { text: "text-orange-500", border: "group-hover:border-orange-500/40", variant: "individuals" as const };
+      case "purple": return { text: "text-purple-500", border: "group-hover:border-purple-500/40", variant: "ai" as const };
+      default: return { text: "text-accent", border: "group-hover:border-accent/40", variant: "default" as const };
     }
   };
 
@@ -38,12 +39,23 @@ export default function AudienceInsightCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className={`glass p-8 rounded-3xl border border-white/5 ${theme.border} transition-all duration-300 group h-full relative overflow-hidden`}
+      className={`glass p-8 rounded-3xl ${theme.border} transition-all duration-300 group h-full relative overflow-hidden`}
     >
-      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${theme.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-bl-full`} />
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+        borderWidth={3}
+        variant={theme.variant}
+      />
       
       {icon && (
-        <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center ${theme.text} mb-6 border border-white/5`}>
+        <div 
+          className={`w-14 h-14 rounded-2xl flex items-center justify-center ${theme.text} mb-6 relative z-10`}
+          style={{ background: "var(--icon-bg)", border: "1px solid var(--glass-border)" }}
+        >
           {icon}
         </div>
       )}

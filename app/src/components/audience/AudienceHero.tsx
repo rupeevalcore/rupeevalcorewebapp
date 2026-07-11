@@ -92,7 +92,12 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
                 {primaryCta}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary py-4 text-base bg-white/5 border border-white/10 hover:bg-white/10">
+              <a 
+                href={WHATSAPP_URL} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary py-4 text-base"
+              >
                 <MessageSquare size={18} />
                 {secondaryCta}
               </a>

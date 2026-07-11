@@ -58,7 +58,7 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
   if (faqs.length === 0) return null;
 
   return (
-    <section id="faq" className="section-padding bg-background/50 relative">
+    <section id="faq" className="section-padding bg-transparent/50 relative">
       <div className="container-rv max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -174,7 +174,7 @@ export default function CorporatePage() {
             <ContextualDownloadCard 
               title="Corporate Financial Wellness Proposal"
               description="Download our comprehensive proposal document designed for HRs, Founders, and Team Leads."
-              pdfUrl="/downloads/Corporate_Financial_Wellness_Programme.pdf"
+              pdfUrl="/proposals/corporate-proposal-2026.pdf"
               category="Corporate"
               themeColor="cyan"
             />

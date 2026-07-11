@@ -39,15 +39,27 @@
     --fg: #0f172a;
     --primary: #071A35;
     --primary-fg: #ffffff;
-    --accent: #D4A44D;
+    --accent: #C4922A;
     --accent-fg: #ffffff;
     --muted: #f1f5f9;
-    --muted-fg: #64748b;
+    --muted-fg: #475569;
     --card: #ffffff;
     --card-fg: #0f172a;
-    --border-color: #e2e8f0;
-    --glass-bg: rgba(255, 255, 255, 0.6);
-    --glass-border: rgba(0, 0, 0, 0.05);
+    --border-color: #d1d5db;
+    /* Light mode glass = white card with subtle shadow */
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.05);
+    /* Secondary button — visible on light backgrounds */
+    --btn-secondary-bg: rgba(7, 26, 53, 0.06);
+    --btn-secondary-border: rgba(7, 26, 53, 0.15);
+    --btn-secondary-text: #071A35;
+    --btn-secondary-hover: rgba(7, 26, 53, 0.10);
+    /* Icon container */
+    --icon-bg: rgba(7, 26, 53, 0.07);
+    /* Theme toggle */
+    --toggle-bg: rgba(7, 26, 53, 0.05);
+    --toggle-border: rgba(7, 26, 53, 0.15);
   }
 
   .dark {
@@ -62,9 +74,17 @@
     --muted-fg: #94a3b8;
     --card: #0c172c;
     --card-fg: #fafafa;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.10);
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.07);
+    --glass-shadow: none;
+    --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+    --btn-secondary-border: rgba(255, 255, 255, 0.10);
+    --btn-secondary-text: #fafafa;
+    --btn-secondary-hover: rgba(255, 255, 255, 0.10);
+    --icon-bg: rgba(255, 255, 255, 0.05);
+    --toggle-bg: rgba(255, 255, 255, 0.05);
+    --toggle-border: rgba(255, 255, 255, 0.10);
   }
 
   *, *::before, *::after {
@@ -93,6 +113,42 @@
     color: var(--color-foreground);
   }
 
+  /* WCAG AA accessible focus states */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Accessibility: Global reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Accessibility: Skip Link */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: top 0.2s ease-out;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--color-background); }
@@ -109,20 +165,73 @@
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
+  /* Glass utility — adapts properly to both light and dark modes */
   .glass {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--glass-shadow);
   }
 
+  /* Primary/secondary button — mode-adaptive, always readable */
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-heading font-semibold text-sm text-primary-foreground
-           bg-primary hover:opacity-90 active:scale-95 transition-all duration-200;
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-heading font-semibold text-sm;
+    background-color: var(--btn-secondary-bg);
+    border: 1px solid var(--btn-secondary-border);
+    color: var(--btn-secondary-text);
+    transition: all 200ms ease-out;
+  }
+  .btn-primary:hover {
+    background-color: var(--btn-secondary-hover);
+    transform: scale(1.01);
+  }
+  .btn-primary:active {
+    transform: scale(0.99);
   }
 
+  /* Accent button — always gold on all modes */
   .btn-accent {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-heading font-semibold text-sm text-accent-foreground
-           bg-accent hover:opacity-90 active:scale-95 transition-all duration-200;
+           bg-accent;
+    transition: all 200ms ease-out;
   }
+  .btn-accent:hover {
+    opacity: 0.95;
+    transform: scale(1.01);
+  }
+  .btn-accent:active {
+    transform: scale(0.99);
+  }
+  
+  /* Interactive Cards — subtle elevation (max 2px) */
+  .glass-interactive {
+    transition: transform 300ms ease-out, border-color 300ms ease-out, box-shadow 300ms ease-out;
+  }
+  .glass-interactive:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--color-accent), 0.15);
+  }
+}
+
+/* ============================================================= */
+/* Counter / Stat animation                                       */
+/* ============================================================= */
+@keyframes stat-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-animate {
+  animation: stat-enter 0.5s ease-out forwards;
+}
+
+/* ============================================================= */
+/* Floating animation used on 3D icons                            */
+/* ============================================================= */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

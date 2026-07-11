@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ShootingStarsGrid } from "@/components/ui/shooting-stars-grid";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export default function HeroSection() {
 
@@ -59,13 +60,22 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto p-2 glass rounded-2xl md:rounded-full border border-white/10 shadow-2xl backdrop-blur-xl"
+          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto p-2 glass rounded-2xl md:rounded-full border border-white/10 shadow-2xl backdrop-blur-xl relative overflow-hidden"
         >
-          <a href="#programs" className="btn-accent flex-1 sm:flex-none group rounded-xl md:rounded-full px-8 py-3.5 text-center">
+          <GlowingEffect
+            spread={40}
+            glow={true}
+            disabled={false}
+            proximity={64}
+            inactiveZone={0.01}
+            borderWidth={3}
+            variant="white"
+          />
+          <a href="#programs" className="btn-accent flex-1 sm:flex-none group rounded-xl md:rounded-full px-8 py-3.5 text-center relative z-10">
             Find The Right Program
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </a>
-          <Link href="#contact" className="btn-primary flex-1 sm:flex-none rounded-xl md:rounded-full px-8 py-3.5 bg-transparent border-transparent hover:bg-white/5">
+          <Link href="#contact" className="btn-primary flex-1 sm:flex-none rounded-xl md:rounded-full px-8 py-3.5 relative z-10">
             WhatsApp Us
           </Link>
         </motion.div>

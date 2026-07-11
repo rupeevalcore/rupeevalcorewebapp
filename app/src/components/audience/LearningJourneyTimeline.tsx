@@ -44,9 +44,9 @@ export default function LearningJourneyTimeline({ items, themeColor = "accent" }
           >
             {/* Timeline Dot */}
             <div className={`absolute -left-10 md:-left-14 top-1.5 w-4 h-4 rounded-full ${theme.bg} shadow-[0_0_15px_rgba(var(--color-${themeColor}),0.5)]`} />
-            <div className={`absolute -left-[38px] md:-left-[54px] top-[8px] w-3 h-3 rounded-full bg-background border border-white/20`} style={{ zIndex: 2 }} />
+            <div className={`absolute -left-[38px] md:-left-[54px] top-[8px] w-3 h-3 rounded-full bg-background border border-border`} style={{ zIndex: 2 }} />
             
-            <div className="glass p-6 md:p-8 rounded-3xl border border-white/5 hover:bg-white/5 transition-colors">
+            <div className="glass p-6 md:p-8 rounded-3xl hover:-translate-y-0.5 transition-all duration-300">
               <h4 className={`font-heading font-bold text-xl md:text-2xl ${theme.text} mb-3`}>
                 {item.title}
               </h4>

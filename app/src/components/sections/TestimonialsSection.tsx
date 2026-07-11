@@ -56,7 +56,7 @@ export default function TestimonialsSection({ context = "all", testimonials: cus
   if (testimonials.length === 0) return null;
 
   return (
-    <section className="section-padding overflow-hidden bg-background">
+    <section className="section-padding overflow-hidden bg-transparent">
       <div className="container-rv">
         
         <div className="flex flex-col md:flex-row gap-12 items-end justify-between mb-16">

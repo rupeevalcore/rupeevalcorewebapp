@@ -35,7 +35,7 @@ export default function AudienceMetrics({ metrics, themeColor = "accent" }: Audi
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1, duration: 0.5 }}
-          className={`glass p-6 md:p-8 rounded-3xl border border-white/5 ${theme.border} text-center group hover:bg-white/5 transition-colors`}
+          className={`glass p-6 md:p-8 rounded-3xl ${theme.border} text-center group transition-colors duration-300`}
         >
           <div className={`text-3xl md:text-4xl font-heading font-black ${theme.text} mb-2 group-hover:scale-105 transition-transform`}>
             {metric.value}

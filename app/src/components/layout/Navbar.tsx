@@ -7,12 +7,14 @@ import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from "@/components/ui/ThemeToggle"
 
 const navLinks = [
-  { label: 'Programs', href: '/#curriculum' },
-  { label: 'Institutions', href: '/#institutions' },
-  { label: 'Resources', href: '/#resources' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'About', href: '/#about' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Programs', href: '/#programs' },
+  { label: 'Schools', href: '/schools' },
+  { label: 'Colleges', href: '/colleges' },
+  { label: 'Corporates', href: '/corporates' },
+  { label: 'AI', href: '/ai' },
+  { label: 'Founder', href: '/#founder' },
+  { label: 'Contact', href: '/#contact' }
 ]
 
 export default function Navbar() {
@@ -27,6 +29,25 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => setMobileOpen(false), [pathname])
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      const targetId = href.replace('/#', '')
+      if (pathname === '/') {
+        e.preventDefault()
+        const element = document.getElementById(targetId)
+        if (element) {
+          window.scrollTo({
+            top: element.offsetTop - 80,
+            behavior: "smooth"
+          })
+          setMobileOpen(false)
+        }
+      }
+    } else {
+      setMobileOpen(false)
+    }
+  }
 
   return (
     <>
@@ -55,6 +76,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="group relative text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 py-1"
               >
                 {link.label}
@@ -119,7 +141,8 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="py-3 px-4 rounded-xl text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all duration-200 font-medium"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="py-3 px-4 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200 font-medium"
             >
               {link.label}
             </Link>

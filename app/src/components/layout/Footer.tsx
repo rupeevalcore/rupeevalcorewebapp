@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <a
                 href={`mailto:${EMAIL}`}
-                className="p-2 rounded-lg glass text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all"
+              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all border border-transparent hover:border-border"
                 aria-label="Email us"
               >
                 <Mail size={16} />
@@ -49,7 +49,7 @@ export default function Footer() {
                 href={INSTAGRAM}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg glass text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all"
+                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all border border-transparent hover:border-border"
                 aria-label="Follow on Instagram"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" aria-hidden="true">
