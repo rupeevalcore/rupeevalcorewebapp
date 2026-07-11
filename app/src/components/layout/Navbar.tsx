@@ -11,7 +11,8 @@ const navLinks = [
   { label: 'Programs', href: '/#programs' },
   { label: 'Schools', href: '/schools' },
   { label: 'Colleges', href: '/colleges' },
-  { label: 'Corporates', href: '/corporates' },
+  { label: 'Corporates', href: '/corporate-financial-wellness' },
+  { label: 'Individuals', href: '/individual-learning' },
   { label: 'AI', href: '/ai' },
   { label: 'Founder', href: '/#founder' },
   { label: 'Contact', href: '/#contact' }
@@ -30,23 +31,20 @@ export default function Navbar() {
 
   useEffect(() => setMobileOpen(false), [pathname])
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/#')) {
-      const targetId = href.replace('/#', '')
-      if (pathname === '/') {
-        e.preventDefault()
-        const element = document.getElementById(targetId)
-        if (element) {
-          window.scrollTo({
-            top: element.offsetTop - 80,
-            behavior: "smooth"
-          })
-          setMobileOpen(false)
-        }
-      }
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden'
     } else {
-      setMobileOpen(false)
+      document.body.style.overflow = ''
     }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setMobileOpen(false)
   }
 
   return (
