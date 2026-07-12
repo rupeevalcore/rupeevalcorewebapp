@@ -71,10 +71,45 @@ These require live services or browser tooling not completed in this local pass:
 - Android Chrome, Samsung Internet, and iPhone Safari device QA.
 - Google Form submission and Google Sheet lead verification.
 - GA4 and Clarity dashboard verification after production environment IDs are configured.
-- GitHub release commit, push to `development`, merge to `main`, and fresh-clone build.
+- Fresh-clone build.
+
+## Production Validation
+
+Git status:
+
+- Local branch: `main`.
+- Local commit before deployment trigger: `ea5e0fb`.
+- Deployment trigger commit pushed: `f0c8cca`.
+- `origin/main`: synchronized with local `main`.
+
+Production HTTP checks on `https://www.rupeevalcore.in`:
+
+- `/`: `200`
+- `/schools`: `200`
+- `/colleges`: `200`
+- `/corporate-financial-wellness`: `200`
+- `/individual-learning`: `200`
+- `/ai`: `200`
+- `/robots.txt`: `200`
+- `/sitemap.xml`: `200`
+
+Production deployment issue:
+
+- The live homepage is still serving an older static deployment with `Last-Modified: Thu, 02 Jul 2026 19:15:38 GMT`.
+- The production sitemap still contains legacy routes such as `/financial-literacy-workshop-chennai` instead of the current App Router sitemap routes.
+- The live response is missing app-level security headers expected from the current `next.config.ts`, including `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, and `Content-Security-Policy`.
+- This indicates Vercel/custom-domain production is not currently serving the latest `origin/main` release commit, despite GitHub being updated.
+
+Required deployment action:
+
+- Inspect the Vercel project connected to `rupeevalcore.in`.
+- Confirm it points to `rupeevalcore/rupeevalcorewebapp` and branch `main`.
+- Redeploy commit `f0c8cca` or reconnect the correct GitHub repository/branch.
+- Configure `NEXT_PUBLIC_GA_ID` and `NEXT_PUBLIC_CLARITY_ID` in Vercel production environment variables before final analytics validation.
+- Re-run production header, sitemap, and Lighthouse validation after redeploy.
 
 ## Release Status
 
 Local code validation: passed.
 
-Production readiness: conditionally ready after external QA, analytics IDs, Google Sheet verification, and controlled GitHub release flow.
+Production readiness: codebase is locally release-ready, but production is not yet serving the latest release commit.
