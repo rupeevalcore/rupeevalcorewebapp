@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const allTestimonials = [
@@ -60,10 +57,7 @@ export default function TestimonialsSection({ context = "all", testimonials: cus
       <div className="container-rv">
         
         <div className="flex flex-col md:flex-row gap-12 items-end justify-between mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <div
             className="max-w-xl"
           >
             <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
@@ -72,7 +66,7 @@ export default function TestimonialsSection({ context = "all", testimonials: cus
             <p className="text-lg text-muted-foreground">
               Real stories from individuals and institutions who have experienced our practical financial education workshops.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* CSS Marquee Carousel */}

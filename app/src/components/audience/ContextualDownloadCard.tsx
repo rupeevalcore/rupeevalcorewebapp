@@ -1,9 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Download, FileText } from "lucide-react";
 import Image from "next/image";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 interface ContextualDownloadCardProps {
   title: string;
@@ -21,47 +17,29 @@ export default function ContextualDownloadCard({
   pdfUrl, 
   thumbnail, 
   category, 
-  trackingEvent,
   themeColor = "accent" 
 }: ContextualDownloadCardProps) {
 
   const getThemeClasses = () => {
     switch(themeColor) {
-      case "emerald": return { text: "text-emerald-500", bg: "bg-emerald-500", glow: "from-emerald-500/20", variant: "schools" as const };
-      case "sapphire": return { text: "text-sapphire-500", bg: "bg-sapphire-500", glow: "from-sapphire-500/20", variant: "colleges" as const };
-      case "cyan": return { text: "text-cyan-500", bg: "bg-cyan-500", glow: "from-cyan-500/20", variant: "corporate" as const };
-      case "orange": return { text: "text-orange-500", bg: "bg-orange-500", glow: "from-orange-500/20", variant: "individuals" as const };
-      case "purple": return { text: "text-purple-500", bg: "bg-purple-500", glow: "from-purple-500/20", variant: "ai" as const };
-      default: return { text: "text-accent", bg: "bg-accent", glow: "from-accent/20", variant: "default" as const };
+      case "emerald": return { text: "text-emerald-500", bg: "bg-emerald-500", glow: "from-emerald-500/20" };
+      case "sapphire": return { text: "text-sapphire-500", bg: "bg-sapphire-500", glow: "from-sapphire-500/20" };
+      case "cyan": return { text: "text-cyan-500", bg: "bg-cyan-500", glow: "from-cyan-500/20" };
+      case "orange": return { text: "text-orange-500", bg: "bg-orange-500", glow: "from-orange-500/20" };
+      case "purple": return { text: "text-purple-500", bg: "bg-purple-500", glow: "from-purple-500/20" };
+      default: return { text: "text-accent", bg: "bg-accent", glow: "from-accent/20" };
     }
   };
 
   const theme = getThemeClasses();
 
-  const handleDownload = () => {
-    if (trackingEvent) {
-      console.log(`Tracking event: ${trackingEvent}`);
-    }
-    window.open(pdfUrl, "_blank");
-  };
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="glass rounded-3xl overflow-hidden border border-white/10 group cursor-pointer relative"
-      onClick={handleDownload}
+    <a
+      href={pdfUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50"
     >
-      <GlowingEffect
-        spread={40}
-        glow={true}
-        disabled={false}
-        proximity={64}
-        inactiveZone={0.01}
-        borderWidth={3}
-        variant={theme.variant}
-      />
       <div className="flex flex-col md:flex-row relative z-10">
         {/* Thumbnail Area */}
         <div className={`md:w-1/3 bg-gradient-to-br ${theme.glow} to-background p-8 flex items-center justify-center border-b md:border-b-0 md:border-r border-white/5 relative`}>
@@ -91,13 +69,13 @@ export default function ContextualDownloadCard({
           </p>
           
           <div className="mt-auto relative z-10">
-            <button className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white hover:opacity-90 transition-opacity`}>
+            <span className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 transition-opacity`}>
               Download PDF
               <Download size={18} />
-            </button>
+            </span>
           </div>
         </div>
       </div>
-    </motion.div>
+    </a>
   );
 }

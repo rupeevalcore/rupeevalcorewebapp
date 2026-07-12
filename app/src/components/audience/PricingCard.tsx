@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export type PricingCardProps = {
@@ -10,6 +7,7 @@ export type PricingCardProps = {
   features: string[];
   buttonText: string;
   buttonLink: string;
+  analyticsEvent?: string;
   themeColor?: "emerald" | "sapphire" | "cyan" | "orange" | "purple" | "accent";
 };
 
@@ -20,6 +18,7 @@ export default function PricingCard({
   features,
   buttonText,
   buttonLink,
+  analyticsEvent,
   themeColor = "accent"
 }: PricingCardProps) {
   const getThemeClasses = () => {
@@ -36,10 +35,7 @@ export default function PricingCard({
   const theme = getThemeClasses();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+    <div
       className={`relative w-full max-w-lg mx-auto rounded-3xl overflow-hidden border border-border shadow-lg bg-card transition-shadow hover:shadow-xl`}
     >
       {/* Top Banner Accent */}
@@ -66,12 +62,13 @@ export default function PricingCard({
           href={buttonLink}
           target="_blank"
           rel="noopener noreferrer"
+          data-analytics-event={analyticsEvent}
           className="btn-accent w-full justify-center group py-4"
         >
           {buttonText}
           <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 }

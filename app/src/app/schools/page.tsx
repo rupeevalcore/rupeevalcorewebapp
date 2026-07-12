@@ -7,6 +7,7 @@ import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import { LEAD_FORMS } from "@/lib/lead-routing";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -25,7 +26,8 @@ const heroConfig: AudienceHeroConfig = {
   secondaryCta: "Talk to Programme Advisor",
   iconPath: "/schools_3d.png",
   photoPosition: "top left",
-  formUrl: process.env.NEXT_PUBLIC_SCHOOLS_FORM_URL
+  formUrl: LEAD_FORMS.schools,
+  analyticsEvent: "school_proposal_requested",
 };
 
 const whyMatters = [
@@ -209,8 +211,10 @@ export default function SchoolsPage() {
       
       <CTASection 
         headline="Prepare Students for a Financially Responsible Future."
-
-        secondaryButtonText="Schedule a Discussion"
+        primaryButtonText="Request School Proposal"
+        primaryHref={LEAD_FORMS.schools}
+        primaryAnalyticsEvent="school_proposal_requested"
+        secondaryButtonText="Discuss School Programme"
       />
     </>
   );

@@ -7,6 +7,7 @@ import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import { LEAD_FORMS } from "@/lib/lead-routing";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -19,11 +20,12 @@ const heroConfig: AudienceHeroConfig = {
   badge: "For Individuals & Families",
   title: "Personal Financial Education Without Product Selling.",
   subtitle: "One-to-one mentoring and family sessions designed to help you understand personal finance, taxes, and long-term planning without the pressure of hidden commissions.",
-  primaryCta: "Book 1-to-1 Session",
-  secondaryCta: "Talk to Advisor",
+  primaryCta: "Request Session Details",
+  secondaryCta: "Schedule a Discussion",
   iconPath: "/individual_3d.png",
   photoPosition: "bottom right",
-  formUrl: process.env.NEXT_PUBLIC_INDIVIDUAL_FORM_URL
+  formUrl: LEAD_FORMS.individual,
+  analyticsEvent: "individual_session_requested",
 };
 
 const whyMatters = [
@@ -189,8 +191,10 @@ export default function IndividualPage() {
       
       <CTASection 
         headline="Take Control Of Your Financial Journey."
-
-        secondaryButtonText="WhatsApp Us"
+        primaryButtonText="Request Session Details"
+        primaryHref={LEAD_FORMS.individual}
+        primaryAnalyticsEvent="individual_session_requested"
+        secondaryButtonText="Schedule a Discussion"
       />
     </>
   );

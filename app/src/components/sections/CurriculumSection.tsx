@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { BookOpen, TrendingUp, ShieldAlert, PieChart, Landmark, Target, Shield, Receipt, Scale, Wallet } from "lucide-react";
 
 const modules = [
@@ -21,29 +18,22 @@ export default function CurriculumSection() {
     <section id="curriculum" className="section-padding bg-transparent/50">
       <div className="container-rv">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
               Comprehensive Curriculum
             </h2>
             <p className="text-lg text-muted-foreground">
               Ten modular topics designed to take participants from basic financial awareness to confident decision-making. No prior finance knowledge required.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {modules.map((mod, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
               className="glass p-6 rounded-2xl border-0 hover:border-accent/30 transition-all duration-300 group flex flex-col items-center text-center hover:-translate-y-1"
+              style={{ transitionDelay: `${i * 20}ms` }}
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center text-accent mb-5 group-hover:scale-110 transition-transform"
@@ -53,7 +43,7 @@ export default function CurriculumSection() {
               </div>
               <h3 className="font-heading font-bold text-foreground mb-3">{mod.title}</h3>
               <p className="text-sm text-muted-foreground">{mod.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

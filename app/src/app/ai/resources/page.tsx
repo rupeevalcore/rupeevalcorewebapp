@@ -1,5 +1,3 @@
-"use client";
-
 import PageHero from "@/components/layout/PageHero";
 import CTASection from "@/components/sections/CTASection";
 
@@ -33,4 +31,3 @@ export default function AIResourcesPage() {
     </>
   );
 }
-

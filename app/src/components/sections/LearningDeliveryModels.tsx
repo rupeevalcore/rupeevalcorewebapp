@@ -1,61 +1,33 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { Building2, GraduationCap, BriefcaseBusiness, UserRound, UsersRound, HeartHandshake, ArrowRight } from "lucide-react";
-import { ElegantShape } from "@/components/ui/shape-landing-hero";
 
 export default function LearningDeliveryModels() {
   return (
     <section id="delivery-models" className="section-padding bg-transparent relative overflow-hidden">
       <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
       
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <ElegantShape
-            delay={0.4}
-            width={400}
-            height={100}
-            rotate={-10}
-            gradient="from-accent/[0.02] dark:from-accent/[0.05]"
-            className="left-[-5%] md:left-[5%] top-[40%] md:top-[20%]"
-        />
-        <ElegantShape
-            delay={0.6}
-            width={300}
-            height={80}
-            rotate={15}
-            gradient="from-primary/[0.02] dark:from-primary/[0.05]"
-            className="right-[-5%] md:right-[5%] bottom-[20%] md:bottom-[10%]"
-        />
-      </div>
+      <div className="absolute left-[-5%] top-[20%] hidden h-24 w-[420px] -rotate-6 rounded-full bg-accent/[0.03] md:block" />
+      <div className="absolute right-[-5%] bottom-[10%] hidden h-20 w-[320px] rotate-6 rounded-full bg-primary/[0.03] md:block" />
 
       <div className="container-rv relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
               Learning Delivery Models
             </h2>
             <p className="text-lg text-muted-foreground">
               Educational formats designed to meet the specific learning objectives of institutions and individuals.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
           {/* Card 1: Group Sessions */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+          <div
             className="h-full flex flex-col"
           >
-            <Link href="#contact" aria-label="Request Group Proposal" className="block h-full p-8 md:p-10 rounded-3xl glass border border-white/10 group hover:-translate-y-[4px] focus-visible:-translate-y-[4px] hover:border-accent/40 focus-visible:border-accent/40 hover:shadow-lg hover:shadow-accent/10 focus-visible:shadow-lg focus-visible:shadow-accent/10 transition-all duration-[300ms] ease-out outline-none relative overflow-hidden flex flex-col">
+            <Link href="#contact" data-program-selector aria-label="Request Group Proposal" className="block h-full p-8 md:p-10 rounded-3xl glass border border-white/10 group hover:-translate-y-[4px] focus-visible:-translate-y-[4px] hover:border-accent/40 focus-visible:border-accent/40 hover:shadow-lg hover:shadow-accent/10 focus-visible:shadow-lg focus-visible:shadow-accent/10 transition-all duration-[300ms] ease-out outline-none relative overflow-hidden flex flex-col">
               <div className="flex flex-wrap gap-2 mb-8">
                 <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-sm font-semibold tracking-wide border border-emerald-500/20">College Events</span>
                 <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-500 text-sm font-semibold tracking-wide border border-cyan-500/20">Corporate Events</span>
@@ -98,14 +70,10 @@ export default function LearningDeliveryModels() {
                 <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-focus-visible:opacity-100 group-hover:translate-x-0 group-focus-visible:translate-x-0 transition-all duration-[300ms] ease-out" />
               </div>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Card 2: Personal Learning Sessions */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+          <div
             className="h-full flex flex-col"
           >
             <Link href="/individual-learning" aria-label="Schedule Personal Learning Discussion" className="block h-full p-8 md:p-10 rounded-3xl glass border border-white/10 group hover:-translate-y-[4px] focus-visible:-translate-y-[4px] hover:border-accent/40 focus-visible:border-accent/40 hover:shadow-lg hover:shadow-accent/10 focus-visible:shadow-lg focus-visible:shadow-accent/10 transition-all duration-[300ms] ease-out outline-none relative overflow-hidden flex flex-col">
@@ -154,7 +122,7 @@ export default function LearningDeliveryModels() {
                 <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-focus-visible:opacity-100 group-hover:translate-x-0 group-focus-visible:translate-x-0 transition-all duration-[300ms] ease-out" />
               </div>
             </Link>
-          </motion.div>
+          </div>
 
         </div>
       </div>

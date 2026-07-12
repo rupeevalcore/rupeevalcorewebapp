@@ -7,6 +7,7 @@ import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import { LEAD_FORMS } from "@/lib/lead-routing";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -26,7 +27,8 @@ const heroConfig: AudienceHeroConfig = {
   secondaryCta: "Talk to Programme Advisor",
   iconPath: "/colleges_3d.png",
   photoPosition: "top right",
-  formUrl: process.env.NEXT_PUBLIC_COLLEGES_FORM_URL
+  formUrl: LEAD_FORMS.colleges,
+  analyticsEvent: "college_proposal_requested",
 };
 
 const whyMatters = [
@@ -207,7 +209,8 @@ export default function CollegesPage() {
               "Strictly educational (No financial products sold)"
             ]}
             buttonText="Request Custom Proposal"
-            buttonLink={heroConfig.formUrl!}
+            buttonLink={LEAD_FORMS.colleges}
+            analyticsEvent="college_proposal_requested"
             themeColor="sapphire"
           />
         </div>
@@ -232,8 +235,10 @@ export default function CollegesPage() {
       
       <CTASection 
         headline="Prepare Students For Financial Life Beyond Graduation."
-
-        secondaryButtonText="Schedule Discussion"
+        primaryButtonText="Request College Proposal"
+        primaryHref={LEAD_FORMS.colleges}
+        primaryAnalyticsEvent="college_proposal_requested"
+        secondaryButtonText="Discuss Campus Workshop"
       />
     </>
   );

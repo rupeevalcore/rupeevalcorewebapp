@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 
@@ -60,10 +59,7 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
   return (
     <section id="faq" className="section-padding bg-transparent/50 relative">
       <div className="container-rv max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="text-center mb-16"
         >
           <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
@@ -72,14 +68,9 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
           <p className="text-lg text-muted-foreground">
             Everything you need to know about our financial literacy programs.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
+        <div>
           <Accordion.Root type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
               <Accordion.Item 
@@ -104,7 +95,7 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
               </Accordion.Item>
             ))}
           </Accordion.Root>
-        </motion.div>
+        </div>
       </div>
 
       <style>{`

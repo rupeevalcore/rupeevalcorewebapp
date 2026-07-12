@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ShootingStarsGrid } from "@/components/ui/shooting-stars-grid";
 import Image from "next/image";
 import { ArrowRight, MessageSquare } from "lucide-react";
@@ -16,6 +13,7 @@ export type AudienceHeroConfig = {
   iconPath: string;
   photoPosition?: "top left" | "top right" | "bottom left" | "bottom right";
   formUrl?: string;
+  analyticsEvent?: string;
 };
 
 interface AudienceHeroProps {
@@ -23,7 +21,7 @@ interface AudienceHeroProps {
 }
 
 export default function AudienceHero({ config }: AudienceHeroProps) {
-  const { themeColor, badge, title, subtitle, primaryCta, secondaryCta, iconPath, photoPosition, formUrl } = config;
+  const { themeColor, badge, title, subtitle, primaryCta, secondaryCta, iconPath, photoPosition, formUrl, analyticsEvent } = config;
 
   const getThemeClasses = () => {
     switch(themeColor) {
@@ -42,53 +40,47 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
     <ShootingStarsGrid
       className="min-h-[70vh] rounded-none border-none shadow-none pt-32 pb-20 overflow-hidden"
       contentClassName="h-full w-full flex items-center p-0"
-      interactive={true}
-      starCount={40}
-      shootingStarCount={5}
-      glow={true}
+      interactive={false}
+      starCount={24}
+      shootingStarCount={2}
+      glow={false}
     >
       <div className="container-rv relative z-10">
         <div className="grid lg:grid-cols-[1fr_500px] gap-12 items-center">
           <div>
             {badge && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+              <div
                 className={`inline-flex items-center px-4 py-2 rounded-full glass ${theme.border} shadow-lg ${theme.text} text-sm font-bold mb-8 uppercase tracking-wider backdrop-blur-md`}
               >
                 {badge}
-              </motion.div>
+              </div>
             )}
             
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+            <div
               className="relative max-w-4xl mb-8"
             >
               <div className={`absolute inset-0 ${theme.glow} blur-[100px] -z-10 rounded-full`} />
               <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-foreground tracking-tight leading-[1.1]">
                 {title}
               </h1>
-            </motion.div>
+            </div>
             
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+            <p
               className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-relaxed mb-12"
             >
               {subtitle}
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+            <div
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
             >
-              <a href={formUrl || process.env.NEXT_PUBLIC_INDIVIDUAL_FORM_URL || "#"} target="_blank" rel="noopener noreferrer" className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto">
+              <a
+                href={formUrl || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-event={analyticsEvent}
+                className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto"
+              >
                 {primaryCta}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -101,13 +93,10 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
                 <MessageSquare size={18} />
                 {secondaryCta}
               </a>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
+          <div
             className="hidden lg:flex justify-center relative w-full aspect-[4/3]"
           >
             <div className={`absolute inset-0 ${theme.glow} blur-[120px] rounded-full scale-150 -z-20`} />
@@ -131,7 +120,7 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
             <div className="absolute -bottom-10 -left-10 w-64 h-64 drop-shadow-2xl z-10 animate-float">
               <Image src={iconPath} alt={title} fill className="object-contain" priority />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </ShootingStarsGrid>

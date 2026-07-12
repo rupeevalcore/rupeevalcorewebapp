@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { LayoutGrid } from "lucide-react";
 
 interface DeliveryModelCardsProps {
@@ -26,19 +23,16 @@ export default function DeliveryModelCards({ models, themeColor = "accent" }: De
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
       {models.map((model, idx) => (
-        <motion.div
+        <div
           key={idx}
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1, duration: 0.4 }}
           className={`glass p-8 rounded-3xl border ${themeClass} transition-all duration-300 group flex flex-col items-center text-center`}
+          style={{ transitionDelay: `${idx * 30}ms` }}
         >
           <div className="w-12 h-12 rounded-full bg-background/50 flex items-center justify-center mb-4">
             <LayoutGrid size={24} />
           </div>
           <h4 className="font-heading font-bold text-lg text-foreground">{model}</h4>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

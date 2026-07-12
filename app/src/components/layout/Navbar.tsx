@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from "@/components/ui/ThemeToggle"
 
@@ -18,10 +18,20 @@ const navLinks = [
   { label: 'Contact', href: '/#contact' }
 ]
 
+const prefetchRoutes = [
+  '/',
+  '/schools',
+  '/colleges',
+  '/corporate-financial-wellness',
+  '/individual-learning',
+  '/ai',
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -30,6 +40,12 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => setMobileOpen(false), [pathname])
+
+  useEffect(() => {
+    prefetchRoutes.forEach((route) => {
+      if (route !== pathname) router.prefetch(route)
+    })
+  }, [pathname, router])
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
@@ -43,7 +59,7 @@ export default function Navbar() {
     }
   }, [mobileOpen])
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = () => {
     setMobileOpen(false)
   }
 
@@ -74,7 +90,8 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                prefetch={!link.href.includes('#')}
+                onClick={handleNavClick}
                 className="group relative text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 py-1"
               >
                 {link.label}
@@ -86,14 +103,14 @@ export default function Navbar() {
           {/* CTA & Theme */}
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
-            <a
-              href={process.env.NEXT_PUBLIC_INDIVIDUAL_FORM_URL || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/#programs"
+              prefetch={false}
+              data-program-selector
               className="btn-accent text-sm py-2 px-5 text-center inline-block"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -139,7 +156,8 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
+              prefetch={!link.href.includes('#')}
+              onClick={handleNavClick}
               className="py-3 px-4 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200 font-medium"
             >
               {link.label}
@@ -150,15 +168,15 @@ export default function Navbar() {
             <ThemeToggle />
           </div>
           <div className="border-t border-border pt-4">
-            <a
-              href={process.env.NEXT_PUBLIC_INDIVIDUAL_FORM_URL || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/#programs"
+              prefetch={false}
+              data-program-selector
               onClick={() => setMobileOpen(false)}
               className="btn-accent w-full justify-center text-center inline-flex"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </nav>
       </aside>

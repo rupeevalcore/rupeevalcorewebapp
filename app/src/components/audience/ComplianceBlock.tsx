@@ -1,14 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 
 export default function ComplianceBlock() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+    <div
       className="max-w-5xl mx-auto glass p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden mt-16 mb-8"
     >
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2" />
@@ -34,6 +28,6 @@ export default function ComplianceBlock() {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }

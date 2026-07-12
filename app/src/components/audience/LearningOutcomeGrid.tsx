@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 interface LearningOutcomeGridProps {
@@ -26,13 +23,10 @@ export default function LearningOutcomeGrid({ outcomes, themeColor = "accent" }:
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
       {outcomes.map((outcome, idx) => (
-        <motion.div
+        <div
           key={idx}
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1, duration: 0.4 }}
           className="flex items-start gap-4"
+          style={{ transitionDelay: `${idx * 30}ms` }}
         >
           <div className={`mt-1 w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${colorClass}`}>
             <Sparkles size={18} />
@@ -40,7 +34,7 @@ export default function LearningOutcomeGrid({ outcomes, themeColor = "accent" }:
           <div>
             <p className="text-foreground font-medium text-lg">{outcome}</p>
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

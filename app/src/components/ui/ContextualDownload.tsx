@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 interface ContextualDownloadProps {
   title: string;
@@ -33,15 +34,11 @@ export function ContextualDownload({ title, file, audience, className }: Context
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => {
-          // @ts-expect-error: gtag is injected globally
-          if (typeof window !== 'undefined' && window.gtag) {
-            // @ts-expect-error: gtag is injected globally
-            window.gtag('event', 'file_download', {
-              file_name: file,
-              link_text: title,
-              section: audience
-            });
-          }
+          trackEvent("file_download", {
+            file_name: file,
+            link_text: title,
+            section: audience,
+          });
         }}
         className="flex items-center gap-4 p-5 glass rounded-2xl border border-white/10 hover:border-accent/40 hover:bg-white/5 transition-all group shadow-xl backdrop-blur-md"
       >

@@ -1,7 +1,4 @@
-"use client";
-
 import * as React from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type ShootingStarsGridSpeed = "slow" | "normal" | "fast" | number;
@@ -94,12 +91,10 @@ function getSpeedScale(speed: ShootingStarsGridSpeed) {
 function GridRunner({
   runner,
   index,
-  shouldAnimate,
   speedScale,
 }: {
   runner: ShootingStar;
   index: number;
-  shouldAnimate: boolean;
   speedScale: number;
 }) {
   const isHorizontal = runner.axis === "horizontal";
@@ -113,35 +108,25 @@ function GridRunner({
       : "0deg";
 
   return (
-    <motion.span
-      className={cn("absolute rounded-full", index > 4 && "max-sm:hidden")}
-      style={{
-        left: isHorizontal ? runner.start : linePosition,
-        top: isHorizontal ? linePosition : runner.start,
-        width: isHorizontal ? runner.length : 1,
-        height: isHorizontal ? 1 : runner.length,
-        background: `linear-gradient(${gradientDirection}, transparent 0%, rgba(8,145,178,0.14) 18%, rgba(103,232,249,0.92) 52%, rgba(255,255,255,0.96) 58%, transparent 100%)`,
-        boxShadow: "0 0 16px rgba(6,182,212,0.46), 0 0 28px rgba(148,163,184,0.18)",
-      }}
-      initial={{ opacity: 0, scaleX: isHorizontal ? 0.35 : 1, scaleY: isHorizontal ? 1 : 0.35 }}
-      animate={
-        shouldAnimate
-          ? {
-              left: isHorizontal ? [runner.start, runner.end] : linePosition,
-              top: isHorizontal ? linePosition : [runner.start, runner.end],
-              opacity: [0, 1, 1, 0],
-              scaleX: isHorizontal ? [0.35, 1, 1.08, 0.8] : 1,
-              scaleY: isHorizontal ? 1 : [0.35, 1, 1.08, 0.8],
-            }
-          : { opacity: 0 }
+    <span
+      className={cn("shooting-star-runner absolute rounded-full", index > 4 && "max-sm:hidden")}
+      style={
+        {
+          "--runner-start": runner.start,
+          "--runner-end": runner.end,
+          "--runner-line": linePosition,
+          "--runner-duration": `${runner.duration * speedScale}s`,
+          "--runner-delay": `${runner.delay}s`,
+          "--runner-repeat-delay": `${runner.repeatDelay * speedScale}s`,
+          left: isHorizontal ? runner.start : linePosition,
+          top: isHorizontal ? linePosition : runner.start,
+          width: isHorizontal ? runner.length : 1,
+          height: isHorizontal ? 1 : runner.length,
+          background: `linear-gradient(${gradientDirection}, transparent 0%, rgba(8,145,178,0.14) 18%, rgba(103,232,249,0.92) 52%, rgba(255,255,255,0.96) 58%, transparent 100%)`,
+          boxShadow: "0 0 16px rgba(6,182,212,0.46), 0 0 28px rgba(148,163,184,0.18)",
+          animationName: isHorizontal ? "shooting-star-horizontal" : "shooting-star-vertical",
+        } as React.CSSProperties
       }
-      transition={{
-        duration: runner.duration * speedScale,
-        delay: runner.delay,
-        repeat: Infinity,
-        repeatDelay: runner.repeatDelay * speedScale,
-        ease: "easeOut",
-      }}
     />
   );
 }
@@ -157,41 +142,13 @@ export function ShootingStarsGrid({
   contentClassName,
   showGrid = true,
   showStaticStars = true,
-  reducedMotionFallback = true,
-  interactive = false,
 }: ShootingStarsGridProps) {
-  const reduceMotion = useReducedMotion() === true;
-  const rootRef = React.useRef<HTMLDivElement>(null);
-  const staticStars = React.useMemo(
-    () => createStaticStars(Math.max(0, Math.min(starCount, 90))),
-    [starCount],
-  );
-  const shootingStars = React.useMemo(
-    () => createShootingStars(Math.max(0, Math.min(shootingStarCount, 10))),
-    [shootingStarCount],
-  );
+  const staticStars = createStaticStars(Math.max(0, Math.min(starCount, 90)));
+  const shootingStars = createShootingStars(Math.max(0, Math.min(shootingStarCount, 10)));
   const speedScale = getSpeedScale(speed);
-
-  const onPointerMove = React.useCallback(
-    (event: React.PointerEvent<HTMLDivElement>) => {
-      if (!interactive || reduceMotion) return;
-      const node = rootRef.current;
-      if (!node) return;
-      const rect = node.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width) * 100;
-      const y = ((event.clientY - rect.top) / rect.height) * 100;
-      node.style.setProperty("--shooting-stars-glow-x", `${x}%`);
-      node.style.setProperty("--shooting-stars-glow-y", `${y}%`);
-    },
-    [interactive, reduceMotion],
-  );
-
-  const shouldAnimate = !reduceMotion || !reducedMotionFallback;
 
   return (
     <section
-      ref={rootRef}
-      onPointerMove={onPointerMove}
       className={cn(
         "group/shooting-stars relative isolate min-h-[520px] w-full overflow-hidden border-none text-zinc-950 dark:text-white bg-transparent",
         className,
@@ -199,8 +156,6 @@ export function ShootingStarsGrid({
       style={
         {
           "--shooting-stars-grid-size": `${gridSize}px`,
-          "--shooting-stars-glow-x": "50%",
-          "--shooting-stars-glow-y": "30%",
         } as React.CSSProperties
       }
     >
@@ -222,21 +177,19 @@ export function ShootingStarsGrid({
       />
 
       {glow && (
-        <motion.div
+        <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_var(--shooting-stars-glow-x)_var(--shooting-stars-glow-y),rgba(8,145,178,0.28),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(99,102,241,0.18),transparent_30%)] dark:bg-[radial-gradient(circle_at_var(--shooting-stars-glow-x)_var(--shooting-stars-glow-y),rgba(34,211,238,0.22),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(168,85,247,0.16),transparent_30%)]"
-          animate={shouldAnimate ? { opacity: [0.72, 1, 0.78], scale: [1, 1.03, 1] } : undefined}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="shooting-stars-glow pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_30%,rgba(8,145,178,0.22),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(99,102,241,0.14),transparent_30%)] dark:bg-[radial-gradient(circle_at_50%_30%,rgba(34,211,238,0.18),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(168,85,247,0.12),transparent_30%)]"
         />
       )}
 
       {showStaticStars && (
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
           {staticStars.map((star, index) => (
-            <motion.span
+            <span
               key={index}
               className={cn(
-                "absolute rounded-full bg-cyan-700 shadow-[0_0_12px_rgba(14,165,233,0.5)] dark:bg-white dark:shadow-[0_0_12px_rgba(255,255,255,0.55)]",
+                "shooting-static-star absolute rounded-full bg-cyan-700 shadow-[0_0_12px_rgba(14,165,233,0.5)] dark:bg-white dark:shadow-[0_0_12px_rgba(255,255,255,0.55)]",
                 index > 34 && "max-sm:hidden",
               )}
               style={{
@@ -245,17 +198,8 @@ export function ShootingStarsGrid({
                 width: star.size,
                 height: star.size,
                 opacity: star.opacity,
-              }}
-              animate={
-                shouldAnimate
-                  ? { opacity: [star.opacity * 0.5, star.opacity, star.opacity * 0.55], scale: [0.85, 1.16, 0.9] }
-                  : undefined
-              }
-              transition={{
-                duration: star.duration,
-                delay: star.delay,
-                repeat: Infinity,
-                ease: "easeInOut",
+                animationDuration: `${star.duration}s`,
+                animationDelay: `${star.delay}s`,
               }}
             />
           ))}
@@ -264,24 +208,13 @@ export function ShootingStarsGrid({
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         {shootingStars.map((star, index) => (
-          <GridRunner
-            key={index}
-            runner={star}
-            index={index}
-            shouldAnimate={shouldAnimate}
-            speedScale={speedScale}
-          />
+          <GridRunner key={index} runner={star} index={index} speedScale={speedScale} />
         ))}
       </div>
 
-      <motion.div
-        className={cn("relative z-10 flex min-h-[inherit] w-full items-center justify-center px-6 py-16 sm:px-10", contentClassName)}
-        initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-      >
+      <div className={cn("relative z-10 flex min-h-[inherit] w-full items-center justify-center px-6 py-16 sm:px-10", contentClassName)}>
         {children}
-      </motion.div>
+      </div>
     </section>
   );
 }

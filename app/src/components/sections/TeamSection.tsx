@@ -1,6 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
 const teamMembers = [
@@ -25,8 +22,6 @@ const teamMembers = [
 ];
 
 export default function TeamSection() {
-  const shouldReduceMotion = useReducedMotion();
-  
   return (
     <section id="founder" className="section-padding bg-muted/20 relative overflow-hidden border-y border-border/40">
       <div className="container-rv relative z-10">
@@ -34,17 +29,19 @@ export default function TeamSection() {
         <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-24 items-start mb-24">
           
           {/* Left Column: Formal Portrait & Credentials */}
-          <motion.div 
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div 
             className="flex flex-col space-y-8"
           >
-            <div className="relative w-full aspect-[4/5] overflow-hidden border border-border shadow-md bg-card">
-              {/* Institutional portrait placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center bg-muted/40 text-muted-foreground font-heading text-lg p-6 text-center">
-                [Formal Portrait Space]
-              </div>
+            <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl border border-border shadow-md bg-card">
+              <Image
+                src="/images/founder-shanthi-chitrarasu.png"
+                alt="Shanthi Chitrarasu, Founder of RupeeValcore"
+                fill
+                className="object-cover object-[55%_45%]"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 70vw, 100vw"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/at9nqAAAAAASUVORK5CYII="
+              />
             </div>
             
             <div className="border-t-2 border-accent pt-6">
@@ -62,13 +59,10 @@ export default function TeamSection() {
                  </div>
               </div>
             </div>
-          </motion.div>
+          </div>
           
           {/* Right Column: "Dean's Letter" / Formal Statement */}
-          <motion.div 
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <div 
             className="flex flex-col lg:pt-8"
           >
             <div className="mb-12">
@@ -76,10 +70,10 @@ export default function TeamSection() {
               
               <div className="border-l-4 border-accent pl-8 py-2 mb-10 relative">
                 {/* Decorative quote mark */}
-                <div className="absolute -top-6 -left-4 text-7xl font-serif text-accent/20 pointer-events-none leading-none">"</div>
+                <div className="absolute -top-6 -left-4 text-7xl font-serif text-accent/20 pointer-events-none leading-none">&ldquo;</div>
                 
                 <p className="text-foreground text-xl md:text-2xl leading-relaxed font-serif text-balance">
-                  "Shanthi founded RupeeValcore with the objective of improving financial awareness among individuals who have not been exposed to basic money concepts."
+                  &ldquo;Shanthi founded RupeeValcore with the objective of improving financial awareness among individuals who have not been exposed to basic money concepts.&rdquo;
                 </p>
               </div>
             </div>
@@ -99,14 +93,11 @@ export default function TeamSection() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         
         {/* Leadership Team List - "Faculty" Style */}
-        <motion.div 
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div 
           className="mt-24 pt-16"
         >
           <div className="flex flex-col items-center justify-center mb-12 text-center">
@@ -131,7 +122,7 @@ export default function TeamSection() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

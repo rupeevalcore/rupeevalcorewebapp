@@ -23,6 +23,12 @@ interface Beam {
     pulseSpeed: number;
 }
 
+const OPACITY_MAP = {
+    subtle: 0.4,
+    medium: 0.6,
+    strong: 0.8,
+};
+
 function createBeam(width: number, height: number, isDark: boolean): Beam {
     const angle = -35 + Math.random() * 10;
     // Premium Institutional colors: Navy (210-230) and Gold (40-50).
@@ -56,12 +62,6 @@ export function BeamsBackground({
     const currentTheme = theme === 'system' ? systemTheme : theme;
     const isDark = currentTheme === 'dark';
 
-    const opacityMap = {
-        subtle: 0.4,
-        medium: 0.6,
-        strong: 0.8,
-    };
-
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -86,7 +86,7 @@ export function BeamsBackground({
         updateCanvasSize();
         window.addEventListener("resize", updateCanvasSize);
 
-        function resetBeam(beam: Beam, index: number, totalBeams: number) {
+        function resetBeam(beam: Beam, index: number) {
             if (!canvas) return beam;
             
             const column = index % 3;
@@ -114,7 +114,7 @@ export function BeamsBackground({
             const pulsingOpacity =
                 beam.opacity *
                 (0.8 + Math.sin(beam.pulse) * 0.2) *
-                opacityMap[intensity];
+                OPACITY_MAP[intensity];
 
             const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
             const lightness = isDark ? 65 : 40;
@@ -149,13 +149,12 @@ export function BeamsBackground({
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.filter = "blur(35px)";
 
-            const totalBeams = beamsRef.current.length;
             beamsRef.current.forEach((beam, index) => {
                 beam.y -= beam.speed;
                 beam.pulse += beam.pulseSpeed;
 
                 if (beam.y + beam.length < -100) {
-                    resetBeam(beam, index, totalBeams);
+                    resetBeam(beam, index);
                 }
 
                 drawBeam(ctx, beam);

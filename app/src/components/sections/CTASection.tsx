@@ -1,12 +1,12 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 import { EMAIL, WHATSAPP_URL } from "../../lib/utils";
 
 interface CTASectionProps {
   headline?: string;
   subhead?: string;
+  primaryButtonText?: string;
+  primaryHref?: string;
+  primaryAnalyticsEvent?: string;
   secondaryButtonText?: string;
   className?: string;
 }
@@ -14,6 +14,9 @@ interface CTASectionProps {
 export default function CTASection({ 
   headline = "Ready to Transform Financial Futures?",
   subhead = "Join the leading institutions prioritizing financial awareness. Talk to our advisors today.",
+  primaryButtonText = "Talk to an Advisor",
+  primaryHref,
+  primaryAnalyticsEvent,
   secondaryButtonText = "WhatsApp Us",
   className
 }: CTASectionProps) {
@@ -25,11 +28,7 @@ export default function CTASection({
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/20 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="container relative z-10 px-4 md:px-6 max-w-5xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
           className="glass border border-white/10 rounded-3xl p-8 md:p-16 relative overflow-hidden"
         >
           {/* Inner glow */}
@@ -43,8 +42,15 @@ export default function CTASection({
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={process.env.NEXT_PUBLIC_INDIVIDUAL_FORM_URL || "#"} target="_blank" rel="noopener noreferrer" className="btn-accent w-full sm:w-auto group text-center inline-flex">
-              Talk to an Advisor
+            <a
+              href={primaryHref || "#programs"}
+              target={primaryHref ? "_blank" : undefined}
+              rel={primaryHref ? "noopener noreferrer" : undefined}
+              data-program-selector={primaryHref ? undefined : true}
+              data-analytics-event={primaryAnalyticsEvent}
+              className="btn-accent w-full sm:w-auto group text-center inline-flex"
+            >
+              {primaryButtonText}
               <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
@@ -59,7 +65,7 @@ export default function CTASection({
               {EMAIL}
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

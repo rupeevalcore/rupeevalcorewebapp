@@ -7,6 +7,7 @@ import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import { LEAD_FORMS } from "@/lib/lead-routing";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -24,7 +25,8 @@ const heroConfig: AudienceHeroConfig = {
   secondaryCta: "Talk to Corporate Advisor",
   iconPath: "/corporate_3d.png",
   photoPosition: "bottom left",
-  formUrl: process.env.NEXT_PUBLIC_CORPORATE_FORM_URL
+  formUrl: LEAD_FORMS.corporate,
+  analyticsEvent: "corporate_proposal_requested",
 };
 
 const whyMatters = [
@@ -194,7 +196,8 @@ export default function CorporatePage() {
               "Strictly educational (No conflict of interest)"
             ]}
             buttonText="Request Corporate Proposal"
-            buttonLink={heroConfig.formUrl!}
+            buttonLink={LEAD_FORMS.corporate}
+            analyticsEvent="corporate_proposal_requested"
             themeColor="cyan"
           />
         </div>
@@ -219,8 +222,10 @@ export default function CorporatePage() {
       
       <CTASection 
         headline="Build Financially Confident Workplaces."
-
-        secondaryButtonText="Schedule Discussion"
+        primaryButtonText="Request Corporate Proposal"
+        primaryHref={LEAD_FORMS.corporate}
+        primaryAnalyticsEvent="corporate_proposal_requested"
+        secondaryButtonText="Discuss Employee Wellness Programme"
       />
     </>
   );

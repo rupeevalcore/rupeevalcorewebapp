@@ -2,7 +2,6 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 
 export function ThemeToggle() {
@@ -29,30 +28,20 @@ export function ThemeToggle() {
       }}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
-      <motion.div
-        initial={false}
-        animate={{
-          scale: isDark ? 1 : 0,
-          opacity: isDark ? 1 : 0,
-          rotate: isDark ? 0 : 90,
-        }}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
-        className="absolute"
+      <div
+        className={`absolute transition-all duration-200 ease-out ${
+          isDark ? "scale-100 opacity-100 rotate-0" : "scale-0 opacity-0 rotate-90"
+        }`}
       >
         <Moon size={18} />
-      </motion.div>
-      <motion.div
-        initial={false}
-        animate={{
-          scale: isDark ? 0 : 1,
-          opacity: isDark ? 0 : 1,
-          rotate: isDark ? -90 : 0,
-        }}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
-        className="absolute"
+      </div>
+      <div
+        className={`absolute transition-all duration-200 ease-out ${
+          isDark ? "scale-0 opacity-0 -rotate-90" : "scale-100 opacity-100 rotate-0"
+        }`}
       >
         <Sun size={18} />
-      </motion.div>
+      </div>
     </button>
   );
 }

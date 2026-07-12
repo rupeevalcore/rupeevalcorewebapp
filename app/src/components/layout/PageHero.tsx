@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 import { ShootingStarsGrid } from "@/components/ui/shooting-stars-grid";
 
 interface PageHeroProps {
@@ -29,43 +25,34 @@ export default function PageHero({ title, description, badge, themeColor = "acce
     <ShootingStarsGrid
       className="min-h-[50vh] rounded-none border-none shadow-none pt-24 pb-12"
       contentClassName="h-full w-full flex items-center justify-center p-0"
-      interactive={true}
-      starCount={40}
-      shootingStarCount={5}
-      glow={true}
+      interactive={false}
+      starCount={24}
+      shootingStarCount={2}
+      glow={false}
     >
       <div className="container-rv relative z-10 text-center">
         {badge && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
             className={`inline-flex items-center px-3 py-1.5 rounded-full glass border-white/10 shadow-lg ${theme.text} text-sm font-medium mb-6 uppercase tracking-wider backdrop-blur-md`}
           >
             {badge}
-          </motion.div>
+          </div>
         )}
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+        <div
           className="relative max-w-4xl mx-auto mb-6"
         >
           <div className={`absolute inset-0 ${theme.glow} blur-[80px] -z-10 rounded-full`} />
           <h1 className="font-heading font-black text-4xl md:text-6xl text-foreground tracking-tight">
             {title}
           </h1>
-        </motion.div>
+        </div>
         
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+        <p
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium leading-relaxed"
         >
           {description}
-        </motion.p>
+        </p>
       </div>
     </ShootingStarsGrid>
   );

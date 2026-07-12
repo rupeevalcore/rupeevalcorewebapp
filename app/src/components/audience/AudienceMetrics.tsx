@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 export type MetricItem = {
   label: string;
@@ -25,25 +23,36 @@ export default function AudienceMetrics({ metrics, themeColor = "accent" }: Audi
   };
 
   const theme = getThemeClasses();
+  const renderMetricValue = (value: string) => {
+    const match = value.match(/^(\d+)(\+?)(\s+.*)?$/);
+
+    if (!match) return value;
+
+    const [, rawTarget, suffix, rest = ""] = match;
+
+    return (
+      <>
+        <AnimatedCounter target={Number(rawTarget)} suffix={suffix} duration={1400} />
+        {rest}
+      </>
+    );
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6">
       {metrics.map((metric, idx) => (
-        <motion.div
+        <div
           key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.1, duration: 0.5 }}
           className={`glass p-6 md:p-8 rounded-3xl ${theme.border} text-center group transition-colors duration-300`}
+          style={{ transitionDelay: `${idx * 30}ms` }}
         >
           <div className={`text-3xl md:text-4xl font-heading font-black ${theme.text} mb-2 group-hover:scale-105 transition-transform`}>
-            {metric.value}
+            {renderMetricValue(metric.value)}
           </div>
           <div className="text-sm md:text-base font-medium text-muted-foreground uppercase tracking-wider">
             {metric.label}
           </div>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export type TimelineItem = {
   title: string;
   description: string;
@@ -34,13 +30,10 @@ export default function LearningJourneyTimeline({ items, themeColor = "accent" }
       
       <div className="space-y-12">
         {items.map((item, idx) => (
-          <motion.div
+          <div
             key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1, duration: 0.5 }}
             className="relative"
+            style={{ transitionDelay: `${idx * 30}ms` }}
           >
             {/* Timeline Dot */}
             <div className={`absolute -left-10 md:-left-14 top-1.5 w-4 h-4 rounded-full ${theme.bg} shadow-[0_0_15px_rgba(var(--color-${themeColor}),0.5)]`} />
@@ -54,7 +47,7 @@ export default function LearningJourneyTimeline({ items, themeColor = "accent" }
                 {item.description}
               </p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
