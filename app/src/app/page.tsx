@@ -12,8 +12,6 @@ const FAQSection = nextDynamic(() => import("@/components/sections/FAQSection"))
 const CTASection = nextDynamic(() => import("@/components/sections/CTASection"));
 const ComplianceBlock = nextDynamic(() => import("@/components/audience/ComplianceBlock"));
 
-export const dynamic = 'force-static';
-
 export default function Home() {
   return (
     <>
