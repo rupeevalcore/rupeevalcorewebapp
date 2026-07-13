@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import AudienceHero, { AudienceHeroConfig } from "@/components/audience/AudienceHero";
 import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
 import AudienceMetrics from "@/components/audience/AudienceMetrics";
@@ -8,6 +9,22 @@ import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
+
+export const metadata: Metadata = {
+  title: "Corporate Financial Wellness Workshops in Chennai | Rupeevalcore",
+  description: "Employee financial wellness workshops for corporates in Chennai. Tax planning, mutual funds, retirement basics, and money stress reduction. NISM certified. MSME registered. Request a corporate proposal.",
+  keywords: ["corporate financial wellness Chennai", "employee financial literacy workshop", "corporate financial education India", "financial wellness program employees Chennai"],
+  openGraph: {
+    title: "Corporate Financial Wellness | Rupeevalcore",
+    description: "Reduce employee money stress with practical financial literacy workshops. Tax, insurance, investments. Chennai. NISM certified.",
+    url: "https://rupeevalcore.in/corporate-financial-wellness",
+    images: [{ url: "https://rupeevalcore.in/og-corporate.jpg", width: 1200, height: 630, alt: "Corporate Financial Wellness" }],
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: { canonical: "https://rupeevalcore.in/corporate-financial-wellness" },
+};
+
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -23,7 +40,7 @@ const heroConfig: AudienceHeroConfig = {
   subtitle: "Practical financial education programmes designed to improve employee confidence, reduce money stress and support long-term wellbeing.",
   primaryCta: "Request Corporate Proposal",
   secondaryCta: "Talk to Corporate Advisor",
-  iconPath: "/corporate_3d.png",
+  iconPath: "/corporate_3d.webp",
   photoPosition: "bottom left",
   formUrl: LEAD_FORMS.corporate,
   analyticsEvent: "corporate_proposal_requested",

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import AudienceHero, { AudienceHeroConfig } from "@/components/audience/AudienceHero";
 import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
 import AudienceMetrics from "@/components/audience/AudienceMetrics";
@@ -17,6 +18,20 @@ const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
 const PricingCard = dynamic(() => import("@/components/audience/PricingCard"));
 
+export const metadata: Metadata = {
+  title: "Financial Literacy Workshops for Colleges in Chennai | Rupeevalcore",
+  description: "NISM-certified financial literacy programmes for college students in Chennai. Placement readiness, salary management, tax awareness and investment basics. Request a campus proposal.",
+  keywords: ["financial literacy for colleges Chennai", "placement readiness financial literacy", "student salary management workshop", "financial awareness for college students"],
+  openGraph: {
+    title: "Financial Literacy for Colleges | Rupeevalcore",
+    description: "Placement-focused financial literacy for college students — salary, tax, banking, investment basics. Chennai.",
+    url: "https://rupeevalcore.in/colleges",
+    images: [{ url: "https://rupeevalcore.in/og-colleges.jpg", width: 1200, height: 630, alt: "Financial Literacy for Colleges" }],
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: { canonical: "https://rupeevalcore.in/colleges" },
+};
 
 const heroConfig: AudienceHeroConfig = {
   themeColor: "sapphire",
@@ -25,7 +40,7 @@ const heroConfig: AudienceHeroConfig = {
   subtitle: "Practical financial literacy programmes designed to equip college students with real-world financial knowledge before they enter the workforce.",
   primaryCta: "Request College Proposal",
   secondaryCta: "Talk to Programme Advisor",
-  iconPath: "/colleges_3d.png",
+  iconPath: "/colleges_3d.webp",
   photoPosition: "top right",
   formUrl: LEAD_FORMS.colleges,
   analyticsEvent: "college_proposal_requested",
@@ -65,9 +80,9 @@ const metrics = [
 ];
 
 const modules = [
-  "Personal Finance Basics", "Banking Fundamentals", "Salary Structure", 
-  "Tax Awareness", "Insurance Awareness", "Investment Awareness", 
-  "Mutual Fund Awareness", "Stock Market Basics", "Fraud Awareness", 
+  "Personal Finance Basics", "Banking Fundamentals", "Salary Structure",
+  "Tax Awareness", "Insurance Awareness", "Investment Awareness",
+  "Mutual Fund Awareness", "Stock Market Basics", "Fraud Awareness",
   "Credit Score Awareness", "Loan Awareness", "Financial Decision Making"
 ];
 
@@ -98,20 +113,20 @@ export default function CollegesPage() {
   return (
     <>
       <AudienceHero config={heroConfig} />
-      
+
       <section className="section-padding bg-background/50">
         <div className="container-rv">
-          
+
           <div className="mb-24">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
               Why College Financial Literacy Matters
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyMatters.map((item, idx) => (
-                <AudienceInsightCard 
-                  key={idx} 
-                  title={item.title} 
-                  description={item.description} 
+                <AudienceInsightCard
+                  key={idx}
+                  title={item.title}
+                  description={item.description}
                   icon={item.icon ? <item.icon size={28} strokeWidth={1.5} /> : undefined}
                   delay={idx * 0.1}
                   themeColor="sapphire"
@@ -126,8 +141,8 @@ export default function CollegesPage() {
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {challenges.map((item, idx) => (
-                <AudienceInsightCard 
-                  key={idx} 
+                <AudienceInsightCard
+                  key={idx}
                   title={item.title}
                   delay={idx * 0.1}
                   themeColor="sapphire"
@@ -179,13 +194,13 @@ export default function CollegesPage() {
         </div>
       </section>
 
-      <WorkshopGallery 
+      <WorkshopGallery
         title="Inside a RupeeValcore Workshop"
         subtitle="Interactive sessions designed to help students understand money, banking, financial decision making and real-world financial concepts."
       />
 
       <TestimonialsSection context="colleges" />
-      
+
       <section className="section-padding bg-background">
         <div className="container-rv">
           <div className="mb-16 text-center max-w-3xl mx-auto">
@@ -196,8 +211,8 @@ export default function CollegesPage() {
               Equip your graduating students with the financial awareness they need to succeed in the real world.
             </p>
           </div>
-          
-          <PricingCard 
+
+          <PricingCard
             title="College Group Sessions"
             price="Custom Pricing"
             description="Tailored financial literacy programmes for final year and placement batches."
@@ -219,7 +234,7 @@ export default function CollegesPage() {
       <section className="section-padding bg-background/50">
         <div className="container-rv">
           <div className="max-w-4xl mx-auto">
-            <ContextualDownloadCard 
+            <ContextualDownloadCard
               title="College Financial Literacy Proposal"
               description="Download our comprehensive proposal document designed for placement officers, deans and HODs."
               pdfUrl="/proposals/college-proposal-2026.pdf"
@@ -232,8 +247,8 @@ export default function CollegesPage() {
       </section>
 
       <FAQSection faqs={faqs} />
-      
-      <CTASection 
+
+      <CTASection
         headline="Prepare Students For Financial Life Beyond Graduation."
         primaryButtonText="Request College Proposal"
         primaryHref={LEAD_FORMS.colleges}

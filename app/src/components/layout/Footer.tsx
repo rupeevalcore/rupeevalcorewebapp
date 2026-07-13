@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
-import { EMAIL, WHATSAPP_URL, INSTAGRAM } from '../../lib/utils'
+import { Mail, Phone, MessageCircle } from 'lucide-react'
+import { EMAIL, WHATSAPP_URL, INSTAGRAM, PHONE_NUMBER, PHONE_DISPLAY } from '../../lib/utils'
 
 const financePrograms = [
   { label: 'Financial Literacy', href: '/financial-literacy' },
@@ -91,20 +91,34 @@ export default function Footer() {
 
           {/* Contact Nav */}
           <div className="space-y-4">
-            <h3 className="font-heading font-semibold text-foreground">Contact</h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>Chennai, Tamil Nadu</li>
-              <li>India</li>
-              <li className="pt-2">
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                  Chat on WhatsApp
+            <h3 className="font-heading font-semibold text-foreground">Contact & Trust</h3>
+            <ul className="space-y-3 text-muted-foreground">
+              <li>
+                <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-2 hover:text-accent transition-colors">
+                  <Phone size={14} />
+                  <span>{PHONE_DISPLAY}</span>
                 </a>
               </li>
+              <li>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors">
+                  <MessageCircle size={14} />
+                  <span>WhatsApp Support</span>
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 hover:text-accent transition-colors">
+                  <Mail size={14} />
+                  <span>{EMAIL}</span>
+                </a>
+              </li>
+              <li className="pt-2 text-sm border-t border-border mt-3">Chennai, Tamil Nadu</li>
+              <li className="text-sm font-medium text-foreground">MSME Registered</li>
+              <li className="text-sm font-medium text-foreground">NISM Certified Faculty</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-muted-foreground text-xs">
+        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-muted-foreground text-sm">
           <p>© {new Date().getFullYear()} Rupeevalcore. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link>

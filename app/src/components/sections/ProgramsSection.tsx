@@ -55,7 +55,7 @@ function ProgramCard({ aud, i }: { aud: typeof audiences[0], i: number }) {
           <div 
             className="w-full h-full transform scale-100 group-hover:scale-[1.05] group-focus-visible:scale-[1.05] transition-transform duration-[400ms] ease-out"
             style={{
-              backgroundImage: `url('/collage_photos.jpg')`,
+              backgroundImage: `url('/collage_photos.webp')`,
               backgroundSize: '200% 200%',
               backgroundPosition: aud.photoPos
             }}

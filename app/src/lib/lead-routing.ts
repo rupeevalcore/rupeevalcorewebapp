@@ -1,8 +1,8 @@
 export const LEAD_FORMS = {
-  schools: "https://forms.gle/GKQUyGusYSZwLP3XA",
-  colleges: "https://forms.gle/qVdiLYFCyVat9NZ79",
-  corporate: "https://forms.gle/gTrhfkwr7p7H1Kza9",
-  individual: "https://forms.gle/eS5pRBLXrrwTF1np7",
+  schools: process.env.NEXT_PUBLIC_SCHOOLS_FORM_URL || "https://forms.gle/GKQUyGusYSZwLP3XA",
+  colleges: process.env.NEXT_PUBLIC_COLLEGES_FORM_URL || "https://forms.gle/qVdiLYFCyVat9NZ79",
+  corporate: process.env.NEXT_PUBLIC_CORPORATE_FORM_URL || "https://forms.gle/gTrhfkwr7p7H1Kza9",
+  individual: process.env.NEXT_PUBLIC_INDIVIDUAL_FORM_URL || "https://forms.gle/eS5pRBLXrrwTF1np7",
 } as const;
 
 export type AnalyticsEvent =

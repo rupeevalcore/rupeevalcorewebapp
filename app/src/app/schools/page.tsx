@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import AudienceHero, { AudienceHeroConfig } from "@/components/audience/AudienceHero";
 import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
 import AudienceMetrics from "@/components/audience/AudienceMetrics";
@@ -16,6 +17,20 @@ const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
 
+export const metadata: Metadata = {
+  title: "Financial Literacy Workshops for Schools in Chennai | Rupeevalcore",
+  description: "NISM-certified financial literacy programmes for school students in Chennai. Aligned with NEP 2020. Interactive sessions on banking, savings, budgeting and digital safety. Request a proposal for your school.",
+  keywords: ["financial literacy for schools", "school financial education Chennai", "NEP 2020 financial literacy", "student money management workshops", "financial awareness for school students Chennai"],
+  openGraph: {
+    title: "Financial Literacy for Schools | Rupeevalcore",
+    description: "Interactive financial literacy sessions for school students — banking, savings, budgeting, digital safety. Chennai. NISM certified.",
+    url: "https://rupeevalcore.in/schools",
+    images: [{ url: "https://rupeevalcore.in/og-schools.jpg", width: 1200, height: 630, alt: "Financial Literacy for Schools" }],
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: { canonical: "https://rupeevalcore.in/schools" },
+};
 
 const heroConfig: AudienceHeroConfig = {
   themeColor: "emerald",
@@ -24,7 +39,7 @@ const heroConfig: AudienceHeroConfig = {
   subtitle: "Practical financial literacy programmes designed for school students to build responsible money habits, digital financial awareness and real-world financial understanding from an early age.",
   primaryCta: "Request School Proposal",
   secondaryCta: "Talk to Programme Advisor",
-  iconPath: "/schools_3d.png",
+  iconPath: "/schools_3d.webp",
   photoPosition: "top left",
   formUrl: LEAD_FORMS.schools,
   analyticsEvent: "school_proposal_requested",
@@ -60,8 +75,8 @@ const metrics = [
 ];
 
 const modules = [
-  "Money Basics", "Saving Habits", "Budgeting", "Banking Fundamentals", 
-  "Digital Payments", "UPI Safety", "Fraud Awareness", "Insurance Awareness", 
+  "Money Basics", "Saving Habits", "Budgeting", "Banking Fundamentals",
+  "Digital Payments", "UPI Safety", "Fraud Awareness", "Insurance Awareness",
   "Tax Awareness", "Goal Setting", "Financial Decision Making"
 ];
 
@@ -102,20 +117,20 @@ export default function SchoolsPage() {
   return (
     <>
       <AudienceHero config={heroConfig} />
-      
+
       <section className="section-padding bg-background/50">
         <div className="container-rv">
-          
+
           <div className="mb-24">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
               Why Financial Literacy Matters
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyMatters.map((item, idx) => (
-                <AudienceInsightCard 
-                  key={idx} 
-                  title={item.title} 
-                  description={item.description} 
+                <AudienceInsightCard
+                  key={idx}
+                  title={item.title}
+                  description={item.description}
                   icon={item.icon ? <item.icon size={28} strokeWidth={1.5} /> : undefined}
                   delay={idx * 0.1}
                   themeColor="emerald"
@@ -130,8 +145,8 @@ export default function SchoolsPage() {
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {challenges.map((item, idx) => (
-                <AudienceInsightCard 
-                  key={idx} 
+                <AudienceInsightCard
+                  key={idx}
                   title={item.title}
                   delay={idx * 0.1}
                   themeColor="emerald"
@@ -183,7 +198,7 @@ export default function SchoolsPage() {
         </div>
       </section>
 
-      <WorkshopGallery 
+      <WorkshopGallery
         title="Representative learning session"
         subtitle=""
         limit={2}
@@ -191,11 +206,11 @@ export default function SchoolsPage() {
       />
 
       <TestimonialsSection testimonials={testimonials} />
-      
+
       <section className="section-padding bg-background/50">
         <div className="container-rv">
           <div className="max-w-4xl mx-auto">
-            <ContextualDownloadCard 
+            <ContextualDownloadCard
               title="School Financial Literacy Proposal"
               description="Download our comprehensive proposal document designed for school principals and administrators."
               pdfUrl="/proposals/school-proposal-2026.pdf"
@@ -208,8 +223,8 @@ export default function SchoolsPage() {
       </section>
 
       <FAQSection faqs={faqs} />
-      
-      <CTASection 
+
+      <CTASection
         headline="Prepare Students for a Financially Responsible Future."
         primaryButtonText="Request School Proposal"
         primaryHref={LEAD_FORMS.schools}

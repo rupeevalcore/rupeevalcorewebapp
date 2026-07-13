@@ -107,7 +107,7 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
                 <div 
                   className="w-full h-full opacity-90"
                   style={{
-                    backgroundImage: `url('/collage_photos.jpg')`,
+                    backgroundImage: `url('/collage_photos.webp')`,
                     backgroundSize: '200% 200%',
                     backgroundPosition: photoPosition
                   }}

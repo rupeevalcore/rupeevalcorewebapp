@@ -59,9 +59,7 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
   return (
     <section id="faq" className="section-padding bg-transparent/50 relative">
       <div className="container-rv max-w-4xl">
-        <div
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
             Frequently Asked Questions
           </h2>
@@ -73,16 +71,16 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
         <div>
           <Accordion.Root type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => (
-              <Accordion.Item 
-                key={i} 
+              <Accordion.Item
+                key={i}
                 value={`item-${i}`}
                 className="glass rounded-2xl border border-white/5 overflow-hidden transition-all data-[state=open]:border-accent/30"
               >
                 <Accordion.Header>
                   <Accordion.Trigger className="flex flex-1 items-center justify-between w-full p-6 font-heading font-bold text-left text-lg text-foreground group">
                     {faq.q}
-                    <ChevronDown 
-                      className="text-muted-foreground transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180 group-data-[state=open]:text-accent" 
+                    <ChevronDown
+                      className="text-muted-foreground transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180 group-data-[state=open]:text-accent shrink-0 ml-4"
                       aria-hidden
                     />
                   </Accordion.Trigger>
@@ -97,23 +95,6 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
           </Accordion.Root>
         </div>
       </div>
-
-      <style>{`
-        @keyframes slideDown {
-          from { height: 0; opacity: 0; }
-          to { height: var(--radix-accordion-content-height); opacity: 1; }
-        }
-        @keyframes slideUp {
-          from { height: var(--radix-accordion-content-height); opacity: 1; }
-          to { height: 0; opacity: 0; }
-        }
-        .animate-slideDown {
-          animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards;
-        }
-        .animate-slideUp {
-          animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1) forwards;
-        }
-      `}</style>
     </section>
   );
 }

@@ -7,18 +7,15 @@ const routes = [
   "/corporate-financial-wellness",
   "/individual-learning",
   "/ai",
-  "/ai/schools",
-  "/ai/colleges",
-  "/ai/resources",
-  "/financial-literacy",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://rupeevalcore.in";
+  const lastModDate = new Date("2026-07-13"); // Static date to avoid spurious crawl hits
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: lastModDate,
     changeFrequency: route ? "monthly" : "weekly",
     priority: route ? 0.8 : 1,
   }));

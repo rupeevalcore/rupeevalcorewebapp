@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, IBM_Plex_Sans } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
@@ -9,16 +9,23 @@ import Footer from "@/components/layout/Footer";
 import PageProgress from "@/components/layout/PageProgress";
 import WhatsAppFAB from "@/components/layout/WhatsAppFAB";
 import LeadCaptureRoot from "@/components/lead/LeadCaptureRoot";
+import { Phone, MessageCircle } from "lucide-react";
+import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/utils";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: true,
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const ibmPlexSans = IBM_Plex_Sans({
+  weight: ["500", "600", "700"],
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -48,10 +55,8 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${outfit.variable} antialiased font-sans bg-background text-foreground`}
-        >
-          <ThemeProvider
+      <body className={`${inter.variable} ${ibmPlexSans.variable} antialiased font-sans bg-background text-foreground selection:bg-accent/30 selection:text-foreground page-transition`}>
+        <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem={true}
@@ -69,10 +74,21 @@ export default function RootLayout({
           </main>
           
           {/* Mobile Sticky CTA */}
-          <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-md border-t border-border/50 z-40 md:hidden animate-in slide-in-from-bottom-full">
-            <Link href="/#programs" data-program-selector className="btn-accent w-full justify-center">
-              Request Proposal
-            </Link>
+          <div className="fixed bottom-0 left-0 right-0 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] bg-background/95 backdrop-blur-lg border-t border-border/50 z-50 md:hidden animate-in slide-in-from-bottom-full shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+            <div className="flex items-center gap-2 max-w-md mx-auto">
+              <a href={`tel:${PHONE_NUMBER}`} className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-accent text-background font-heading font-bold hover:bg-accent/90 transition-colors text-sm leading-none">
+                <Phone size={18} />
+                <span>Call Now</span>
+              </a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-[#25D366] text-white font-heading font-bold hover:bg-[#20b858] transition-colors text-sm leading-none">
+                <MessageCircle size={18} />
+                <span>WhatsApp</span>
+              </a>
+              <Link href="/#programs" data-program-selector className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-muted text-foreground font-heading font-bold hover:bg-muted/80 transition-colors text-sm leading-none">
+                <span className="text-lg">📄</span>
+                <span>Proposal</span>
+              </Link>
+            </div>
           </div>
 
           <Footer />
@@ -109,19 +125,45 @@ export default function RootLayout({
           </Script>
         ) : null}
         
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <script type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "EducationalOrganization",
             "name": "Rupeevalcore",
             "url": "https://rupeevalcore.in",
             "logo": "https://rupeevalcore.in/favicon.ico",
+            "description": "Financial literacy workshops for schools, colleges, corporates and individuals in Chennai, Tamil Nadu.",
+            "telephone": "+918248589694",
+            "email": "contactrupeevalcore@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Chennai",
+              "addressRegion": "Tamil Nadu",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 13.0827,
+              "longitude": 80.2707
+            },
+            "areaServed": ["Chennai", "Tamil Nadu", "India"],
             "sameAs": [
               "https://www.instagram.com/rupeevalcore_"
-            ]
-          })}
-        </script>
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Financial Literacy Programs",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "School Financial Literacy Programme" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "College Financial Literacy Programme" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Corporate Financial Wellness Programme" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Individual Financial Mentoring" } }
+              ]
+            }
+          })}}
+        />
       </body>
     </html>
   );
 }
+

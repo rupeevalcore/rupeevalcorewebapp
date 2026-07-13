@@ -43,7 +43,7 @@ export default function ContextualDownloadCard({
       <div className="flex flex-col md:flex-row relative z-10">
         {/* Thumbnail Area */}
         <div className={`md:w-1/3 bg-gradient-to-br ${theme.glow} to-background p-8 flex items-center justify-center border-b md:border-b-0 md:border-r border-white/5 relative`}>
-          <div className={`absolute top-4 left-4 text-xs font-bold uppercase tracking-wider ${theme.text} bg-background/50 backdrop-blur-md px-3 py-1 rounded-full`}>
+          <div className={`absolute top-4 left-4 text-sm font-bold uppercase tracking-wider ${theme.text} bg-background/50 backdrop-blur-md px-3 py-1 rounded-full`}>
             {category}
           </div>
           {thumbnail ? (

@@ -46,8 +46,8 @@ interface TestimonialsSectionProps {
 }
 
 export default function TestimonialsSection({ context = "all", testimonials: customTestimonials }: TestimonialsSectionProps) {
-  const testimonials = customTestimonials ? customTestimonials : (context === "all" 
-    ? allTestimonials 
+  const testimonials = customTestimonials ? customTestimonials : (context === "all"
+    ? allTestimonials
     : allTestimonials.filter(t => t.context === context));
 
   if (testimonials.length === 0) return null;
@@ -55,11 +55,9 @@ export default function TestimonialsSection({ context = "all", testimonials: cus
   return (
     <section className="section-padding overflow-hidden bg-transparent">
       <div className="container-rv">
-        
+
         <div className="flex flex-col md:flex-row gap-12 items-end justify-between mb-16">
-          <div
-            className="max-w-xl"
-          >
+          <div className="max-w-xl">
             <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
               Hear from our learners
             </h2>
@@ -72,7 +70,6 @@ export default function TestimonialsSection({ context = "all", testimonials: cus
         {/* CSS Marquee Carousel */}
         <div className="relative flex overflow-x-hidden w-full pb-8">
           <div className="flex gap-6 animate-marquee">
-            {/* Double the array for seamless looping */}
             {[...testimonials, ...testimonials].map((t, i) => (
               <div key={i} className="glass p-8 rounded-3xl border border-white/5 w-[350px] md:w-[450px] flex-shrink-0 relative group hover:border-accent/30 transition-colors">
                 <Quote className="absolute top-6 right-6 text-white/5 w-16 h-16 group-hover:text-accent/10 transition-colors" />
@@ -89,27 +86,13 @@ export default function TestimonialsSection({ context = "all", testimonials: cus
               </div>
             ))}
           </div>
-          
+
           {/* Fading Edges */}
           <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none" />
           <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none" />
         </div>
-        
+
       </div>
-      
-      {/* Custom styles for marquee animation */}
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-50% - 12px)); }
-        }
-        .animate-marquee {
-          animation: marquee 40s linear infinite;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,6 +1,14 @@
 import PageHero from "@/components/layout/PageHero";
 import CurriculumSection from "@/components/sections/CurriculumSection";
 import CTASection from "@/components/sections/CTASection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function FinancialLiteracyPage() {
   return (

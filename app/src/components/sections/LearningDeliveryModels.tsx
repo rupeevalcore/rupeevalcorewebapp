@@ -83,7 +83,7 @@ export default function LearningDeliveryModels() {
                   <span className="px-3 py-1 rounded-full bg-rose-500/10 text-rose-500 text-sm font-semibold tracking-wide">Families</span>
                   <span className="px-3 py-1 rounded-full bg-violet-500/10 text-violet-500 text-sm font-semibold tracking-wide">Professionals</span>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-xs font-bold uppercase tracking-wider">Premium</span>
+                <span className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-bold uppercase tracking-wider">Premium</span>
               </div>
 
               <div className="flex gap-4 mb-8 text-foreground/40 dark:text-white/40">

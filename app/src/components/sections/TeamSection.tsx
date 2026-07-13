@@ -34,7 +34,7 @@ export default function TeamSection() {
           >
             <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl border border-border shadow-md bg-card">
               <Image
-                src="/images/founder-shanthi-chitrarasu.png"
+                src="/images/founder-shanthi-chitrarasu.webp"
                 alt="Shanthi Chitrarasu, Founder of RupeeValcore"
                 fill
                 className="object-cover object-[55%_45%]"
@@ -117,7 +117,7 @@ export default function TeamSection() {
                  <div className="absolute top-0 left-0 w-full h-1 bg-accent/60" />
                  
                  <h4 className="font-heading font-bold text-xl text-foreground mb-1">{member.name}</h4>
-                 <p className="text-muted-foreground text-xs font-bold uppercase tracking-widest mb-6">{member.role}</p>
+                 <p className="text-muted-foreground text-sm font-bold uppercase tracking-widest mb-6">{member.role}</p>
                  <p className="text-foreground/80 leading-relaxed text-sm">{member.description}</p>
               </div>
             ))}

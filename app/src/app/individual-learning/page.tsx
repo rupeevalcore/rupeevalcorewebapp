@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import AudienceHero, { AudienceHeroConfig } from "@/components/audience/AudienceHero";
 import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
 import AudienceMetrics from "@/components/audience/AudienceMetrics";
@@ -8,6 +9,22 @@ import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
+
+export const metadata: Metadata = {
+  title: "Personal Financial Literacy Mentoring in Chennai | Rupeevalcore",
+  description: "One-to-one financial literacy mentoring for working professionals, parents and individuals in Chennai. Tax planning, investments, insurance. NISM certified. No products sold.",
+  keywords: ["personal financial literacy Chennai", "individual financial mentoring", "financial planning for working professionals Chennai", "family financial literacy session"],
+  openGraph: {
+    title: "Personal Financial Learning | Rupeevalcore",
+    description: "One-to-one financial mentoring for individuals and families. Tax, investments, insurance. Chennai. NISM certified. No products sold.",
+    url: "https://rupeevalcore.in/individual-learning",
+    images: [{ url: "https://rupeevalcore.in/og-individual.jpg", width: 1200, height: 630, alt: "Individual Financial Learning" }],
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: { canonical: "https://rupeevalcore.in/individual-learning" },
+};
+
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -22,7 +39,7 @@ const heroConfig: AudienceHeroConfig = {
   subtitle: "One-to-one mentoring and family sessions designed to help you understand personal finance, taxes, and long-term planning without the pressure of hidden commissions.",
   primaryCta: "Request Session Details",
   secondaryCta: "Schedule a Discussion",
-  iconPath: "/individual_3d.png",
+  iconPath: "/individual_3d.webp",
   photoPosition: "bottom right",
   formUrl: LEAD_FORMS.individual,
   analyticsEvent: "individual_session_requested",
