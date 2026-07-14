@@ -1,22 +1,31 @@
-import { Download, FileText } from "lucide-react";
+"use client";
+
+import { Download, FileText, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
+import type { AnalyticsEvent } from "@/lib/lead-routing";
 
 interface ContextualDownloadCardProps {
   title: string;
   description: string;
-  pdfUrl: string;
+  features?: string[];
+  pdfUrl?: string;
+  fileSize?: string;
   thumbnail?: string;
   category: string;
-  trackingEvent?: string;
+  trackingEvent?: AnalyticsEvent;
   themeColor?: "emerald" | "sapphire" | "cyan" | "orange" | "purple" | "accent";
 }
 
 export default function ContextualDownloadCard({ 
   title, 
-  description, 
-  pdfUrl, 
+  description,
+  features = [], 
+  pdfUrl,
+  fileSize,
   thumbnail, 
-  category, 
+  category,
+  trackingEvent, 
   themeColor = "accent" 
 }: ContextualDownloadCardProps) {
 
@@ -33,12 +42,23 @@ export default function ContextualDownloadCard({
 
   const theme = getThemeClasses();
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!pdfUrl) {
+      e.preventDefault();
+      return;
+    }
+    if (trackingEvent) {
+      trackEvent(trackingEvent);
+    }
+  };
+
   return (
     <a
-      href={pdfUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50"
+      href={pdfUrl || "#"}
+      target={pdfUrl ? "_blank" : undefined}
+      rel={pdfUrl ? "noopener noreferrer" : undefined}
+      onClick={handleClick}
+      className={`block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50 ${!pdfUrl ? "cursor-default" : ""}`}
     >
       <div className="flex flex-col md:flex-row relative z-10">
         {/* Thumbnail Area */}
@@ -48,7 +68,7 @@ export default function ContextualDownloadCard({
           </div>
           {thumbnail ? (
             <div className="relative w-full aspect-[3/4] max-w-[160px] drop-shadow-2xl group-hover:scale-105 transition-transform duration-500">
-              <Image src={thumbnail} alt={title} fill className="object-cover rounded-md" />
+              <Image src={thumbnail} alt={title} fill sizes="(max-width: 768px) 100vw, 160px" className="object-cover rounded-md" />
             </div>
           ) : (
             <div className="w-24 h-32 bg-white/5 border border-white/10 rounded-md flex items-center justify-center shadow-2xl group-hover:scale-105 transition-transform duration-500">
@@ -61,18 +81,42 @@ export default function ContextualDownloadCard({
         <div className="md:w-2/3 p-8 md:p-10 flex flex-col justify-center relative overflow-hidden">
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors" />
           
-          <h3 className="font-heading font-black text-2xl md:text-3xl text-foreground mb-4 relative z-10">
+          <h3 className="font-heading font-black text-2xl md:text-3xl text-foreground mb-2 relative z-10">
             {title}
           </h3>
-          <p className="text-muted-foreground text-lg mb-8 relative z-10">
+          <p className="text-muted-foreground text-base md:text-lg mb-6 relative z-10 font-medium">
             {description}
           </p>
           
-          <div className="mt-auto relative z-10">
-            <span className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 transition-opacity`}>
-              Download PDF
-              <Download size={18} />
-            </span>
+          {features.length > 0 && (
+            <ul className="mb-8 space-y-2 relative z-10">
+              {features.map((feature, idx) => (
+                <li key={idx} className="flex items-center gap-3 text-sm md:text-base text-muted-foreground">
+                  <CheckCircle2 size={16} className={theme.text} />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <div className="mt-auto relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            {pdfUrl ? (
+              <>
+                <span className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 transition-opacity`}>
+                  Download Proposal
+                  <Download size={18} />
+                </span>
+                {fileSize && (
+                  <span className="text-sm font-medium text-muted-foreground">
+                    {fileSize} PDF
+                  </span>
+                )}
+              </>
+            ) : (
+              <p className="text-sm text-muted-foreground bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                Proposal document temporarily unavailable. Please contact us for the latest version.
+              </p>
+            )}
           </div>
         </div>
       </div>

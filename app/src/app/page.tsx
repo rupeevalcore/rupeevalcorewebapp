@@ -38,6 +38,8 @@ const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
 
+import { SectionContainer } from "@/components/ui/SectionContainer";
+
 export default function Home() {
   return (
     <>
@@ -50,7 +52,9 @@ export default function Home() {
       <TeamSection />
       <TestimonialsSection />
       <FAQSection />
-      <div className="container-rv mb-24"><ComplianceBlock /></div>
+      <SectionContainer className="mb-24">
+        <ComplianceBlock />
+      </SectionContainer>
       <CTASection />
     </>
   );

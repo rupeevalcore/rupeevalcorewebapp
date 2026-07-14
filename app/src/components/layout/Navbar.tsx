@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { Menu, X, Phone, MessageCircle } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 import { ThemeToggle } from "@/components/ui/ThemeToggle"
 import { PHONE_NUMBER, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/utils'
 
@@ -13,7 +14,7 @@ const navLinks = [
   { label: 'Colleges', href: '/colleges' },
   { label: 'Corporates', href: '/corporate-financial-wellness' },
   { label: 'Individuals', href: '/individual-learning' },
-  { label: 'AI', href: '/ai' },
+  { label: 'AI Division', href: '/ai' },
 ]
 
 const prefetchRoutes = [
@@ -28,11 +29,21 @@ const prefetchRoutes = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const pathname = usePathname()
   const router = useRouter()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+      
+      // Calculate scroll progress
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+      const scrolled = (winScroll / height) * 100
+      setScrollProgress(scrolled)
+    }
+    
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -65,12 +76,18 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+          scrolled || mobileOpen
             ? 'border-b border-border bg-background/80 backdrop-blur-2xl shadow-sm'
             : 'bg-transparent'
         }`}
       >
-        <div className="container-rv flex h-16 items-center justify-between">
+        {/* Scroll Progress Bar */}
+        <div 
+          className="absolute top-0 left-0 h-[2px] bg-accent z-50 transition-all duration-150 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        />
+
+        <div className="w-full px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto max-w-[1440px] flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3 shrink-0" aria-label="Rupeevalcore home">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent text-background font-heading font-black text-base shadow-glow transition-transform duration-200 group-hover:scale-105">
@@ -102,102 +119,94 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <div className="flex items-center gap-3 mr-2">
               <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                <Phone size={16} />
+                <Phone className="h-4 w-4" />
                 {PHONE_DISPLAY}
               </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 transition-colors">
-                <MessageCircle size={18} />
+                <FaWhatsapp className="h-5 w-5" />
               </a>
             </div>
             
             <ThemeToggle />
             
-            <Link
-              href="/#programs"
-              prefetch={false}
-              data-program-selector
-              className="btn-accent text-sm py-2 px-5 text-center inline-block ml-1"
+            <button
+              type="button"
+              data-program-selector="true"
+              className="btn-accent text-sm py-2 px-5 h-10 rounded-xl text-center inline-flex items-center ml-1 focus:outline-none"
             >
               Request Proposal
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Right Controls */}
           <div className="flex lg:hidden items-center gap-2">
-            <a href={`tel:${PHONE_NUMBER}`} aria-label="Call Us" className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors">
-              <Phone size={16} />
-            </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us" className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 transition-colors">
-              <MessageCircle size={16} />
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us" className="flex h-10 w-10 min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 transition-colors">
+              <FaWhatsapp className="h-5 w-5" />
             </a>
             
-            <div className="scale-90 origin-right">
+            <div className="scale-90 origin-right min-h-[44px] min-w-[44px] flex items-center justify-center">
               <ThemeToggle />
             </div>
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 ml-1 rounded-lg text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="p-2 ml-1 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileOpen}
             >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile overlay */}
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/60 lg:hidden backdrop-blur-sm"
-          onClick={() => setMobileOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Mobile drawer */}
-      <aside
-        className={`fixed right-0 top-0 z-50 h-screen w-[min(88vw,360px)] border-l border-border bg-background/95 backdrop-blur-md transition-transform duration-300 lg:hidden ${
-          mobileOpen ? 'translate-x-0' : 'translate-x-full'
+      {/* Mobile Full-Screen Overlay Menu */}
+      <div 
+        className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-xl transition-all duration-300 lg:hidden flex flex-col pt-20 pb-24 px-6 ${
+          mobileOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
-        aria-label="Mobile navigation"
+        aria-hidden={!mobileOpen}
       >
-        <div className="flex items-center justify-between p-4 border-b border-border">
-          <span className="font-heading font-bold text-foreground">Menu</span>
-          <button
-            onClick={() => setMobileOpen(false)}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Close navigation menu"
-          >
-            <X size={18} />
-          </button>
-        </div>
-        <nav className="flex flex-col p-6 gap-2" aria-label="Mobile navigation">
+        <nav className="flex flex-col gap-6 mt-8 flex-1 overflow-y-auto" aria-label="Mobile navigation">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               prefetch={!link.href.includes('#')}
               onClick={handleNavClick}
-              className="py-3 px-4 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-200 font-medium"
+              className="text-2xl font-heading font-bold text-foreground/80 hover:text-foreground transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <div className="border-t border-border mt-4 pt-6">
-            <Link
-              href="/#programs"
-              prefetch={false}
-              data-program-selector
+          
+          <div className="mt-auto space-y-6 pt-8 border-t border-border/50">
+            <div className="flex flex-col gap-4">
+              <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-3 text-lg font-medium text-foreground hover:text-accent transition-colors">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-muted text-foreground">
+                  <Phone className="h-5 w-5" />
+                </div>
+                Call Us
+              </a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-lg font-medium text-foreground hover:text-[#25D366] transition-colors">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#25D366]/10 text-[#25D366]">
+                  <FaWhatsapp className="h-6 w-6" />
+                </div>
+                WhatsApp Support
+              </a>
+            </div>
+            
+            <button
+              type="button"
+              data-program-selector="true"
               onClick={() => setMobileOpen(false)}
-              className="btn-accent w-full justify-center text-center inline-flex py-3"
+              className="btn-accent w-full justify-center text-center inline-flex py-4 h-14 text-lg focus:outline-none"
             >
               Request Proposal
-            </Link>
+            </button>
           </div>
         </nav>
-      </aside>
+      </div>
     </>
   )
 }

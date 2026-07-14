@@ -1,66 +1,71 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
-import { AnimatePresence, motion } from "framer-motion";
-import { Bot, Building2, GraduationCap, University, UserRound, X } from "lucide-react";
+import { Building2, GraduationCap, School, UserRound, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { AnalyticsEvent } from "@/lib/lead-routing";
 import { trackEvent } from "@/lib/analytics";
+import { LEAD_FORMS } from "@/lib/lead-routing";
 
 type ProgramOption = {
-  id: "school" | "college" | "corporate" | "individual" | "ai";
+  id: "school" | "college" | "corporate" | "individual";
   title: string;
   description: string;
   href: string;
   event: AnalyticsEvent;
-  icon: typeof GraduationCap;
+  icon: typeof School;
+  emoji: string;
 };
 
 const PROGRAM_OPTIONS: ProgramOption[] = [
   {
     id: "school",
-    title: "Schools",
-    description: "Financial literacy programmes for students from Grade 3 to Grade 12.",
-    href: "/schools",
-    event: "program_selected_school",
-    icon: GraduationCap,
+    title: "School",
+    description: "Financial Literacy Programs for School Students",
+    href: LEAD_FORMS.schools,
+    event: "program_selector_school",
+    icon: School,
+    emoji: "\u{1F3EB}",
   },
   {
     id: "college",
-    title: "Colleges",
-    description: "Financial readiness programmes for college students.",
-    href: "/colleges",
-    event: "program_selected_college",
-    icon: University,
+    title: "College",
+    description: "Financial Literacy Programs for College Students",
+    href: LEAD_FORMS.colleges,
+    event: "program_selector_college",
+    icon: GraduationCap,
+    emoji: "\u{1F393}",
   },
   {
     id: "corporate",
     title: "Corporate",
-    description: "Employee financial wellness programmes for organisations.",
-    href: "/corporate-financial-wellness",
-    event: "program_selected_corporate",
+    description: "Financial Wellness Programs for Employees",
+    href: LEAD_FORMS.corporate,
+    event: "program_selector_corporate",
     icon: Building2,
+    emoji: "\u{1F3E2}",
   },
   {
     id: "individual",
-    title: "Individual Learning",
-    description: "Personal financial education for individuals and families.",
-    href: "/individual-learning",
-    event: "program_selected_individual",
+    title: "Individual",
+    description: "Personal Financial Learning Programs",
+    href: LEAD_FORMS.individual,
+    event: "program_selector_individual",
     icon: UserRound,
-  },
-  {
-    id: "ai",
-    title: "AI Education",
-    description: "AI literacy and practical AI programmes.",
-    href: "/ai",
-    event: "program_selected_ai",
-    icon: Bot,
+    emoji: "\u{1F464}",
   },
 ];
 
 export default function ProgramSelectorDialog() {
   const [open, setOpen] = useState(false);
+  const [loadingId, setLoadingId] = useState<string | null>(null);
+
+  const handleOpenChange = (newOpen: boolean) => {
+    if (!newOpen) {
+      trackEvent("program_selector_closed");
+    }
+    setOpen(newOpen);
+  };
 
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
@@ -85,80 +90,199 @@ export default function ProgramSelectorDialog() {
   }, []);
 
   const selectProgram = (option: ProgramOption) => {
+    if (loadingId) return;
+    setLoadingId(option.id);
     trackEvent(option.event);
-    window.location.href = option.href;
+    window.open(option.href, "_blank", "noopener,noreferrer");
+
+    setTimeout(() => {
+      setLoadingId(null);
+      setOpen(false);
+    }, 500);
   };
 
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
-      <AnimatePresence>
-        {open && (
-          <Dialog.Portal forceMount>
-            <Dialog.Overlay asChild>
-              <motion.div
-                className="fixed inset-0 z-[100] bg-background/70 backdrop-blur-md"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.18, ease: "easeOut" }}
-              />
-            </Dialog.Overlay>
+    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
+      <Dialog.Portal>
+        {/* Overlay — full screen dark blur */}
+        <Dialog.Overlay
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9998,
+            backgroundColor: "rgba(0,0,0,0.70)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+          }}
+        />
 
-            <Dialog.Content asChild>
-              <motion.div
-                className="fixed left-1/2 top-1/2 z-[101] w-[calc(100vw-2rem)] max-w-4xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-3xl border border-border bg-card shadow-2xl focus:outline-none"
-                initial={{ opacity: 0, y: 18, scale: 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 12, scale: 0.98 }}
-                transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+        {/* Dialog Content — centered, always on top */}
+        <Dialog.Content
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 9999,
+            width: "90vw",
+            maxWidth: "32rem",
+            maxHeight: "calc(100dvh - 2rem)",
+            overflowY: "auto",
+            borderRadius: "1.5rem",
+            padding: "2rem",
+            boxShadow: "0 25px 60px rgba(0,0,0,0.35)",
+            outline: "none",
+          }}
+          className="bg-white text-slate-950 dark:bg-neutral-950 dark:text-white border border-slate-200 dark:border-white/10"
+        >
+          <div style={{ position: "relative" }}>
+            {/* Header */}
+            <div style={{ marginBottom: "2rem", paddingRight: "3rem" }}>
+              <Dialog.Title
+                style={{
+                  fontFamily: "var(--font-ibm-plex-sans, sans-serif)",
+                  fontSize: "1.75rem",
+                  fontWeight: 900,
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.2,
+                  margin: 0,
+                }}
+                className="text-slate-950 dark:text-white"
               >
-                <div className="relative p-6 sm:p-8 md:p-10">
-                  <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-accent/10 blur-3xl" />
+                Which program are you looking for?
+              </Dialog.Title>
+              <Dialog.Description
+                style={{
+                  marginTop: "0.75rem",
+                  fontSize: "1rem",
+                  lineHeight: 1.6,
+                }}
+                className="text-slate-600 dark:text-neutral-300"
+              >
+                Select your audience and we&apos;ll open the correct proposal form.
+              </Dialog.Description>
+            </div>
 
-                  <div className="relative mb-8 pr-12">
-                    <Dialog.Title className="font-heading text-3xl font-black tracking-tight text-foreground md:text-4xl">
-                      Who is this programme for?
-                    </Dialog.Title>
-                    <Dialog.Description className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                      Select the option that best describes your requirement and we&apos;ll guide you to the right programme.
-                    </Dialog.Description>
-                  </div>
+            {/* Program Option Cards */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, 1fr)",
+                gap: "1rem",
+              }}
+            >
+              {PROGRAM_OPTIONS.map((option) => {
+                const Icon = option.icon;
+                const isLoading = loadingId === option.id;
 
-                  <div className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-                    {PROGRAM_OPTIONS.map((option) => {
-                      const Icon = option.icon;
-
-                      return (
-                        <button
-                          key={option.id}
-                          type="button"
-                          onClick={() => selectProgram(option)}
-                          className="group min-h-[160px] rounded-2xl border border-border bg-background/70 p-5 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-background focus-visible:border-accent"
-                          aria-label={`Choose ${option.title}`}
-                        >
-                          <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent transition-transform duration-200 group-hover:scale-105">
-                            <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => selectProgram(option)}
+                    disabled={!!loadingId}
+                    style={{
+                      minHeight: "148px",
+                      borderRadius: "1rem",
+                      padding: "1.25rem",
+                      textAlign: "left",
+                      cursor: loadingId && !isLoading ? "not-allowed" : "pointer",
+                      opacity: loadingId && !isLoading ? 0.5 : 1,
+                      transition: "border-color 150ms, background-color 150ms",
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                    className="border border-slate-200 bg-slate-50 text-slate-950 hover:border-[#C4922A] hover:bg-white dark:border-white/10 dark:bg-neutral-900 dark:text-white dark:hover:border-[#D4A44D] dark:hover:bg-neutral-800"
+                    aria-label={`Choose ${option.title}`}
+                  >
+                    {/* Icon badge */}
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        height: "3rem",
+                        width: "3rem",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "0.75rem",
+                        marginBottom: "1.25rem",
+                      }}
+                      className="bg-[#C4922A]/10 text-[#C4922A] dark:bg-[#D4A44D]/10 dark:text-[#D4A44D]"
+                    >
+                      {isLoading ? (
+                        <span
+                          style={{
+                            height: "1.25rem",
+                            width: "1.25rem",
+                            borderRadius: "9999px",
+                            border: "2px solid currentColor",
+                            borderTopColor: "transparent",
+                            display: "block",
+                            animation: "spin 0.7s linear infinite",
+                          }}
+                        />
+                      ) : (
+                        <>
+                          <span style={{ marginRight: "0.25rem", fontSize: "1.25rem" }} aria-hidden="true">
+                            {option.emoji}
                           </span>
-                          <span className="block font-heading text-lg font-bold text-foreground">
-                            {option.title}
-                          </span>
-                          <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
-                            {option.description}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
+                          <Icon size={20} strokeWidth={1.8} aria-hidden="true" />
+                        </>
+                      )}
+                    </span>
 
-                  <Dialog.Close className="absolute right-5 top-5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/70 text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground" aria-label="Close programme selector">
-                    <X size={18} />
-                  </Dialog.Close>
-                </div>
-              </motion.div>
-            </Dialog.Content>
-          </Dialog.Portal>
-        )}
-      </AnimatePresence>
+                    {/* Title */}
+                    <span
+                      style={{
+                        display: "block",
+                        fontFamily: "var(--font-ibm-plex-sans, sans-serif)",
+                        fontSize: "1.25rem",
+                        fontWeight: 700,
+                      }}
+                      className="text-slate-950 dark:text-white"
+                    >
+                      {option.title}
+                    </span>
+
+                    {/* Description */}
+                    <span
+                      style={{
+                        display: "block",
+                        marginTop: "0.5rem",
+                        fontSize: "0.875rem",
+                        lineHeight: 1.5,
+                      }}
+                      className="text-slate-600 dark:text-neutral-300"
+                    >
+                      {option.description}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Close button */}
+            <Dialog.Close
+              style={{
+                position: "absolute",
+                right: 0,
+                top: 0,
+                display: "inline-flex",
+                height: "2.5rem",
+                width: "2.5rem",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "9999px",
+                transition: "color 150ms",
+                cursor: "pointer",
+              }}
+              className="border border-slate-200 bg-white text-slate-500 hover:text-slate-950 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+              aria-label="Close programme selector"
+            >
+              <X size={18} />
+            </Dialog.Close>
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
     </Dialog.Root>
   );
 }

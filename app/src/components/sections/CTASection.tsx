@@ -1,5 +1,5 @@
 import { ArrowRight, Mail } from "lucide-react";
-import { EMAIL, WHATSAPP_URL } from "../../lib/utils";
+import { EMAIL, getWhatsAppUrl } from "../../lib/utils";
 
 interface CTASectionProps {
   headline?: string;
@@ -8,6 +8,7 @@ interface CTASectionProps {
   primaryHref?: string;
   primaryAnalyticsEvent?: string;
   secondaryButtonText?: string;
+  whatsappContext?: string;
   className?: string;
 }
 
@@ -18,6 +19,7 @@ export default function CTASection({
   primaryHref,
   primaryAnalyticsEvent,
   secondaryButtonText = "WhatsApp Us",
+  whatsappContext,
   className
 }: CTASectionProps) {
 
@@ -42,18 +44,29 @@ export default function CTASection({
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={primaryHref || "#programs"}
-              target={primaryHref ? "_blank" : undefined}
-              rel={primaryHref ? "noopener noreferrer" : undefined}
-              data-program-selector={primaryHref ? undefined : true}
-              data-analytics-event={primaryAnalyticsEvent}
-              className="btn-accent w-full sm:w-auto group text-center inline-flex"
-            >
-              {primaryButtonText}
-              <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
+            {primaryHref ? (
+              <a
+                href={primaryHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-event={primaryAnalyticsEvent}
+                className="btn-accent w-full sm:w-auto group text-center inline-flex"
+              >
+                {primaryButtonText}
+                <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            ) : (
+              <button
+                type="button"
+                data-program-selector="true"
+                data-analytics-event={primaryAnalyticsEvent}
+                className="btn-accent w-full sm:w-auto group text-center inline-flex focus:outline-none"
+              >
+                {primaryButtonText}
+                <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+            )}
+            <a href={getWhatsAppUrl(whatsappContext)} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
               {secondaryButtonText}
             </a>
           </div>

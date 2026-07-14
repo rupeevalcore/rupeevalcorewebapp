@@ -51,14 +51,33 @@ interface FAQSectionProps {
   faqs?: {q: string, a: string}[];
 }
 
+import { SectionContainer } from "@/components/ui/SectionContainer";
+
 export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSectionProps) {
   const faqs = customFaqs ? customFaqs : allFaqs.filter(faq => faq.context.includes(context));
 
   if (faqs.length === 0) return null;
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="section-padding bg-transparent/50 relative">
-      <div className="container-rv max-w-4xl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <SectionContainer className="max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
             Frequently Asked Questions
@@ -74,7 +93,7 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
               <Accordion.Item
                 key={i}
                 value={`item-${i}`}
-                className="glass rounded-2xl border border-white/5 overflow-hidden transition-all data-[state=open]:border-accent/30"
+                className="glass rounded-[24px] border border-white/5 overflow-hidden transition-all data-[state=open]:border-accent/30"
               >
                 <Accordion.Header>
                   <Accordion.Trigger className="flex flex-1 items-center justify-between w-full p-6 font-heading font-bold text-left text-lg text-foreground group">
@@ -94,7 +113,7 @@ export default function FAQSection({ context = "all", faqs: customFaqs }: FAQSec
             ))}
           </Accordion.Root>
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

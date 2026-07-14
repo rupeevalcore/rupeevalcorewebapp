@@ -1,7 +1,7 @@
 import { ShootingStarsGrid } from "@/components/ui/shooting-stars-grid";
 import Image from "next/image";
 import { ArrowRight, MessageSquare } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/utils";
+import { getWhatsAppUrl } from "@/lib/utils";
 
 export type AudienceHeroConfig = {
   themeColor: "emerald" | "sapphire" | "cyan" | "orange" | "purple" | "accent";
@@ -85,7 +85,7 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
-                href={WHATSAPP_URL} 
+                href={getWhatsAppUrl(badge)} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary py-4 text-base"

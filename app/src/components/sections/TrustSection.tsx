@@ -1,5 +1,6 @@
-import { CheckCircle2, Shield, GraduationCap, MapPin } from "lucide-react";
+import { ShieldCheck, BookOpen, MapPin, Building2 } from "lucide-react";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { SectionContainer } from "@/components/ui/SectionContainer";
 
 const stats = [
   { label: "Schools", value: 2, suffix: "", variant: "schools" as const },
@@ -14,26 +15,28 @@ const visionStats = [
   { label: "Workplaces", value: 50, suffix: "+" },
 ];
 
-const compliance = [
-  { icon: Shield, text: "MSME Registered" },
-  { icon: CheckCircle2, text: "NISM Certified" },
-  { icon: GraduationCap, text: "Education First" },
-  { icon: MapPin, text: "Chennai & Online" },
+const trustCards = [
+  { icon: ShieldCheck, title: "MSME Registered Business" },
+  { icon: BookOpen, title: "Financial Education Specialists" },
+  { icon: MapPin, title: "Chennai Based + Online Delivery" },
+  { icon: Building2, title: "Institution Focused Programs" },
 ];
 
 export default function TrustSection() {
   return (
     <section id="trust" className="section-padding relative overflow-hidden bg-transparent">
-      <div className="container-rv">
+      <SectionContainer>
         
-        {/* Compliance Badges Bar */}
-        <div 
-          className="flex flex-wrap justify-center gap-6 md:gap-12 pb-24 border-b border-border/50 mb-24"
-        >
-          {compliance.map((item, i) => (
-            <div key={i} className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
-              <item.icon className="text-accent" size={24} strokeWidth={1.5} aria-hidden="true" />
-              <span className="font-heading font-medium tracking-wide uppercase text-sm">{item.text}</span>
+        {/* New Premium Trust Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pb-24 border-b border-border/50 mb-24">
+          {trustCards.map((card, i) => (
+            <div key={i} className="glass p-6 rounded-2xl flex flex-col items-start gap-4">
+              <div className="h-12 w-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
+                <card.icon size={24} strokeWidth={1.5} />
+              </div>
+              <span className="font-heading font-semibold tracking-tight text-foreground text-lg leading-tight">
+                {card.title}
+              </span>
             </div>
           ))}
         </div>
@@ -41,11 +44,9 @@ export default function TrustSection() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Current Impact */}
-          <div
-            className="space-y-10"
-          >
+          <div className="space-y-10">
             <div>
-              <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">
+              <h2 className="font-heading font-bold text-foreground mb-4">
                 Our Current Impact
               </h2>
               <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
@@ -73,9 +74,7 @@ export default function TrustSection() {
           </div>
 
           {/* Future Vision */}
-          <div
-            className="relative"
-          >
+          <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-b from-primary/10 to-background rounded-3xl blur-xl" />
             <div className="relative glass p-10 md:p-12 rounded-3xl border border-accent/10">
               <h3 className="font-heading font-bold text-2xl text-foreground mb-2">Our Vision</h3>
@@ -95,7 +94,7 @@ export default function TrustSection() {
           </div>
 
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

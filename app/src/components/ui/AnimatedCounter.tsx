@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { useInView, useMotionValue, useSpring, useTransform, motion } from "framer-motion";
 
 interface AnimatedCounterProps {
   target: number;
@@ -18,39 +18,28 @@ export function AnimatedCounter({
   duration = 1800,
   className = "",
 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const hasAnimated = useRef(false);
+  
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    duration: duration,
+    bounce: 0,
+  });
+  
+  const displayValue = useTransform(springValue, (latest) => Math.round(latest));
 
   useEffect(() => {
-    if (!isInView || hasAnimated.current) return;
-    hasAnimated.current = true;
-
-    const startTime = performance.now();
-    const startValue = 0;
-
-    // Easing function: ease-out quart
-    const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
-
-    const tick = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = easeOutQuart(progress);
-      const current = Math.round(startValue + eased * (target - startValue));
-      setCount(current);
-
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
-    };
-
-    requestAnimationFrame(tick);
-  }, [isInView, target, duration]);
+    if (isInView) {
+      motionValue.set(target);
+    }
+  }, [isInView, target, motionValue]);
 
   return (
     <span ref={ref} className={className} aria-label={`${prefix}${target}${suffix}`}>
-      {prefix}{count}{suffix}
+      {prefix}
+      <motion.span>{displayValue}</motion.span>
+      {suffix}
     </span>
   );
 }

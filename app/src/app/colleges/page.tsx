@@ -9,6 +9,8 @@ import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
+import { SectionContainer } from "@/components/ui/SectionContainer";
+import { getFileSize } from "@/lib/server-utils";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -115,7 +117,7 @@ export default function CollegesPage() {
       <AudienceHero config={heroConfig} />
 
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
 
           <div className="mb-24">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
@@ -191,7 +193,7 @@ export default function CollegesPage() {
             <DeliveryModelCards models={formats} themeColor="sapphire" />
           </div>
 
-        </div>
+        </SectionContainer>
       </section>
 
       <WorkshopGallery
@@ -202,7 +204,7 @@ export default function CollegesPage() {
       <TestimonialsSection context="colleges" />
 
       <section className="section-padding bg-background">
-        <div className="container-rv">
+        <SectionContainer>
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4">
               Institutional Investment
@@ -228,22 +230,31 @@ export default function CollegesPage() {
             analyticsEvent="college_proposal_requested"
             themeColor="sapphire"
           />
-        </div>
+        </SectionContainer>
       </section>
 
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
           <div className="max-w-4xl mx-auto">
             <ContextualDownloadCard
               title="College Financial Literacy Proposal"
-              description="Download our comprehensive proposal document designed for placement officers, deans and HODs."
-              pdfUrl="/proposals/college-proposal-2026.pdf"
+              description="Placement & Graduate Program Overview"
+              features={[
+                "Curriculum Overview",
+                "Delivery Model",
+                "Learning Outcomes",
+                "Workshop Structure"
+              ]}
+              pdfUrl="/proposals/college-proposal.pdf"
+              fileSize={getFileSize("proposals/college-proposal.pdf")}
+              thumbnail="/colleges_3d.webp"
               category="Colleges"
               themeColor="sapphire"
+              trackingEvent="pdf_download_college"
             />
           </div>
           <ComplianceBlock />
-        </div>
+        </SectionContainer>
       </section>
 
       <FAQSection faqs={faqs} />

@@ -27,7 +27,7 @@ export default function LearningDeliveryModels() {
           <div
             className="h-full flex flex-col"
           >
-            <Link href="#contact" data-program-selector aria-label="Request Group Proposal" className="block h-full p-8 md:p-10 rounded-3xl glass border border-white/10 group hover:-translate-y-[4px] focus-visible:-translate-y-[4px] hover:border-accent/40 focus-visible:border-accent/40 hover:shadow-lg hover:shadow-accent/10 focus-visible:shadow-lg focus-visible:shadow-accent/10 transition-all duration-[300ms] ease-out outline-none relative overflow-hidden flex flex-col">
+            <button type="button" data-program-selector aria-label="Request Group Proposal" className="block h-full w-full p-8 md:p-10 rounded-3xl glass border border-white/10 group hover:-translate-y-[4px] focus-visible:-translate-y-[4px] hover:border-accent/40 focus-visible:border-accent/40 hover:shadow-lg hover:shadow-accent/10 focus-visible:shadow-lg focus-visible:shadow-accent/10 transition-all duration-[300ms] ease-out outline-none relative overflow-hidden flex flex-col text-left">
               <div className="flex flex-wrap gap-2 mb-8">
                 <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-sm font-semibold tracking-wide border border-emerald-500/20">College Events</span>
                 <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-500 text-sm font-semibold tracking-wide border border-cyan-500/20">Corporate Events</span>
@@ -69,7 +69,7 @@ export default function LearningDeliveryModels() {
                 Request Group Proposal
                 <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-focus-visible:opacity-100 group-hover:translate-x-0 group-focus-visible:translate-x-0 transition-all duration-[300ms] ease-out" />
               </div>
-            </Link>
+            </button>
           </div>
 
           {/* Card 2: Personal Learning Sessions */}

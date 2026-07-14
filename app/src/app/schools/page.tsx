@@ -9,6 +9,8 @@ import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
 import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
+import { SectionContainer } from "@/components/ui/SectionContainer";
+import { getFileSize } from "@/lib/server-utils";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -119,7 +121,7 @@ export default function SchoolsPage() {
       <AudienceHero config={heroConfig} />
 
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
 
           <div className="mb-24">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
@@ -195,7 +197,7 @@ export default function SchoolsPage() {
             <DeliveryModelCards models={formats} themeColor="emerald" />
           </div>
 
-        </div>
+        </SectionContainer>
       </section>
 
       <WorkshopGallery
@@ -208,18 +210,27 @@ export default function SchoolsPage() {
       <TestimonialsSection testimonials={testimonials} />
 
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
           <div className="max-w-4xl mx-auto">
             <ContextualDownloadCard
               title="School Financial Literacy Proposal"
-              description="Download our comprehensive proposal document designed for school principals and administrators."
-              pdfUrl="/proposals/school-proposal-2026.pdf"
+              description="Grades 3-12 Program Overview"
+              features={[
+                "Curriculum Overview",
+                "Delivery Model",
+                "Learning Outcomes",
+                "Workshop Structure"
+              ]}
+              pdfUrl="/proposals/school-proposal.pdf"
+              fileSize={getFileSize("proposals/school-proposal.pdf")}
+              thumbnail="/schools_3d.webp"
               category="Schools"
               themeColor="emerald"
+              trackingEvent="pdf_download_school"
             />
           </div>
           <ComplianceBlock />
-        </div>
+        </SectionContainer>
       </section>
 
       <FAQSection faqs={faqs} />

@@ -7,8 +7,10 @@ import LearningJourneyTimeline from "@/components/audience/LearningJourneyTimeli
 import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
-import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
+import { SectionContainer } from "@/components/ui/SectionContainer";
+import { getFileSize } from "@/lib/server-utils";
+import { AlertCircle, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Corporate Financial Wellness Workshops in Chennai | Rupeevalcore",
@@ -103,13 +105,14 @@ const faqs = [
   { q: "Are industry-specific modules available?", a: "Yes, we can adapt our examples for IT Services, Manufacturing, Startups, and other sectors." }
 ];
 
+
 export default function CorporatePage() {
   return (
     <>
       <AudienceHero config={heroConfig} />
       
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
           
           <div className="mb-24">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
@@ -185,13 +188,13 @@ export default function CorporatePage() {
             <DeliveryModelCards models={formats} themeColor="cyan" />
           </div>
 
-        </div>
+        </SectionContainer>
       </section>
 
       <TestimonialsSection context="corporate" />
       
       <section className="section-padding bg-background">
-        <div className="container-rv">
+        <SectionContainer>
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4">
               Corporate Investment
@@ -217,22 +220,31 @@ export default function CorporatePage() {
             analyticsEvent="corporate_proposal_requested"
             themeColor="cyan"
           />
-        </div>
+        </SectionContainer>
       </section>
 
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
           <div className="max-w-4xl mx-auto">
             <ContextualDownloadCard 
               title="Corporate Financial Wellness Proposal"
-              description="Download our comprehensive proposal document designed for HRs, Founders, and Team Leads."
-              pdfUrl="/proposals/corporate-proposal-2026.pdf"
+              description="Employee Wellness Program Overview"
+              features={[
+                "Needs Assessment Approach",
+                "Customized Modules",
+                "Interactive Delivery",
+                "Educational Focus (No Sales)"
+              ]}
+              pdfUrl="/proposals/corporate-proposal.pdf"
+              fileSize={getFileSize("proposals/corporate-proposal.pdf")}
+              thumbnail="/corporate_3d.webp"
               category="Corporate"
               themeColor="cyan"
+              trackingEvent="pdf_download_corporate"
             />
           </div>
           <ComplianceBlock />
-        </div>
+        </SectionContainer>
       </section>
 
       <FAQSection faqs={faqs} />

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, IBM_Plex_Sans } from "next/font/google";
-import Link from "next/link";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
@@ -9,7 +8,8 @@ import Footer from "@/components/layout/Footer";
 import PageProgress from "@/components/layout/PageProgress";
 import WhatsAppFAB from "@/components/layout/WhatsAppFAB";
 import LeadCaptureRoot from "@/components/lead/LeadCaptureRoot";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { PHONE_NUMBER, WHATSAPP_URL } from "@/lib/utils";
 import "./globals.css";
 
@@ -32,6 +32,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rupeevalcore.in"),
   title: "Financial Literacy Workshops in Chennai and Online | Rupeevalcore",
   description: "India's premium financial literacy platform focused on financial awareness, education, trust, and practical learning.",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "RupeeValcore",
     description: "Premium financial literacy workshops for schools, colleges, corporates and individuals.",
@@ -76,18 +84,18 @@ export default function RootLayout({
           {/* Mobile Sticky CTA */}
           <div className="fixed bottom-0 left-0 right-0 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] bg-background/95 backdrop-blur-lg border-t border-border/50 z-50 md:hidden animate-in slide-in-from-bottom-full shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
             <div className="flex items-center gap-2 max-w-md mx-auto">
-              <a href={`tel:${PHONE_NUMBER}`} className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-accent text-background font-heading font-bold hover:bg-accent/90 transition-colors text-sm leading-none">
-                <Phone size={18} />
-                <span>Call Now</span>
-              </a>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-[#25D366] text-white font-heading font-bold hover:bg-[#20b858] transition-colors text-sm leading-none">
-                <MessageCircle size={18} />
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-[#25D366] text-white font-heading font-bold hover:bg-[#20b858] transition-colors text-sm leading-none min-h-[48px]">
+                <FaWhatsapp size={18} />
                 <span>WhatsApp</span>
               </a>
-              <Link href="/#programs" data-program-selector className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-muted text-foreground font-heading font-bold hover:bg-muted/80 transition-colors text-sm leading-none">
-                <span className="text-lg">📄</span>
-                <span>Proposal</span>
-              </Link>
+              <a href={`tel:${PHONE_NUMBER}`} className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-accent text-accent-foreground font-heading font-bold hover:bg-accent/90 transition-colors text-sm leading-none min-h-[48px]">
+                <Phone size={18} />
+                <span>Call</span>
+              </a>
+              <a href={`mailto:contactrupeevalcore@gmail.com`} className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-muted text-foreground font-heading font-bold hover:bg-muted/80 transition-colors text-sm leading-none min-h-[48px]">
+                <Mail size={18} />
+                <span>Email</span>
+              </a>
             </div>
           </div>
 

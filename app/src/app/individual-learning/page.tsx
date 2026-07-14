@@ -7,8 +7,10 @@ import LearningJourneyTimeline from "@/components/audience/LearningJourneyTimeli
 import ProgrammeModuleGrid from "@/components/audience/ProgrammeModuleGrid";
 import DeliveryModelCards from "@/components/audience/DeliveryModelCards";
 import LearningOutcomeGrid from "@/components/audience/LearningOutcomeGrid";
-import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
+import { SectionContainer } from "@/components/ui/SectionContainer";
+import { getFileSize } from "@/lib/server-utils";
+import { AlertCircle, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Personal Financial Literacy Mentoring in Chennai | Rupeevalcore",
@@ -102,13 +104,14 @@ const faqs = [
   { q: "Do you offer investment advice?", a: "No, we do not offer investment advice, stock recommendations, or portfolio management. We teach you the frameworks to make your own informed decisions." }
 ];
 
+
 export default function IndividualPage() {
   return (
     <>
       <AudienceHero config={heroConfig} />
       
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
           
           <div className="mb-24">
             <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center">
@@ -184,24 +187,33 @@ export default function IndividualPage() {
             <DeliveryModelCards models={formats} themeColor="orange" />
           </div>
 
-        </div>
+        </SectionContainer>
       </section>
 
       <TestimonialsSection context="individual" />
       
       <section className="section-padding bg-background/50">
-        <div className="container-rv">
+        <SectionContainer>
           <div className="max-w-4xl mx-auto">
             <ContextualDownloadCard 
               title="Individual & Family Programme Overview"
-              description="Download our detailed outline of topics covered during our 1-to-1 mentoring sessions."
-              pdfUrl="/downloads/Individual_Financial_Literacy_Programme.pdf"
+              description="Personal Financial Mentoring Outline"
+              features={[
+                "Personalized Financial Guidance",
+                "Unbiased Educational Approach",
+                "Family & Couple Sessions",
+                "Strictly Confidential"
+              ]}
+              pdfUrl="/proposals/individual-learning-proposal.pdf"
+              fileSize={getFileSize("proposals/individual-learning-proposal.pdf")}
+              thumbnail="/individual_3d.webp"
               category="Individuals"
               themeColor="orange"
+              trackingEvent="pdf_download_individual"
             />
           </div>
           <ComplianceBlock />
-        </div>
+        </SectionContainer>
       </section>
 
       <FAQSection faqs={faqs} />
