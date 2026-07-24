@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Personal Financial Learning | Rupeevalcore",
     description: "One-to-one financial mentoring for individuals and families. Tax, investments, insurance. Chennai. NISM certified. No products sold.",
-    url: "https://rupeevalcore.in/individual-learning",
-    images: [{ url: "https://rupeevalcore.in/og-individual.jpg", width: 1200, height: 630, alt: "Individual Financial Learning" }],
+    url: "https://www.rupeevalcore.in/individual-learning",
+    images: [{ url: "https://www.rupeevalcore.in/og-individual.jpg", width: 1200, height: 630, alt: "Individual Financial Learning" }],
     locale: "en_IN",
     type: "website",
   },
-  alternates: { canonical: "https://rupeevalcore.in/individual-learning" },
+  alternates: { canonical: "https://www.rupeevalcore.in/individual-learning" },
 };
 
 

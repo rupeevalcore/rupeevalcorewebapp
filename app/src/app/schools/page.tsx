@@ -15,6 +15,8 @@ import { getFileSize } from "@/lib/server-utils";
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
+const ProcessSection = dynamic(() => import("@/components/sections/ProcessSection"));
+const WorkshopFormatTable = dynamic(() => import("@/components/audience/WorkshopFormatTable"));
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
@@ -26,12 +28,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Financial Literacy for Schools | Rupeevalcore",
     description: "Interactive financial literacy sessions for school students — banking, savings, budgeting, digital safety. Chennai. NISM certified.",
-    url: "https://rupeevalcore.in/schools",
-    images: [{ url: "https://rupeevalcore.in/og-schools.jpg", width: 1200, height: 630, alt: "Financial Literacy for Schools" }],
+    url: "https://www.rupeevalcore.in/schools",
+    images: [{ url: "https://www.rupeevalcore.in/og-schools.jpg", width: 1200, height: 630, alt: "Financial Literacy for Schools" }],
     locale: "en_IN",
     type: "website",
   },
-  alternates: { canonical: "https://rupeevalcore.in/schools" },
+  alternates: { canonical: "https://www.rupeevalcore.in/schools" },
 };
 
 const heroConfig: AudienceHeroConfig = {
@@ -92,9 +94,42 @@ const outcomes = [
   "Fraud prevention", "Financial confidence", "Goal-oriented thinking", "Digital financial safety"
 ];
 
-const formats = [
-  "60 Minute Awareness Session", "Half Day Workshop", "Full Day Workshop",
-  "Multi Session Programme", "Financial Literacy Club Model"
+const schoolFormats = [
+  {
+    name: "60 Minute Awareness Session",
+    duration: "60 Minutes",
+    bestFor: "Single Grade / Assembly",
+    pricing: "Custom Pricing",
+    highlights: ["Interactive Quiz", "Money Basics", "Digital Safety Overview"]
+  },
+  {
+    name: "Half Day Workshop",
+    duration: "3 Hours",
+    bestFor: "Grade 6 to 12 Batches",
+    pricing: "Custom Pricing",
+    highlights: ["Banking Fundamentals", "Budgeting Exercise", "UPI Fraud Awareness"]
+  },
+  {
+    name: "Full Day Workshop",
+    duration: "6 Hours",
+    bestFor: "Comprehensive Campus Event",
+    pricing: "Custom Pricing",
+    highlights: ["Complete Curriculum", "Gamified Learning", "Certificates Included"]
+  },
+  {
+    name: "Multi-Session Programme",
+    duration: "4 - 8 Sessions",
+    bestFor: "Term-long Integration",
+    pricing: "Custom Pricing",
+    highlights: ["Grade-wise Curriculum", "Progress Assessments", "Parent Orientation"]
+  },
+  {
+    name: "Financial Literacy Club Model",
+    duration: "Annual",
+    bestFor: "Institutional Partnership",
+    pricing: "Custom Pricing",
+    highlights: ["Student Club Setup", "Monthly Activities", "Guest Mentors"]
+  }
 ];
 
 const testimonials = [
@@ -191,10 +226,13 @@ export default function SchoolsPage() {
           </div>
 
           <div className="mb-16">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
-              Workshop Formats
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4">
+              Workshop Formats & Structure
             </h2>
-            <DeliveryModelCards models={formats} themeColor="emerald" />
+            <p className="text-muted-foreground text-lg mb-8">
+              Choose the format that fits your school schedule and student cohort size.
+            </p>
+            <WorkshopFormatTable formats={schoolFormats} themeColor="emerald" />
           </div>
 
         </SectionContainer>
@@ -208,6 +246,8 @@ export default function SchoolsPage() {
       />
 
       <TestimonialsSection testimonials={testimonials} />
+
+      <ProcessSection themeColor="emerald" />
 
       <section className="section-padding bg-background/50">
         <SectionContainer>

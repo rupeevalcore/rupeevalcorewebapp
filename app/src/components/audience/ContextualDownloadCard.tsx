@@ -2,7 +2,6 @@
 
 import { Download, FileText, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import { trackEvent } from "@/lib/analytics";
 import type { AnalyticsEvent } from "@/lib/lead-routing";
 
 interface ContextualDownloadCardProps {
@@ -42,23 +41,13 @@ export default function ContextualDownloadCard({
 
   const theme = getThemeClasses();
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!pdfUrl) {
-      e.preventDefault();
-      return;
-    }
-    if (trackingEvent) {
-      trackEvent(trackingEvent);
-    }
-  };
-
   return (
-    <a
-      href={pdfUrl || "#"}
-      target={pdfUrl ? "_blank" : undefined}
-      rel={pdfUrl ? "noopener noreferrer" : undefined}
-      onClick={handleClick}
-      className={`block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50 ${!pdfUrl ? "cursor-default" : ""}`}
+    <div
+      data-program-selector="true"
+      data-pdf-url={pdfUrl || undefined}
+      data-pdf-title={title}
+      data-analytics-event={trackingEvent}
+      className={`block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50 cursor-pointer ${!pdfUrl ? "cursor-default" : ""}`}
     >
       <div className="flex flex-col md:flex-row relative z-10">
         {/* Thumbnail Area */}
@@ -102,10 +91,13 @@ export default function ContextualDownloadCard({
           <div className="mt-auto relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {pdfUrl ? (
               <>
-                <span className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 transition-opacity`}>
-                  Download Proposal
+                <button
+                  type="button"
+                  className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 transition-opacity cursor-pointer`}
+                >
+                  Get Proposal PDF
                   <Download size={18} />
-                </span>
+                </button>
                 {fileSize && (
                   <span className="text-sm font-medium text-muted-foreground">
                     {fileSize} PDF
@@ -120,6 +112,6 @@ export default function ContextualDownloadCard({
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 }

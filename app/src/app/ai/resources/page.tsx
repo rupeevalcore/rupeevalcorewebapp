@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/layout/PageHero";
 import CTASection from "@/components/sections/CTASection";
+
+export const metadata: Metadata = {
+  title: "AI Education Proposals & Resources for Schools and Colleges | Rupeevalcore",
+  description: "Download AI literacy programme proposals for schools and colleges from Rupeevalcore. Curriculum overviews, brochures, and resources for institutions looking to introduce AI education.",
+  openGraph: {
+    title: "AI Education Resources for Institutions | Rupeevalcore",
+    description: "Downloadable AI literacy proposals and brochures for schools and colleges. Chennai and online.",
+    url: "https://www.rupeevalcore.in/ai/resources",
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: { canonical: "https://www.rupeevalcore.in/ai/resources" },
+};
+
 
 export default function AIResourcesPage() {
   return (

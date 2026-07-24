@@ -14,24 +14,26 @@ export default function ProgramsSection() {
       <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
       <div className="container-rv relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <div>
-            <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-6">
-              Tailored Programs
+            <span className="inline-block text-xs font-heading font-bold uppercase tracking-widest text-accent mb-3">
+              Quick Program Selector
+            </span>
+            <h2 className="font-heading font-black text-4xl md:text-5xl text-foreground mb-4">
+              Select Your Audience
             </h2>
             <p className="text-lg text-muted-foreground">
-              We design our workshops to fit the specific needs of different audiences, from school students to working professionals.
+              Choose your category below to explore tailored curricula and institutional proposals.
             </p>
           </div>
         </div>
 
         {/* Audiences Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {audiences.map((aud, i) => (
             <ProgramCard key={i} aud={aud} i={i} />
           ))}
         </div>
-
 
       </div>
     </section>

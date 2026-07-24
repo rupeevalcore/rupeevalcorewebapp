@@ -15,6 +15,7 @@ import { getFileSize } from "@/lib/server-utils";
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
+const ProcessSection = dynamic(() => import("@/components/sections/ProcessSection"));
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
@@ -27,12 +28,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Financial Literacy for Colleges | Rupeevalcore",
     description: "Placement-focused financial literacy for college students — salary, tax, banking, investment basics. Chennai.",
-    url: "https://rupeevalcore.in/colleges",
-    images: [{ url: "https://rupeevalcore.in/og-colleges.jpg", width: 1200, height: 630, alt: "Financial Literacy for Colleges" }],
+    url: "https://www.rupeevalcore.in/colleges",
+    images: [{ url: "https://www.rupeevalcore.in/og-colleges.jpg", width: 1200, height: 630, alt: "Financial Literacy for Colleges" }],
     locale: "en_IN",
     type: "website",
   },
-  alternates: { canonical: "https://rupeevalcore.in/colleges" },
+  alternates: { canonical: "https://www.rupeevalcore.in/colleges" },
 };
 
 const heroConfig: AudienceHeroConfig = {
@@ -202,6 +203,8 @@ export default function CollegesPage() {
       />
 
       <TestimonialsSection context="colleges" />
+
+      <ProcessSection themeColor="sapphire" />
 
       <section className="section-padding bg-background">
         <SectionContainer>

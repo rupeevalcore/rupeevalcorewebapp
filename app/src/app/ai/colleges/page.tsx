@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/layout/PageHero";
 import CTASection from "@/components/sections/CTASection";
 import { ContextualDownload } from "@/components/ui/ContextualDownload";
+
+export const metadata: Metadata = {
+  title: "AI Orientation Programme for College Students | Rupeevalcore",
+  description: "Rupeevalcore's AI workshops for college students cover advanced prompt engineering, workflow automation, and AI for career readiness. Bridge the skills gap before entering the workforce.",
+  openGraph: {
+    title: "AI Orientation for College Students | Rupeevalcore",
+    description: "Advanced AI skills for college students — prompting, automation, and career-ready AI literacy. Chennai and online.",
+    url: "https://www.rupeevalcore.in/ai/colleges",
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: { canonical: "https://www.rupeevalcore.in/ai/colleges" },
+};
+
 
 export default function AICollegesPage() {
   return (

@@ -16,15 +16,11 @@ export type AudienceHeroConfig = {
   analyticsEvent?: string;
 };
 
-interface AudienceHeroProps {
-  config: AudienceHeroConfig;
-}
-
-export default function AudienceHero({ config }: AudienceHeroProps) {
-  const { themeColor, badge, title, subtitle, primaryCta, secondaryCta, iconPath, photoPosition, formUrl, analyticsEvent } = config;
+export default function AudienceHero({ config }: { config: AudienceHeroConfig }) {
+  const { themeColor, badge, title, subtitle, primaryCta, secondaryCta, iconPath, photoPosition, analyticsEvent } = config;
 
   const getThemeClasses = () => {
-    switch(themeColor) {
+    switch (themeColor) {
       case "emerald": return { text: "text-emerald-500", glow: "bg-emerald-500/10", border: "border-emerald-500/20" };
       case "sapphire": return { text: "text-sapphire-500", glow: "bg-sapphire-500/10", border: "border-sapphire-500/20" };
       case "cyan": return { text: "text-cyan-500", glow: "bg-cyan-500/10", border: "border-cyan-500/20" };
@@ -55,39 +51,51 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
                 {badge}
               </div>
             )}
-            
-            <div
-              className="relative max-w-4xl mb-8"
-            >
+
+            <div className="relative max-w-4xl mb-8">
               <div className={`absolute inset-0 ${theme.glow} blur-[100px] -z-10 rounded-full`} />
               <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-foreground tracking-tight leading-[1.1]">
                 {title}
               </h1>
             </div>
-            
-            <p
-              className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-relaxed mb-12"
-            >
+
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-relaxed mb-12">
               {subtitle}
             </p>
 
-            <div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
-            >
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              {config.formUrl ? (
+                <a
+                  href={config.formUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-analytics-event={analyticsEvent}
+                  className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto"
+                >
+                  {primaryCta}
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  data-program-selector="true"
+                  data-audience={
+                    themeColor === "emerald" ? "school" :
+                    themeColor === "sapphire" ? "college" :
+                    themeColor === "cyan" ? "corporate" :
+                    themeColor === "orange" ? "individual" : undefined
+                  }
+                  data-analytics-event={analyticsEvent}
+                  className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto focus:outline-none cursor-pointer"
+                >
+                  {primaryCta}
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </button>
+              )}
               <a
-                href={formUrl || "#"}
+                href={getWhatsAppUrl(badge)}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-analytics-event={analyticsEvent}
-                className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto"
-              >
-                {primaryCta}
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a 
-                href={getWhatsAppUrl(badge)} 
-                target="_blank" 
-                rel="noopener noreferrer" 
                 className="btn-primary py-4 text-base"
               >
                 <MessageSquare size={18} />
@@ -96,20 +104,18 @@ export default function AudienceHero({ config }: AudienceHeroProps) {
             </div>
           </div>
 
-          <div
-            className="hidden lg:flex justify-center relative w-full aspect-[4/3]"
-          >
+          <div className="hidden lg:flex justify-center relative w-full aspect-[4/3]">
             <div className={`absolute inset-0 ${theme.glow} blur-[120px] rounded-full scale-150 -z-20`} />
-            
+
             {/* The Photo Container */}
             {photoPosition && (
               <div className="absolute inset-0 rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-0 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div 
+                <div
                   className="w-full h-full opacity-90"
                   style={{
                     backgroundImage: `url('/collage_photos.webp')`,
-                    backgroundSize: '200% 200%',
-                    backgroundPosition: photoPosition
+                    backgroundSize: "200% 200%",
+                    backgroundPosition: photoPosition,
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent" />

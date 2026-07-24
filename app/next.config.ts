@@ -7,6 +7,19 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    qualities: [85],
+  },
+  async redirects() {
+    return [
+      // Permanent 301: apex domain → www (code-level safety net)
+      // NOTE: also set this in Vercel dashboard → Domains → rupeevalcore.in → Redirect to www.rupeevalcore.in
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'rupeevalcore.in' }],
+        destination: 'https://www.rupeevalcore.in/:path*',
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [

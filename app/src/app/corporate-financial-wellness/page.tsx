@@ -19,18 +19,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Corporate Financial Wellness | Rupeevalcore",
     description: "Reduce employee money stress with practical financial literacy workshops. Tax, insurance, investments. Chennai. NISM certified.",
-    url: "https://rupeevalcore.in/corporate-financial-wellness",
-    images: [{ url: "https://rupeevalcore.in/og-corporate.jpg", width: 1200, height: 630, alt: "Corporate Financial Wellness" }],
+    url: "https://www.rupeevalcore.in/corporate-financial-wellness",
+    images: [{ url: "https://www.rupeevalcore.in/og-corporate.jpg", width: 1200, height: 630, alt: "Corporate Financial Wellness" }],
     locale: "en_IN",
     type: "website",
   },
-  alternates: { canonical: "https://rupeevalcore.in/corporate-financial-wellness" },
+  alternates: { canonical: "https://www.rupeevalcore.in/corporate-financial-wellness" },
 };
-
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
 const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"));
+const ProcessSection = dynamic(() => import("@/components/sections/ProcessSection"));
+const WorkshopFormatTable = dynamic(() => import("@/components/audience/WorkshopFormatTable"));
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const PricingCard = dynamic(() => import("@/components/audience/PricingCard"));
@@ -93,9 +94,35 @@ const outcomes = [
   "Increased financial confidence", "Improved long-term planning awareness"
 ];
 
-const formats = [
-  "60 Minute Sessions", "Half Day Workshops", "Full Day Workshops",
-  "Wellness Series", "Quarterly Engagement Programmes"
+const corporateFormats = [
+  {
+    name: "60 Minute Lunch & Learn",
+    duration: "60 Minutes",
+    bestFor: "All Employee Teams",
+    pricing: "Custom Pricing",
+    highlights: ["Tax Saving Tips", "Salary Structuring", "Interactive Q&A"]
+  },
+  {
+    name: "Half Day Financial Bootcamp",
+    duration: "3 - 4 Hours",
+    bestFor: "Onboarding & Department Teams",
+    pricing: "Custom Pricing",
+    highlights: ["Mutual Funds & Debt", "Insurance Audit", "Retirement Basics"]
+  },
+  {
+    name: "Full Day Executive Workshop",
+    duration: "6 Hours",
+    bestFor: "Mid & Senior Leadership",
+    pricing: "Custom Pricing",
+    highlights: ["Wealth Management", "Estate Planning Basics", "Tax Optimization"]
+  },
+  {
+    name: "Employee Wellness Series",
+    duration: "4 Quarterly Sessions",
+    bestFor: "Annual Corporate Engagement",
+    pricing: "Custom Pricing",
+    highlights: ["Continuous Mentoring", "Seasonal Tax Guides", "1-on-1 Q&A Access"]
+  }
 ];
 
 const faqs = [
@@ -182,16 +209,21 @@ export default function CorporatePage() {
           </div>
 
           <div className="mb-16">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
-              Workshop Formats
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4">
+              Workshop Formats & Structure
             </h2>
-            <DeliveryModelCards models={formats} themeColor="cyan" />
+            <p className="text-muted-foreground text-lg mb-8">
+              Choose the program structure that aligns with your employee wellness goals.
+            </p>
+            <WorkshopFormatTable formats={corporateFormats} themeColor="cyan" />
           </div>
 
         </SectionContainer>
       </section>
 
       <TestimonialsSection context="corporate" />
+
+      <ProcessSection themeColor="cyan" />
       
       <section className="section-padding bg-background">
         <SectionContainer>

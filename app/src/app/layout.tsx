@@ -29,7 +29,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rupeevalcore.in"),
+  metadataBase: new URL("https://www.rupeevalcore.in"),
   title: "Financial Literacy Workshops in Chennai and Online | Rupeevalcore",
   description: "India's premium financial literacy platform focused on financial awareness, education, trust, and practical learning.",
   icons: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "RupeeValcore",
     description: "Premium financial literacy workshops for schools, colleges, corporates and individuals.",
-    url: "https://rupeevalcore.in",
+    url: "https://www.rupeevalcore.in",
     siteName: "RupeeValcore",
     type: "website",
   },
@@ -84,11 +84,11 @@ export default function RootLayout({
           {/* Mobile Sticky CTA */}
           <div className="fixed bottom-0 left-0 right-0 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] bg-background/95 backdrop-blur-lg border-t border-border/50 z-50 md:hidden animate-in slide-in-from-bottom-full shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
             <div className="flex items-center gap-2 max-w-md mx-auto">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-[#25D366] text-white font-heading font-bold hover:bg-[#20b858] transition-colors text-sm leading-none min-h-[48px]">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-analytics-event="whatsapp_click" className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-[#25D366] text-white font-heading font-bold hover:bg-[#20b858] transition-colors text-sm leading-none min-h-[48px]">
                 <FaWhatsapp size={18} />
                 <span>WhatsApp</span>
               </a>
-              <a href={`tel:${PHONE_NUMBER}`} className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-accent text-accent-foreground font-heading font-bold hover:bg-accent/90 transition-colors text-sm leading-none min-h-[48px]">
+              <a href={`tel:${PHONE_NUMBER}`} data-analytics-event="phone_tap" className="flex-1 py-3 px-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-accent text-accent-foreground font-heading font-bold hover:bg-accent/90 transition-colors text-sm leading-none min-h-[48px]">
                 <Phone size={18} />
                 <span>Call</span>
               </a>
@@ -137,12 +137,25 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{__html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EducationalOrganization",
+            "@id": "https://www.rupeevalcore.in/#organization",
             "name": "Rupeevalcore",
-            "url": "https://rupeevalcore.in",
-            "logo": "https://rupeevalcore.in/favicon.ico",
+            "url": "https://www.rupeevalcore.in",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.rupeevalcore.in/icon.png",
+              "width": 512,
+              "height": 512
+            },
             "description": "Financial literacy workshops for schools, colleges, corporates and individuals in Chennai, Tamil Nadu.",
             "telephone": "+918248589694",
             "email": "contactrupeevalcore@gmail.com",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+918248589694",
+              "contactType": "customer service",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Tamil"]
+            },
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Chennai",

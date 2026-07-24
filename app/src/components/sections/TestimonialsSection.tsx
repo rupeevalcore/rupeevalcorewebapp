@@ -45,6 +45,43 @@ interface TestimonialsSectionProps {
   testimonials?: Testimonial[];
 }
 
+function getInitials(name: string) {
+  const parts = name.replace(/^(Dr\.|Mr\.|Mrs\.|Ms\.)\s+/i, "").trim().split(/\s+/);
+  if (parts.length >= 2) {
+    return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
+  }
+  return name.slice(0, 2).toUpperCase();
+}
+
+function TestimonialCard({ t }: { t: Testimonial }) {
+  const initials = getInitials(t.author);
+
+  return (
+    <div className="glass p-8 rounded-3xl border border-white/5 w-[350px] md:w-[450px] flex-shrink-0 relative group hover:border-accent/30 transition-colors flex flex-col justify-between">
+      <Quote className="absolute top-6 right-6 text-white/5 w-16 h-16 group-hover:text-accent/10 transition-colors" />
+      
+      <div>
+        <div className="flex gap-1 text-accent mb-6">
+          {[...Array(5)].map((_, j) => <Star key={j} size={16} fill="currentColor" />)}
+        </div>
+        <p className="text-foreground text-lg mb-8 relative z-10 leading-relaxed">
+          &quot;{t.text}&quot;
+        </p>
+      </div>
+
+      <div className="mt-auto relative z-10 flex items-center gap-3.5">
+        <div className="h-11 w-11 rounded-full bg-accent/15 text-accent font-heading font-black text-sm flex items-center justify-center border border-accent/30 shrink-0">
+          {initials}
+        </div>
+        <div>
+          <div className="font-heading font-bold text-foreground leading-tight">{t.author}</div>
+          <div className="text-xs text-accent mt-0.5">{t.role}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function TestimonialsSection({ context = "all", testimonials: customTestimonials }: TestimonialsSectionProps) {
   const testimonials = customTestimonials ? customTestimonials : (context === "all"
     ? allTestimonials
@@ -67,30 +104,25 @@ export default function TestimonialsSection({ context = "all", testimonials: cus
           </div>
         </div>
 
-        {/* CSS Marquee Carousel */}
-        <div className="relative flex overflow-x-hidden w-full pb-8">
-          <div className="flex gap-6 animate-marquee">
-            {[...testimonials, ...testimonials].map((t, i) => (
-              <div key={i} className="glass p-8 rounded-3xl border border-white/5 w-[350px] md:w-[450px] flex-shrink-0 relative group hover:border-accent/30 transition-colors">
-                <Quote className="absolute top-6 right-6 text-white/5 w-16 h-16 group-hover:text-accent/10 transition-colors" />
-                <div className="flex gap-1 text-accent mb-6">
-                  {[...Array(5)].map((_, j) => <Star key={j} size={16} fill="currentColor" />)}
-                </div>
-                <p className="text-foreground text-lg mb-8 relative z-10 leading-relaxed">
-                  &quot;{t.text}&quot;
-                </p>
-                <div className="mt-auto relative z-10">
-                  <div className="font-heading font-bold text-foreground">{t.author}</div>
-                  <div className="text-sm text-accent">{t.role}</div>
-                </div>
-              </div>
-            ))}
+        {testimonials.length === 1 ? (
+          /* Single testimonial: static centered card — no marquee, no fake duplication */
+          <div className="flex justify-center">
+            <TestimonialCard t={testimonials[0]} />
           </div>
+        ) : (
+          /* 2+ testimonials: CSS marquee carousel with intentional doubling for infinite scroll */
+          <div className="relative flex overflow-x-hidden w-full pb-8">
+            <div className="flex gap-6 animate-marquee">
+              {[...testimonials, ...testimonials].map((t, i) => (
+                <TestimonialCard key={i} t={t} />
+              ))}
+            </div>
 
-          {/* Fading Edges */}
-          <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-        </div>
+            {/* Fading Edges */}
+            <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+          </div>
+        )}
 
       </div>
     </section>

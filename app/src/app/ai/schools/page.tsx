@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/layout/PageHero";
 import CTASection from "@/components/sections/CTASection";
 import { ContextualDownload } from "@/components/ui/ContextualDownload";
+
+export const metadata: Metadata = {
+  title: "AI Literacy Workshops for School Students | Rupeevalcore",
+  description: "Rupeevalcore's AI workshops for school students teach prompt engineering, AI ethics, and critical thinking. Practical sessions on using AI tools responsibly. Chennai and online.",
+  openGraph: {
+    title: "AI Literacy for Schools | Rupeevalcore",
+    description: "Teach school students AI fundamentals — prompt engineering, ethics, and critical thinking with AI tools. Chennai and online.",
+    url: "https://www.rupeevalcore.in/ai/schools",
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: { canonical: "https://www.rupeevalcore.in/ai/schools" },
+};
+
 
 export default function AISchoolsPage() {
   return (

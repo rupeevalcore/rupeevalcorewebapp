@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Financial Literacy Workshops in Chennai | Rupeevalcore",
     description: "Certified financial literacy workshops for schools, colleges, corporates and individuals. NISM certified. MSME registered. Chennai.",
-    url: "https://rupeevalcore.in",
+    url: "https://www.rupeevalcore.in",
     siteName: "Rupeevalcore",
-    images: [{ url: "https://rupeevalcore.in/og-home.jpg", width: 1200, height: 630, alt: "Rupeevalcore Financial Literacy Workshops" }],
+    images: [{ url: "https://www.rupeevalcore.in/og-home.jpg", width: 1200, height: 630, alt: "Rupeevalcore Financial Literacy Workshops" }],
     locale: "en_IN",
     type: "website",
   },
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Financial Literacy Workshops in Chennai | Rupeevalcore",
     description: "Certified financial literacy workshops for schools, colleges, corporates and individuals in Chennai.",
-    images: ["https://rupeevalcore.in/og-home.jpg"],
+    images: ["https://www.rupeevalcore.in/og-home.jpg"],
   },
   alternates: {
-    canonical: "https://rupeevalcore.in",
+    canonical: "https://www.rupeevalcore.in",
   },
 };
 

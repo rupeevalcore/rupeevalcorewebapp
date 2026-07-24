@@ -7,10 +7,13 @@ const routes = [
   "/corporate-financial-wellness",
   "/individual-learning",
   "/ai",
+  "/ai/schools",
+  "/ai/colleges",
+  "/ai/resources",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://rupeevalcore.in";
+  const baseUrl = "https://www.rupeevalcore.in";
   const lastModDate = new Date("2026-07-13"); // Static date to avoid spurious crawl hits
 
   return routes.map((route) => ({

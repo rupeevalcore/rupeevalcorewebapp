@@ -12,6 +12,11 @@ export type AnalyticsEvent =
   | "program_selector_college"
   | "program_selector_corporate"
   | "program_selector_individual"
+  | "lead_form_started"
+  | "lead_form_submitted"
+  | "whatsapp_click"
+  | "phone_tap"
+  | "pdf_download_gated"
   | "pdf_view_school"
   | "pdf_download_school"
   | "pdf_view_college"
@@ -24,4 +29,5 @@ export type AnalyticsEvent =
   | "college_proposal_requested"
   | "corporate_proposal_requested"
   | "individual_session_requested";
+
 

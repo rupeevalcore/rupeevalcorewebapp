@@ -16,7 +16,7 @@ export function getFileSize(relativePath: string): string | undefined {
     }
     
     return `${sizeInMB} MB`;
-  } catch (_) {
+  } catch {
     return undefined;
   }
 }
