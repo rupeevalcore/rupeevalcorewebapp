@@ -3,17 +3,22 @@
 import { Download, FileText, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import type { AnalyticsEvent } from "@/lib/lead-routing";
+import type { BrochureKey } from "@/lib/brochures";
 
 interface ContextualDownloadCardProps {
   title: string;
   description: string;
   features?: string[];
+  /** Legacy: direct PDF URL (opens lead-capture modal). Use brochureKey for the new verification flow. */
   pdfUrl?: string;
   fileSize?: string;
   thumbnail?: string;
   category: string;
   trackingEvent?: AnalyticsEvent;
   themeColor?: "emerald" | "sapphire" | "cyan" | "orange" | "purple" | "accent";
+  /** New: key from brochures.ts — triggers brochure verification modal instead of lead-capture */
+  brochureKey?: BrochureKey;
+  buttonLabel?: string;
 }
 
 export default function ContextualDownloadCard({ 
@@ -25,7 +30,9 @@ export default function ContextualDownloadCard({
   thumbnail, 
   category,
   trackingEvent, 
-  themeColor = "accent" 
+  themeColor = "accent",
+  brochureKey,
+  buttonLabel = "Get Proposal PDF",
 }: ContextualDownloadCardProps) {
 
   const getThemeClasses = () => {
@@ -41,13 +48,18 @@ export default function ContextualDownloadCard({
 
   const theme = getThemeClasses();
 
+  // If brochureKey is set, the card itself triggers the verification modal.
+  // If only pdfUrl is set, it falls back to the existing lead-capture modal.
+  const cardDataAttrs = brochureKey
+    ? { "data-brochure-verify": brochureKey, "data-analytics-event": trackingEvent }
+    : { "data-program-selector": "true", "data-pdf-url": pdfUrl || undefined, "data-pdf-title": title, "data-analytics-event": trackingEvent };
+
+  const hasDownload = Boolean(brochureKey || pdfUrl);
+
   return (
     <div
-      data-program-selector="true"
-      data-pdf-url={pdfUrl || undefined}
-      data-pdf-title={title}
-      data-analytics-event={trackingEvent}
-      className={`block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50 cursor-pointer ${!pdfUrl ? "cursor-default" : ""}`}
+      {...cardDataAttrs}
+      className={`block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50 ${hasDownload ? "cursor-pointer" : "cursor-default"}`}
     >
       <div className="flex flex-col md:flex-row relative z-10">
         {/* Thumbnail Area */}
@@ -89,13 +101,13 @@ export default function ContextualDownloadCard({
           )}
 
           <div className="mt-auto relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            {pdfUrl ? (
+            {hasDownload ? (
               <>
                 <button
                   type="button"
                   className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 transition-opacity cursor-pointer`}
                 >
-                  Get Proposal PDF
+                  {buttonLabel}
                   <Download size={18} />
                 </button>
                 {fileSize && (
@@ -115,3 +127,4 @@ export default function ContextualDownloadCard({
     </div>
   );
 }
+

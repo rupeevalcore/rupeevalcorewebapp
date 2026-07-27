@@ -248,8 +248,8 @@ export default function CollegesPage() {
                 "Learning Outcomes",
                 "Workshop Structure"
               ]}
-              pdfUrl="/proposals/college-proposal.pdf"
-              fileSize={getFileSize("proposals/college-proposal.pdf")}
+              brochureKey="finance-colleges"
+              fileSize={getFileSize("downloads/finance-colleges.pdf")}
               thumbnail="/colleges_3d.webp"
               category="Colleges"
               themeColor="sapphire"

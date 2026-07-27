@@ -267,8 +267,8 @@ export default function CorporatePage() {
                 "Interactive Delivery",
                 "Educational Focus (No Sales)"
               ]}
-              pdfUrl="/proposals/corporate-proposal.pdf"
-              fileSize={getFileSize("proposals/corporate-proposal.pdf")}
+              brochureKey="finance-corporate"
+              fileSize={getFileSize("downloads/finance-corporate.pdf")}
               thumbnail="/corporate_3d.webp"
               category="Corporate"
               themeColor="cyan"

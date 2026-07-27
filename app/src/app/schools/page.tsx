@@ -261,8 +261,8 @@ export default function SchoolsPage() {
                 "Learning Outcomes",
                 "Workshop Structure"
               ]}
-              pdfUrl="/proposals/school-proposal.pdf"
-              fileSize={getFileSize("proposals/school-proposal.pdf")}
+              brochureKey="finance-schools"
+              fileSize={getFileSize("downloads/finance-schools.pdf")}
               thumbnail="/schools_3d.webp"
               category="Schools"
               themeColor="emerald"
