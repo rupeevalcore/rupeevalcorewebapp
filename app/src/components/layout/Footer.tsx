@@ -5,16 +5,16 @@ import { EMAIL, WHATSAPP_URL, INSTAGRAM, PHONE_NUMBER, PHONE_DISPLAY } from '@/l
 import { SectionContainer } from '@/components/ui/SectionContainer'
 
 const financePrograms = [
-  { label: 'Financial Literacy', href: '/financial-literacy' },
-  { label: 'For Schools', href: '/schools' },
-  { label: 'For Colleges', href: '/colleges' },
-  { label: 'Corporate Wellness', href: '/corporate-financial-wellness' },
-  { label: 'Individual Learning', href: '/individual-learning' },
+  { label: 'Financial Literacy Workshops in Chennai', href: '/' },
+  { label: 'Financial Literacy Programs for Schools', href: '/schools' },
+  { label: 'Financial Literacy Workshops for Colleges', href: '/colleges' },
+  { label: 'Corporate Financial Wellness Programs', href: '/corporate-financial-wellness' },
+  { label: 'Personal Finance Education', href: '/individual-learning' },
 ]
 
 const aiPrograms = [
-  { label: 'AI for Schools', href: '/ai' },
-  { label: 'AI for Colleges', href: '/ai' },
+  { label: 'AI Education for Schools', href: '/ai/schools' },
+  { label: 'AI Education for Colleges', href: '/ai/colleges' },
 ]
 
 export default function Footer() {
@@ -24,18 +24,18 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="group flex items-center gap-3 w-fit" aria-label="Rupeevalcore home">
+            <Link href="/" className="group flex items-center gap-3 w-fit" aria-label="RupeeValcore home">
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent text-[#050B18] font-heading font-black text-lg shadow-glow transition-transform duration-200 group-hover:scale-105">
                 ₹
               </div>
               <div className="flex flex-col leading-none">
-                <span className="font-heading font-bold text-white text-xl tracking-tight">Rupeevalcore</span>
-                <span className="text-[11px] text-slate-400 tracking-widest uppercase font-semibold mt-1">Finance Education</span>
+                <span className="font-heading font-bold text-white text-xl tracking-tight">RupeeValcore</span>
+                <span className="text-[11px] text-slate-400 tracking-widest uppercase font-semibold mt-1">Financial Education</span>
               </div>
             </Link>
             
             <p className="text-slate-400 max-w-sm text-base leading-relaxed">
-              India&apos;s premium financial literacy platform. Practical education focused on awareness, trust, and real-world application.
+              Practical financial literacy platform for schools, colleges, corporates and individuals in Chennai. Education-only. No products sold.
             </p>
 
             <button
@@ -123,7 +123,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm font-medium">
-          <p>© {new Date().getFullYear()} Rupeevalcore. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} RupeeValcore. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

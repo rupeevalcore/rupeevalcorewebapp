@@ -7,6 +7,7 @@ import AudienceInsightCard from "@/components/audience/AudienceInsightCard";
 import { getBrochure } from "@/lib/brochures";
 import { School, GraduationCap, ArrowRight, Sparkles, Cpu, Code2, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -15,13 +16,14 @@ const schoolBrochure = getBrochure("ai-schools");
 const collegeBrochure = getBrochure("ai-colleges");
 
 export const metadata: Metadata = {
-  title: "AI Education & Workshops for Schools & Colleges in Chennai | Rupeevalcore",
-  description: "Rupeevalcore AI Division delivers practical AI upskilling, prompt engineering, AI ethics & Vibe Coding workshops for school students and college campuses in Chennai & online.",
+  title: "AI Education Workshops for Schools & Colleges in Chennai | RupeeValcore",
+  description: "Practical AI education workshops for schools and colleges in Chennai covering AI literacy, productivity, automation, AI tools and hands-on application. RupeeValcore AI Division.",
   keywords: ["AI education Chennai", "AI workshops for schools and colleges", "vibe coding training", "prompt engineering workshops Chennai", "institutional AI upskilling"],
   openGraph: {
-    title: "AI Education for Institutions | Rupeevalcore AI Division",
+    title: "AI Education Workshops for Schools & Colleges in Chennai | RupeeValcore",
     description: "Practical, future-ready AI literacy programmes for schools and colleges. Hands-on tools, Vibe Coding, ethics & safety. Chennai and online.",
     url: "https://www.rupeevalcore.in/ai",
+    siteName: "RupeeValcore",
     locale: "en_IN",
     type: "website",
   },
@@ -54,9 +56,17 @@ const pillars = [
 export default function AILandingPage() {
   return (
     <>
-      <PageHero 
+      <div className="container-rv pt-20 pb-2">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "AI Education Workshops", href: "/ai" },
+          ]}
+        />
+      </div>
+      <PageHero
         badge="RupeeValcore AI Division"
-        title="Practical AI Education for Institutions" 
+        title="Practical AI Education for Institutions"
         description="Equipping schools and colleges with future-ready Artificial Intelligence literacy. Moving beyond theory to hands-on build, automation, and Vibe Coding."
         themeColor="purple"
       />

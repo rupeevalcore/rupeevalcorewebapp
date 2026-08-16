@@ -14,7 +14,7 @@ const allTestimonials = [
     context: "schools",
   },
   {
-    text: "The one-on-one sessions helped me demystify mutual funds and tax planning. Highly recommend Rupeevalcore for their unbiased, education-first approach.",
+    text: "The one-on-one sessions helped me demystify mutual funds and tax planning. Highly recommend RupeeValcore for their unbiased, education-first approach.",
     author: "Arun M.",
     role: "Individual Learner",
     context: "individual",

@@ -11,6 +11,7 @@ import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { getFileSize } from "@/lib/server-utils";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -22,14 +23,14 @@ const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
 
 export const metadata: Metadata = {
-  title: "Financial Literacy Workshops for Schools in Chennai | Rupeevalcore",
-  description: "NISM-certified financial literacy programmes for school students in Chennai. Aligned with NEP 2020. Interactive sessions on banking, savings, budgeting and digital safety. Request a proposal for your school.",
-  keywords: ["financial literacy for schools", "school financial education Chennai", "NEP 2020 financial literacy", "student money management workshops", "financial awareness for school students Chennai"],
+  title: "Financial Literacy Programs for Schools in Chennai | RupeeValcore",
+  description: "Financial literacy programs for school students from Grade 3–12 in Chennai. Covering saving, budgeting, banking, digital payments, UPI safety, fraud awareness and financial decision-making.",
+  keywords: ["financial literacy programs for schools", "financial literacy workshops for schools", "financial education for school students", "financial literacy workshop Chennai schools", "money management workshops for students"],
   openGraph: {
-    title: "Financial Literacy for Schools | Rupeevalcore",
-    description: "Interactive financial literacy sessions for school students — banking, savings, budgeting, digital safety. Chennai. NISM certified.",
+    title: "Financial Literacy Programs for Schools in Chennai | RupeeValcore",
+    description: "Interactive financial literacy sessions for school students — banking, savings, budgeting, digital safety. Grades 3–12. Chennai and online.",
     url: "https://www.rupeevalcore.in/schools",
-    images: [{ url: "https://www.rupeevalcore.in/og-schools.jpg", width: 1200, height: 630, alt: "Financial Literacy for Schools" }],
+    siteName: "RupeeValcore",
     locale: "en_IN",
     type: "website",
   },
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
 const heroConfig: AudienceHeroConfig = {
   themeColor: "emerald",
   badge: "For Schools",
-  title: "Building Financial Confidence Early.",
-  subtitle: "Practical financial literacy programmes designed for school students to build responsible money habits, digital financial awareness and real-world financial understanding from an early age.",
+  title: "Financial Literacy Programs for Schools in Chennai",
+  subtitle: "Building financial confidence early. Practical financial literacy programmes designed for school students from Grade 3 to Grade 12 — covering responsible money habits, digital financial awareness and real-world financial understanding.",
   primaryCta: "Request School Proposal",
   secondaryCta: "Talk to Programme Advisor",
   iconPath: "/schools_3d.webp",
@@ -153,6 +154,14 @@ const faqs = [
 export default function SchoolsPage() {
   return (
     <>
+      <div className="container-rv pt-20 pb-2">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Financial Literacy Programs for Schools", href: "/schools" },
+          ]}
+        />
+      </div>
       <AudienceHero config={heroConfig} />
 
       <section className="section-padding bg-background/50">

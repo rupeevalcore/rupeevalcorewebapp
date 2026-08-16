@@ -11,6 +11,7 @@ import { AlertCircle, TrendingUp } from "lucide-react";
 import { LEAD_FORMS } from "@/lib/lead-routing";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { getFileSize } from "@/lib/server-utils";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const ContextualDownloadCard = dynamic(() => import("@/components/audience/ContextualDownloadCard"));
 const ComplianceBlock = dynamic(() => import("@/components/audience/ComplianceBlock"));
@@ -22,14 +23,14 @@ const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGall
 const PricingCard = dynamic(() => import("@/components/audience/PricingCard"));
 
 export const metadata: Metadata = {
-  title: "Financial Literacy Workshops for Colleges in Chennai | Rupeevalcore",
-  description: "NISM-certified financial literacy programmes for college students in Chennai. Placement readiness, salary management, tax awareness and investment basics. Request a campus proposal.",
-  keywords: ["financial literacy for colleges Chennai", "placement readiness financial literacy", "student salary management workshop", "financial awareness for college students"],
+  title: "Financial Literacy Workshops for College Students in Chennai | RupeeValcore",
+  description: "Financial literacy workshops for college students in Chennai covering salary management, taxes, banking, credit, investing basics, fraud awareness and first-salary planning.",
+  keywords: ["financial literacy workshops for college students", "financial literacy workshops for colleges", "financial education for college students", "first salary financial literacy workshop", "personal finance workshop for college students"],
   openGraph: {
-    title: "Financial Literacy for Colleges | Rupeevalcore",
-    description: "Placement-focused financial literacy for college students — salary, tax, banking, investment basics. Chennai.",
+    title: "Financial Literacy Workshops for College Students in Chennai | RupeeValcore",
+    description: "Placement-focused financial literacy for college students — salary, tax, banking, investment basics. Chennai and online.",
     url: "https://www.rupeevalcore.in/colleges",
-    images: [{ url: "https://www.rupeevalcore.in/og-colleges.jpg", width: 1200, height: 630, alt: "Financial Literacy for Colleges" }],
+    siteName: "RupeeValcore",
     locale: "en_IN",
     type: "website",
   },
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
 const heroConfig: AudienceHeroConfig = {
   themeColor: "sapphire",
   badge: "For Colleges",
-  title: "Preparing Students For Financial Life Beyond Graduation.",
-  subtitle: "Practical financial literacy programmes designed to equip college students with real-world financial knowledge before they enter the workforce.",
+  title: "Financial Literacy Workshops for College Students in Chennai",
+  subtitle: "Preparing students for financial life beyond graduation. Practical financial literacy programmes to equip college students with real-world financial knowledge before they enter the workforce.",
   primaryCta: "Request College Proposal",
   secondaryCta: "Talk to Programme Advisor",
   iconPath: "/colleges_3d.webp",
@@ -115,6 +116,14 @@ const faqs = [
 export default function CollegesPage() {
   return (
     <>
+      <div className="container-rv pt-20 pb-2">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Financial Literacy Workshops for College Students", href: "/colleges" },
+          ]}
+        />
+      </div>
       <AudienceHero config={heroConfig} />
 
       <section className="section-padding bg-background/50">

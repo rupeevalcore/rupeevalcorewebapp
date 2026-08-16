@@ -16,7 +16,7 @@ const allFaqs = [
   },
   {
     q: "Are you selling any financial products or mutual funds?",
-    a: "Absolutely not. Rupeevalcore operates strictly on an 'Education First' model. We do not sell insurance, mutual funds, or any financial products, nor do we earn commissions. Our sole focus is unbiased financial education.",
+    a: "Absolutely not. RupeeValcore operates strictly on an 'Education First' model. We do not sell insurance, mutual funds, or any financial products, nor do we earn commissions. Our sole focus is unbiased financial education.",
     context: ["all", "schools", "colleges", "corporate", "individual"]
   },
   {

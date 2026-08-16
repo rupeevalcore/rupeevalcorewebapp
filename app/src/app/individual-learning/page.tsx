@@ -11,16 +11,17 @@ import { LEAD_FORMS } from "@/lib/lead-routing";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { getFileSize } from "@/lib/server-utils";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Personal Financial Literacy Mentoring in Chennai | Rupeevalcore",
-  description: "One-to-one financial literacy mentoring for working professionals, parents and individuals in Chennai. Tax planning, investments, insurance. NISM certified. No products sold.",
-  keywords: ["personal financial literacy Chennai", "individual financial mentoring", "financial planning for working professionals Chennai", "family financial literacy session"],
+  title: "Personal Finance Education & Mentoring in Chennai | RupeeValcore",
+  description: "Personal finance education and one-to-one financial literacy mentoring in Chennai for young professionals, couples, families and pre-retirees. No products sold. Unbiased education.",
+  keywords: ["personal finance education Chennai", "financial literacy mentoring Chennai", "personal finance workshop Chennai", "financial education for young professionals", "money management classes Chennai"],
   openGraph: {
-    title: "Personal Financial Learning | Rupeevalcore",
-    description: "One-to-one financial mentoring for individuals and families. Tax, investments, insurance. Chennai. NISM certified. No products sold.",
+    title: "Personal Finance Education & Mentoring in Chennai | RupeeValcore",
+    description: "One-to-one financial mentoring for individuals and families in Chennai. Tax awareness, investments, insurance. Education-only. No products sold.",
     url: "https://www.rupeevalcore.in/individual-learning",
-    images: [{ url: "https://www.rupeevalcore.in/og-individual.jpg", width: 1200, height: 630, alt: "Individual Financial Learning" }],
+    siteName: "RupeeValcore",
     locale: "en_IN",
     type: "website",
   },
@@ -37,8 +38,8 @@ const CTASection = dynamic(() => import("@/components/sections/CTASection"));
 const heroConfig: AudienceHeroConfig = {
   themeColor: "orange",
   badge: "For Individuals & Families",
-  title: "Personal Financial Education Without Product Selling.",
-  subtitle: "One-to-one mentoring and family sessions designed to help you understand personal finance, taxes, and long-term planning without the pressure of hidden commissions.",
+  title: "Personal Finance Education & Financial Literacy Mentoring in Chennai",
+  subtitle: "Personal financial education without product selling. One-to-one mentoring and family sessions designed to help you understand personal finance, taxes, and long-term planning without the pressure of hidden commissions.",
   primaryCta: "Request Session Details",
   secondaryCta: "Schedule a Discussion",
   iconPath: "/individual_3d.webp",
@@ -108,6 +109,14 @@ const faqs = [
 export default function IndividualPage() {
   return (
     <>
+      <div className="container-rv pt-20 pb-2">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Personal Finance Education & Mentoring", href: "/individual-learning" },
+          ]}
+        />
+      </div>
       <AudienceHero config={heroConfig} />
       
       <section className="section-padding bg-background/50">
@@ -204,8 +213,8 @@ export default function IndividualPage() {
                 "Family & Couple Sessions",
                 "Strictly Confidential"
               ]}
-              pdfUrl="/proposals/individual-learning-proposal.pdf"
-              fileSize={getFileSize("proposals/individual-learning-proposal.pdf")}
+              brochureKey="finance-individual"
+              fileSize={getFileSize("downloads/Individual_Financial_Literacy_Programme.pdf")}
               thumbnail="/individual_3d.webp"
               category="Individuals"
               themeColor="orange"

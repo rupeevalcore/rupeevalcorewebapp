@@ -89,12 +89,12 @@ export default function Navbar() {
 
         <div className="w-full px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto max-w-[1440px] flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="group flex items-center gap-3 shrink-0" aria-label="Rupeevalcore home">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent text-background font-heading font-black text-base shadow-glow transition-transform duration-200 group-hover:scale-105">
+          <Link href="/" className="group flex items-center gap-3 shrink-0" aria-label="RupeeValcore home">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent text-[#050B18] font-heading font-black text-base shadow-glow group-hover:shadow-glow-lg transition-shadow">
               ₹
             </div>
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="font-heading font-bold text-foreground text-base tracking-tight">Rupeevalcore</span>
+              <span className="font-heading font-bold text-foreground text-base tracking-tight">RupeeValcore</span>
               <span className="text-[10px] text-muted-foreground tracking-widest uppercase font-medium">Finance Education</span>
             </div>
           </Link>

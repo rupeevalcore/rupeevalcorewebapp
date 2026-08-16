@@ -25,11 +25,11 @@ const PricingCard = dynamic(() => import("@/components/audience/PricingCard"));
 const brochure = getBrochure("ai-colleges");
 
 export const metadata: Metadata = {
-  title: "AI Workshops for College Students in Chennai | Rupeevalcore",
+  title: "AI Workshops for College Students in Chennai | RupeeValcore",
   description: "AI upskilling & Vibe Coding workshops for college students in Chennai. 3-Hour Accelerator & Full-Day Intensive. AI portfolios, automation, NAAC/NBA documentation. Founder-led.",
   keywords: ["AI for college students Chennai", "campus AI workshop", "vibe coding college students", "placement AI readiness", "AI automation workshop Chennai"],
   openGraph: {
-    title: "AI Education for Colleges | Rupeevalcore",
+    title: "AI Education for Colleges | RupeeValcore",
     description: "Placement-focused AI upskilling for college students. 15+ live tools, Vibe Coding, NAAC/NBA accreditation evidence. Chennai and online.",
     url: "https://www.rupeevalcore.in/ai/colleges",
     images: [{ url: "https://www.rupeevalcore.in/og-colleges.jpg", width: 1200, height: 630, alt: "AI for Colleges" }],

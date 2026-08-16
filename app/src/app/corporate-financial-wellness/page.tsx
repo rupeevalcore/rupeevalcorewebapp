@@ -11,16 +11,17 @@ import { LEAD_FORMS } from "@/lib/lead-routing";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { getFileSize } from "@/lib/server-utils";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Corporate Financial Wellness Workshops in Chennai | Rupeevalcore",
-  description: "Employee financial wellness workshops for corporates in Chennai. Tax planning, mutual funds, retirement basics, and money stress reduction. NISM certified. MSME registered. Request a corporate proposal.",
-  keywords: ["corporate financial wellness Chennai", "employee financial literacy workshop", "corporate financial education India", "financial wellness program employees Chennai"],
+  title: "Corporate Financial Wellness Programs in Chennai | RupeeValcore",
+  description: "Corporate financial wellness workshops in Chennai that help employees improve money management, financial awareness, financial confidence and long-term planning. Education-only. No products sold.",
+  keywords: ["corporate financial wellness Chennai", "financial wellness workshops Chennai", "employee financial wellness program", "financial literacy workshops for employees", "corporate financial literacy program"],
   openGraph: {
-    title: "Corporate Financial Wellness | Rupeevalcore",
-    description: "Reduce employee money stress with practical financial literacy workshops. Tax, insurance, investments. Chennai. NISM certified.",
+    title: "Corporate Financial Wellness Programs in Chennai | RupeeValcore",
+    description: "Practical financial education workshops helping employees improve money management, financial awareness and long-term financial confidence. Chennai and online.",
     url: "https://www.rupeevalcore.in/corporate-financial-wellness",
-    images: [{ url: "https://www.rupeevalcore.in/og-corporate.jpg", width: 1200, height: 630, alt: "Corporate Financial Wellness" }],
+    siteName: "RupeeValcore",
     locale: "en_IN",
     type: "website",
   },
@@ -39,8 +40,8 @@ const PricingCard = dynamic(() => import("@/components/audience/PricingCard"));
 const heroConfig: AudienceHeroConfig = {
   themeColor: "cyan",
   badge: "For Corporates",
-  title: "Financial Wellness For Modern Workplaces.",
-  subtitle: "Practical financial education programmes designed to improve employee confidence, reduce money stress and support long-term wellbeing.",
+  title: "Corporate Financial Wellness Programs in Chennai",
+  subtitle: "Financial wellness for modern workplaces. Practical financial education programmes designed to improve employee confidence, reduce money stress and support long-term wellbeing.",
   primaryCta: "Request Corporate Proposal",
   secondaryCta: "Talk to Corporate Advisor",
   iconPath: "/corporate_3d.webp",
@@ -69,7 +70,7 @@ const timeline = [
   { title: "Fresh Graduates", description: "Navigating their first salary, understanding taxes, and building saving habits." },
   { title: "Individual Contributors", description: "Managing expenses, avoiding debt traps, and setting mid-term goals." },
   { title: "Team Leads & Managers", description: "Balancing family finances, insurance needs, and long-term investments." },
-  { title: "Leadership Teams", description: "Advanced awareness of estate planning, retirement structures, and tax optimization." }
+  { title: "Leadership Teams", description: "Advanced awareness of estate planning basics, retirement structures, and tax planning awareness." }
 ];
 
 const metrics = [
@@ -114,7 +115,7 @@ const corporateFormats = [
     duration: "6 Hours",
     bestFor: "Mid & Senior Leadership",
     pricing: "Custom Pricing",
-    highlights: ["Wealth Management", "Estate Planning Basics", "Tax Optimization"]
+    highlights: ["Wealth Management Awareness", "Estate Planning Awareness", "Tax Planning Basics"]
   },
   {
     name: "Employee Wellness Series",
@@ -136,6 +137,14 @@ const faqs = [
 export default function CorporatePage() {
   return (
     <>
+      <div className="container-rv pt-20 pb-2">
+        <Breadcrumbs
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Corporate Financial Wellness Programs", href: "/corporate-financial-wellness" },
+          ]}
+        />
+      </div>
       <AudienceHero config={heroConfig} />
       
       <section className="section-padding bg-background/50">

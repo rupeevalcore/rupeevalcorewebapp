@@ -2,12 +2,13 @@ import PageHero from "@/components/layout/PageHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Rupeevalcore",
-  description: "Privacy Policy for Rupeevalcore",
+  title: "Privacy Policy | RupeeValcore",
+  description: "Privacy Policy for RupeeValcore",
   robots: {
     index: false,
     follow: false,
   },
+  alternates: { canonical: "https://www.rupeevalcore.in/privacy" },
 };
 
 export default function PrivacyPolicyPage() {

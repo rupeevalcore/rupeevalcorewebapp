@@ -24,11 +24,11 @@ const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGall
 const brochure = getBrochure("ai-schools");
 
 export const metadata: Metadata = {
-  title: "AI Workshops for School Students in Chennai | Rupeevalcore",
+  title: "AI Workshops for School Students in Chennai | RupeeValcore",
   description: "Hands-on AI workshops for school students (Grades 6–12) in Chennai. Prompting, AI ethics, automation & Vibe Coding. Aligned with NEP 2020. Founder-led by Cloud/AI educator.",
   keywords: ["AI for school students Chennai", "AI workshop for schools", "student artificial intelligence training", "NEP 2020 AI digital literacy", "vibe coding for school students"],
   openGraph: {
-    title: "AI Education for Schools | Rupeevalcore",
+    title: "AI Education for Schools | RupeeValcore",
     description: "Equip school students to become responsible, capable AI users. Hands-on tools, Vibe Coding, ethics & safety. Chennai and online.",
     url: "https://www.rupeevalcore.in/ai/schools",
     images: [{ url: "https://www.rupeevalcore.in/og-schools.jpg", width: 1200, height: 630, alt: "AI for Schools" }],

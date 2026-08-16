@@ -3,20 +3,19 @@
 import { Download, FileText, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import type { AnalyticsEvent } from "@/lib/lead-routing";
-import type { BrochureKey } from "@/lib/brochures";
+import { type BrochureKey, BROCHURES } from "@/lib/brochures";
+import { trackEvent } from "@/lib/analytics";
 
 interface ContextualDownloadCardProps {
   title: string;
   description: string;
   features?: string[];
-  /** Legacy: direct PDF URL (opens lead-capture modal). Use brochureKey for the new verification flow. */
   pdfUrl?: string;
   fileSize?: string;
   thumbnail?: string;
   category: string;
   trackingEvent?: AnalyticsEvent;
   themeColor?: "emerald" | "sapphire" | "cyan" | "orange" | "purple" | "accent";
-  /** New: key from brochures.ts — triggers brochure verification modal instead of lead-capture */
   brochureKey?: BrochureKey;
   buttonLabel?: string;
 }
@@ -32,7 +31,7 @@ export default function ContextualDownloadCard({
   trackingEvent, 
   themeColor = "accent",
   brochureKey,
-  buttonLabel = "Get Proposal PDF",
+  buttonLabel = "Download PDF Brochure",
 }: ContextualDownloadCardProps) {
 
   const getThemeClasses = () => {
@@ -48,18 +47,24 @@ export default function ContextualDownloadCard({
 
   const theme = getThemeClasses();
 
-  // If brochureKey is set, the card itself triggers the verification modal.
-  // If only pdfUrl is set, it falls back to the existing lead-capture modal.
-  const cardDataAttrs = brochureKey
-    ? { "data-brochure-verify": brochureKey, "data-analytics-event": trackingEvent }
-    : { "data-program-selector": "true", "data-pdf-url": pdfUrl || undefined, "data-pdf-title": title, "data-analytics-event": trackingEvent };
-
+  const finalPdfUrl = brochureKey ? (BROCHURES[brochureKey]?.pdfPath || pdfUrl || "#") : (pdfUrl || "#");
+  const finalFileName = finalPdfUrl.split("/").pop() || "brochure.pdf";
   const hasDownload = Boolean(brochureKey || pdfUrl);
+
+  const handleDownloadClick = () => {
+    if (trackingEvent) {
+      trackEvent(trackingEvent);
+    }
+    trackEvent("file_download", {
+      file_name: brochureKey || finalFileName,
+      link_text: title,
+      section: category,
+    });
+  };
 
   return (
     <div
-      {...cardDataAttrs}
-      className={`block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50 ${hasDownload ? "cursor-pointer" : "cursor-default"}`}
+      className="block glass rounded-3xl overflow-hidden border border-white/10 group relative outline-none focus-visible:border-accent/50"
     >
       <div className="flex flex-col md:flex-row relative z-10">
         {/* Thumbnail Area */}
@@ -103,13 +108,18 @@ export default function ContextualDownloadCard({
           <div className="mt-auto relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {hasDownload ? (
               <>
-                <button
-                  type="button"
-                  className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 transition-opacity cursor-pointer`}
+                <a
+                  href={finalPdfUrl}
+                  download={finalFileName}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleDownloadClick}
+                  aria-label={`Download ${title} (PDF)`}
+                  className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-heading font-bold text-sm ${theme.bg} text-white group-hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg`}
                 >
                   {buttonLabel}
                   <Download size={18} />
-                </button>
+                </a>
                 {fileSize && (
                   <span className="text-sm font-medium text-muted-foreground">
                     {fileSize} PDF

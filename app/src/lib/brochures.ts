@@ -20,7 +20,8 @@ export type BrochureKey =
   | "ai-colleges"
   | "finance-schools"
   | "finance-colleges"
-  | "finance-corporate";
+  | "finance-corporate"
+  | "finance-individual";
 
 export type BrochureConfig = {
   key: BrochureKey;
@@ -87,6 +88,17 @@ export const BROCHURES: Record<BrochureKey, BrochureConfig> = {
       "https://forms.gle/gTrhfkwr7p7H1Kza9",
     category: "Finance · Corporate",
     pageRoute: "/corporate-financial-wellness",
+  },
+  "finance-individual": {
+    key: "finance-individual",
+    title: "Individual & Family Financial Mentoring — Programme Overview",
+    downloadLabel: "Download Individual Mentoring Overview",
+    pdfPath: "/downloads/Individual_Financial_Literacy_Programme.pdf",
+    formUrl:
+      process.env.NEXT_PUBLIC_INDIVIDUAL_FORM_URL ||
+      "https://forms.gle/GKQUyGusYSZwLP3XA",
+    category: "Finance · Individual",
+    pageRoute: "/individual-learning",
   },
 } as const;
 

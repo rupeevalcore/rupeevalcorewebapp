@@ -9,10 +9,10 @@ const schoolBrochure = getBrochure("ai-schools");
 const collegeBrochure = getBrochure("ai-colleges");
 
 export const metadata: Metadata = {
-  title: "AI Education Proposals & Resources for Schools and Colleges | Rupeevalcore",
-  description: "Download AI literacy programme proposals for schools and colleges from Rupeevalcore. Curriculum overviews, brochures, and resources for institutions looking to introduce AI education.",
+  title: "AI Education Proposals & Resources for Schools and Colleges | RupeeValcore",
+  description: "Download AI literacy programme proposals for schools and colleges from RupeeValcore. Curriculum overviews, brochures, and resources for institutions looking to introduce AI education.",
   openGraph: {
-    title: "AI Education Resources for Institutions | Rupeevalcore",
+    title: "AI Education Resources for Institutions | RupeeValcore",
     description: "Downloadable AI literacy proposals and brochures for schools and colleges. Chennai and online.",
     url: "https://www.rupeevalcore.in/ai/resources",
     locale: "en_IN",

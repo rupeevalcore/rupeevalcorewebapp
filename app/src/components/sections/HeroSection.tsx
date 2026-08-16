@@ -31,10 +31,16 @@ export default function HeroSection() {
           {/* Subtle text glow behind */}
           <div className="absolute inset-0 bg-accent/20 blur-[100px] -z-10 rounded-full" />
           
-          <h1 className="font-heading font-black tracking-tight mb-6 text-foreground text-balance">
-            Premium Financial <br className="hidden sm:block" />
-            Education Institution.
+          <h1 className="font-heading font-black tracking-tight mb-4 text-foreground text-balance">
+            Financial Literacy
+            <br className="hidden sm:block" />
+            Workshops in Chennai
           </h1>
+
+          <p className="text-base md:text-lg text-accent font-semibold mb-4 tracking-wide">
+            Practical financial education for schools, colleges,
+            <br className="hidden sm:block" /> companies and individuals — in Chennai and online.
+          </p>
         </div>
 
         <p className="text-lg md:text-xl text-muted-foreground w-full max-w-[800px] mb-10 leading-relaxed font-medium text-balance">

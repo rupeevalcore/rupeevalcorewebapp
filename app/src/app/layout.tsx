@@ -30,8 +30,8 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rupeevalcore.in"),
-  title: "Financial Literacy Workshops in Chennai and Online | Rupeevalcore",
-  description: "India's premium financial literacy platform focused on financial awareness, education, trust, and practical learning.",
+  title: "Financial Literacy Workshops in Chennai | RupeeValcore",
+  description: "Practical financial literacy workshops in Chennai for schools, colleges, companies and individuals. Learn money management, banking, investing basics, taxes and financial decision-making.",
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png", sizes: "512x512" },
@@ -41,11 +41,20 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "RupeeValcore",
-    description: "Premium financial literacy workshops for schools, colleges, corporates and individuals.",
+    title: "Financial Literacy Workshops in Chennai | RupeeValcore",
+    description: "Practical financial literacy workshops in Chennai for schools, colleges, companies and individuals. Learn money management, banking, investing basics, taxes and financial decision-making.",
     url: "https://www.rupeevalcore.in",
     siteName: "RupeeValcore",
+    locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Financial Literacy Workshops in Chennai | RupeeValcore",
+    description: "Practical financial literacy workshops in Chennai for schools, colleges, companies and individuals.",
+  },
+  alternates: {
+    canonical: "https://www.rupeevalcore.in",
   },
   robots: {
     index: true,
@@ -62,7 +71,7 @@ export default function RootLayout({
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-IN" suppressHydrationWarning>
       <body className={`${inter.variable} ${ibmPlexSans.variable} antialiased font-sans bg-background text-foreground selection:bg-accent/30 selection:text-foreground page-transition`}>
         <ThemeProvider
           attribute="class"
@@ -138,7 +147,7 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "EducationalOrganization",
             "@id": "https://www.rupeevalcore.in/#organization",
-            "name": "Rupeevalcore",
+            "name": "RupeeValcore",
             "url": "https://www.rupeevalcore.in",
             "logo": {
               "@type": "ImageObject",
@@ -146,7 +155,7 @@ export default function RootLayout({
               "width": 512,
               "height": 512
             },
-            "description": "Financial literacy workshops for schools, colleges, corporates and individuals in Chennai, Tamil Nadu.",
+            "description": "RupeeValcore provides practical financial literacy workshops for schools, colleges, corporates and individuals in Chennai, Tamil Nadu. MSME registered. Education-only, no products sold.",
             "telephone": "+918248589694",
             "email": "contactrupeevalcore@gmail.com",
             "contactPoint": {
@@ -162,25 +171,10 @@ export default function RootLayout({
               "addressRegion": "Tamil Nadu",
               "addressCountry": "IN"
             },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 13.0827,
-              "longitude": 80.2707
-            },
             "areaServed": ["Chennai", "Tamil Nadu", "India"],
             "sameAs": [
               "https://www.instagram.com/rupeevalcore_"
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Financial Literacy Programs",
-              "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "School Financial Literacy Programme" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "College Financial Literacy Programme" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Corporate Financial Wellness Programme" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "Individual Financial Mentoring" } }
-              ]
-            }
+            ]
           })}}
         />
       </body>

@@ -4,10 +4,13 @@ import CTASection from "@/components/sections/CTASection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: "Financial Literacy Program | RupeeValcore",
+  description: "Core financial literacy curriculum and workshop overview.",
   robots: {
     index: false,
     follow: false,
   },
+  alternates: { canonical: "https://www.rupeevalcore.in/financial-literacy" },
 };
 
 export default function FinancialLiteracyPage() {
