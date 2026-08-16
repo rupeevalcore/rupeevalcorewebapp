@@ -30,10 +30,10 @@ export default function PageHero({ title, description, badge, themeColor = "acce
       shootingStarCount={2}
       glow={false}
     >
-      <div className="container-rv relative z-10 text-center">
+      <div className="container-rv relative z-10 text-center w-full">
         {badge && (
           <div
-            className={`inline-flex items-center px-3 py-1.5 rounded-full glass border-white/10 shadow-lg ${theme.text} text-sm font-medium mb-6 uppercase tracking-wider backdrop-blur-md`}
+            className={`inline-flex items-center px-3 py-1.5 rounded-full glass border-white/10 shadow-lg ${theme.text} text-xs sm:text-sm font-medium mb-6 uppercase tracking-wider backdrop-blur-md`}
           >
             {badge}
           </div>
@@ -43,13 +43,13 @@ export default function PageHero({ title, description, badge, themeColor = "acce
           className="relative max-w-4xl mx-auto mb-6"
         >
           <div className={`absolute inset-0 ${theme.glow} blur-[80px] -z-10 rounded-full`} />
-          <h1 className="font-heading font-black text-4xl md:text-6xl text-foreground tracking-tight">
+          <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground tracking-tight leading-[1.15] text-balance">
             {title}
           </h1>
         </div>
         
         <p
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium leading-relaxed text-balance"
         >
           {description}
         </p>

@@ -203,7 +203,7 @@ export default function SchoolsPage() {
 
           <div className="mb-24 grid lg:grid-cols-[1fr_400px] gap-16 items-start">
             <div>
-              <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+              <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
                 Who Can Attend
               </h2>
               <LearningJourneyTimeline items={timeline} themeColor="emerald" />
@@ -214,31 +214,31 @@ export default function SchoolsPage() {
           </div>
 
           <div className="mb-24">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
               Programme Modules
             </h2>
             <ProgrammeModuleGrid modules={modules} themeColor="emerald" />
           </div>
 
           <div className="mb-24">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
               Delivery Models
             </h2>
             <DeliveryModelCards models={deliveryModels} themeColor="emerald" />
           </div>
 
           <div className="mb-24">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
               Learning Outcomes
             </h2>
             <LearningOutcomeGrid outcomes={outcomes} themeColor="emerald" />
           </div>
 
           <div className="mb-16">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-4 text-center lg:text-left">
               Workshop Formats & Structure
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-muted-foreground text-lg mb-8 text-center lg:text-left">
               Choose the format that fits your school schedule and student cohort size.
             </p>
             <WorkshopFormatTable formats={schoolFormats} themeColor="emerald" />

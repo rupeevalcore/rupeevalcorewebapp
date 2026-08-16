@@ -34,43 +34,43 @@ export default function AudienceHero({ config }: { config: AudienceHeroConfig })
 
   return (
     <ShootingStarsGrid
-      className="min-h-[70vh] rounded-none border-none shadow-none pt-32 pb-20 overflow-hidden"
+      className="min-h-[70vh] rounded-none border-none shadow-none pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden"
       contentClassName="h-full w-full flex items-center p-0"
       interactive={false}
       starCount={24}
       shootingStarCount={2}
       glow={false}
     >
-      <div className="container-rv relative z-10">
-        <div className="grid lg:grid-cols-[1fr_500px] gap-12 items-center">
-          <div>
+      <div className="container-rv relative z-10 w-full">
+        <div className="grid lg:grid-cols-[1fr_500px] gap-8 lg:gap-12 items-center">
+          <div className="text-center lg:text-left flex flex-col items-center lg:items-start max-w-3xl mx-auto lg:max-w-none lg:mx-0">
             {badge && (
               <div
-                className={`inline-flex items-center px-4 py-2 rounded-full glass ${theme.border} shadow-lg ${theme.text} text-sm font-bold mb-8 uppercase tracking-wider backdrop-blur-md`}
+                className={`inline-flex items-center px-4 py-2 rounded-full glass ${theme.border} shadow-lg ${theme.text} text-xs sm:text-sm font-bold mb-6 sm:mb-8 uppercase tracking-wider backdrop-blur-md`}
               >
                 {badge}
               </div>
             )}
 
-            <div className="relative max-w-4xl mb-8">
+            <div className="relative w-full max-w-4xl mb-6 sm:mb-8">
               <div className={`absolute inset-0 ${theme.glow} blur-[100px] -z-10 rounded-full`} />
-              <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-foreground tracking-tight leading-[1.1]">
+              <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground tracking-tight leading-[1.15] text-balance">
                 {title}
               </h1>
             </div>
 
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-relaxed mb-12">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl font-medium leading-relaxed mb-8 sm:mb-12 text-balance">
               {subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
               {config.formUrl ? (
                 <a
                   href={config.formUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-analytics-event={analyticsEvent}
-                  className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto"
+                  className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto justify-center"
                 >
                   {primaryCta}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -86,7 +86,7 @@ export default function AudienceHero({ config }: { config: AudienceHeroConfig })
                     themeColor === "orange" ? "individual" : undefined
                   }
                   data-analytics-event={analyticsEvent}
-                  className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto focus:outline-none cursor-pointer"
+                  className="btn-accent group py-4 text-base text-center inline-flex w-full sm:w-auto justify-center focus:outline-none cursor-pointer"
                 >
                   {primaryCta}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -96,7 +96,7 @@ export default function AudienceHero({ config }: { config: AudienceHeroConfig })
                 href={getWhatsAppUrl(badge)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary py-4 text-base"
+                className="btn-primary py-4 text-base w-full sm:w-auto justify-center"
               >
                 <MessageSquare size={18} />
                 {secondaryCta}

@@ -169,28 +169,28 @@ export default function IndividualPage() {
           </div>
 
           <div className="mb-24">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
               Programme Modules
             </h2>
             <ProgrammeModuleGrid modules={modules} themeColor="orange" />
           </div>
 
           <div className="mb-24">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
               Delivery Models
             </h2>
             <DeliveryModelCards models={deliveryModels} themeColor="orange" />
           </div>
 
           <div className="mb-24">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
               Learning Outcomes
             </h2>
             <LearningOutcomeGrid outcomes={outcomes} themeColor="orange" />
           </div>
 
           <div className="mb-16">
-            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-heading font-black text-3xl md:text-4xl text-foreground mb-10 text-center lg:text-left">
               Session Formats
             </h2>
             <DeliveryModelCards models={formats} themeColor="orange" />
