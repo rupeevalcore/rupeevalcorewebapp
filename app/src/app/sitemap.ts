@@ -23,13 +23,15 @@ const blogPages = [
   { route: "/blog/personal-finance-for-young-professionals", priority: 0.6 as const, changeFrequency: "monthly" as const },
 ];
 
-
+const toolPages = [
+  { route: "/tools/financial-knowledge", priority: 0.8 as const, changeFrequency: "weekly" as const },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.rupeevalcore.in";
   const lastModDate = new Date("2026-08-16");
 
-  const allPages = [...primaryPages, ...aiPages, ...blogPages];
+  const allPages = [...primaryPages, ...aiPages, ...blogPages, ...toolPages];
 
   return allPages.map(({ route, priority, changeFrequency }) => ({
     url: `${baseUrl}${route}`,

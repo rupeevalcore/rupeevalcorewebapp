@@ -164,7 +164,7 @@ export function ShootingStarsGrid({
           aria-hidden="true"
           className={cn(
             "pointer-events-none absolute inset-0 -z-30 opacity-60",
-            "[background-image:linear-gradient(to_right,rgba(14,165,233,0.13)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.13)_1px,transparent_1px)]",
+            "[background-image:linear-gradient(to_right,rgba(196,146,42,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(196,146,42,0.06)_1px,transparent_1px)]",
             "[background-size:var(--shooting-stars-grid-size)_var(--shooting-stars-grid-size)]",
             "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.075)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.075)_1px,transparent_1px)]",
           )}
@@ -173,13 +173,13 @@ export function ShootingStarsGrid({
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.3)_54%,rgba(255,255,255,0.92)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(7,9,15,0.22)_52%,rgba(7,9,15,0.96)_100%)]"
+        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.35)_0%,rgba(248,249,252,0.80)_60%,rgba(241,245,249,0.96)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(7,9,15,0.22)_52%,rgba(7,9,15,0.96)_100%)]"
       />
 
       {glow && (
         <div
           aria-hidden="true"
-          className="shooting-stars-glow pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_30%,rgba(8,145,178,0.22),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(99,102,241,0.14),transparent_30%)] dark:bg-[radial-gradient(circle_at_50%_30%,rgba(34,211,238,0.18),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(168,85,247,0.12),transparent_30%)]"
+          className="shooting-stars-glow pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_30%,rgba(196,146,42,0.12),transparent_40%),radial-gradient(circle_at_72%_72%,rgba(6,182,212,0.06),transparent_35%)] dark:bg-[radial-gradient(circle_at_50%_30%,rgba(34,211,238,0.18),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(168,85,247,0.12),transparent_30%)]"
         />
       )}
 
@@ -189,7 +189,7 @@ export function ShootingStarsGrid({
             <span
               key={index}
               className={cn(
-                "shooting-static-star absolute rounded-full bg-cyan-700 shadow-[0_0_12px_rgba(14,165,233,0.5)] dark:bg-white dark:shadow-[0_0_12px_rgba(255,255,255,0.55)]",
+                "shooting-static-star absolute rounded-full bg-accent/40 shadow-[0_0_8px_rgba(196,146,42,0.25)] dark:bg-white dark:shadow-[0_0_12px_rgba(255,255,255,0.55)]",
                 index > 34 && "max-sm:hidden",
               )}
               style={{

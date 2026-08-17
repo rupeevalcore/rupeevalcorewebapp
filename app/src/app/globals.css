@@ -144,12 +144,22 @@
     }
     
     .animate-float,
+    .animate-ecosystem-enter,
+    .animate-ecosystem-3d-orbit,
+    .animate-ecosystem-light-sweep,
+    .animate-ecosystem-float,
+    .animate-ecosystem-glow,
     .shooting-stars-glow,
     .shooting-star-runner,
     .shooting-static-star,
     .animate-marquee {
       animation: none !important;
       transform: none !important;
+    }
+
+    .eco-3d-fwd-orbit,
+    .eco-3d-bwd-counter {
+      animation-play-state: paused !important;
     }
   }
 
@@ -236,6 +246,317 @@
     border-color: rgba(var(--color-accent), 0.15);
   }
 }
+
+/* ================================================================ */
+/* 3D Financial Learning Ecosystem Animations                       */
+/* ================================================================ */
+
+@keyframes ecosystem-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 90s Ultra-slow Cinematic 3D Perspective Orbit (Depth & Tilt) */
+@keyframes ecosystem-3d-orbit {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+  }
+  25% {
+    transform: rotateY(3deg) rotateX(-1.8deg) translateZ(6px);
+  }
+  50% {
+    transform: rotateY(0deg) rotateX(1.5deg) translateZ(0px);
+  }
+  75% {
+    transform: rotateY(-3deg) rotateX(-1.8deg) translateZ(6px);
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+  }
+}
+
+@keyframes ecosystem-3d-orbit-mobile {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+  }
+  25% {
+    transform: rotateY(1.5deg) rotateX(-0.8deg) translateZ(3px);
+  }
+  50% {
+    transform: rotateY(0deg) rotateX(0.8deg) translateZ(0px);
+  }
+  75% {
+    transform: rotateY(-1.5deg) rotateX(-0.8deg) translateZ(3px);
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+  }
+}
+
+/* 90s Slow Volumetric Ambient Light Sweep */
+@keyframes ecosystem-light-sweep {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.75;
+  }
+}
+
+/* Central ₹ Pedestal Breathing Pulse */
+@keyframes ecosystem-glow-breathe {
+  0%, 100% {
+    opacity: 0.60;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.90;
+    transform: scale(1.04);
+  }
+}
+
+/* Gentle Vertical Floating Motion */
+@keyframes ecosystem-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes ecosystem-float-mobile {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-ecosystem-enter {
+  animation: ecosystem-enter 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.animate-ecosystem-3d-orbit {
+  animation: ecosystem-3d-orbit 90s ease-in-out infinite 1.4s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .animate-ecosystem-3d-orbit {
+    animation: ecosystem-3d-orbit-mobile 90s ease-in-out infinite 1.4s;
+  }
+}
+
+.animate-ecosystem-light-sweep {
+  animation: ecosystem-light-sweep 90s linear infinite;
+  will-change: transform, opacity;
+}
+
+.animate-ecosystem-glow {
+  animation: ecosystem-glow-breathe 8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-ecosystem-float {
+  animation: ecosystem-float 7s ease-in-out infinite 1.4s;
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .animate-ecosystem-float {
+    animation: ecosystem-float-mobile 7.5s ease-in-out infinite 1.4s;
+  }
+}
+
+/* ================================================================ */
+/* 3D Layered Ecosystem Mechanics & Glass Modules                   */
+/* ================================================================ */
+
+/* Forward Orbit (clockwise in 3D perspective plane) */
+.eco-3d-fwd-orbit {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  transform-style: preserve-3d;
+  animation: eco-3d-fwd-spin 90s linear infinite;
+  will-change: transform;
+}
+
+/* Static Translate: moves module out along orbit radius */
+.eco-3d-radius-translate {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: translateX(112px);
+}
+
+@media (min-width: 400px) {
+  .eco-3d-radius-translate { transform: translateX(126px); }
+}
+@media (min-width: 480px) {
+  .eco-3d-radius-translate { transform: translateX(142px); }
+}
+@media (min-width: 640px) {
+  .eco-3d-radius-translate { transform: translateX(165px); }
+}
+@media (min-width: 1024px) {
+  .eco-3d-radius-translate { transform: translateX(185px); }
+}
+@media (min-width: 1280px) {
+  .eco-3d-radius-translate { transform: translateX(205px); }
+}
+
+/* Backward Counter-Rotation: cancels tilt to keep cards upright & applies Z-depth */
+.eco-3d-bwd-counter {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  transform-style: preserve-3d;
+  animation: eco-3d-bwd-spin 90s linear infinite;
+  will-change: transform, opacity;
+}
+
+.eco-3d-card-anchor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+
+/* 3D Glass Module Card Styling */
+.eco-3d-glass-card {
+  position: relative;
+  width: 70px;
+  border-radius: 14px;
+  padding: 8px 6px 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  background: var(--node-light-bg, rgba(255, 255, 255, 0.96));
+  border: 1.5px solid var(--node-light-border, rgba(0, 0, 0, 0.12));
+  box-shadow: 0 10px 28px -4px rgba(15, 23, 42, 0.18), 0 2px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+.dark .eco-3d-glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 60%, rgba(0, 0, 0, 0.25) 100%);
+  border: 1.5px solid var(--node-accent, rgba(255, 255, 255, 0.25));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.60), 0 0 18px var(--node-glow, rgba(212, 172, 62, 0.20)), inset 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+.eco-3d-icon-wrap {
+  width: 32px;
+  height: 32px;
+  background: var(--node-light-icon-bg, rgba(0, 0, 0, 0.05));
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dark .eco-3d-icon-wrap {
+  background: var(--node-glow, rgba(255, 255, 255, 0.08));
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.20);
+}
+
+.eco-3d-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--node-light-icon-color, #0F172A);
+  transition: color 0.3s ease;
+}
+
+.dark .eco-3d-icon {
+  color: var(--node-dark-icon-color, #FFFFFF);
+}
+
+.eco-3d-label {
+  font-size: 9.5px;
+  letter-spacing: 0.01em;
+  margin-top: 2px;
+  color: #0F172A;
+  transition: color 0.3s ease;
+}
+
+.dark .eco-3d-label {
+  color: #FFFFFF;
+}
+
+@media (min-width: 480px) {
+  .eco-3d-glass-card { width: 75px; padding: 9px 6px 10px; border-radius: 15px; }
+  .eco-3d-icon-wrap { width: 34px; height: 34px; }
+  .eco-3d-icon { width: 18px; height: 18px; }
+  .eco-3d-label { font-size: 10px; }
+}
+
+@media (min-width: 640px) {
+  .eco-3d-glass-card { width: 82px; padding: 10px 7px 11px; border-radius: 16px; }
+  .eco-3d-icon-wrap { width: 36px; height: 36px; }
+  .eco-3d-icon { width: 19px; height: 19px; }
+  .eco-3d-label { font-size: 10.5px; }
+}
+
+@media (min-width: 1024px) {
+  .eco-3d-glass-card { width: 88px; padding: 11px 8px 12px; border-radius: 17px; }
+  .eco-3d-icon-wrap { width: 38px; height: 38px; }
+  .eco-3d-icon { width: 21px; height: 21px; }
+  .eco-3d-label { font-size: 11px; }
+}
+
+/* 3D Forward & Backward Orbit Keyframes with Dynamic Z-Depth */
+@keyframes eco-3d-fwd-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes eco-3d-bwd-spin {
+  0% {
+    transform: rotate(0deg) translateZ(40px) scale(1.05);
+    opacity: 1;
+    z-index: 30;
+  }
+  25% {
+    transform: rotate(-90deg) translateZ(0px) scale(0.96);
+    opacity: 0.88;
+    z-index: 20;
+  }
+  50% {
+    transform: rotate(-180deg) translateZ(-40px) scale(0.88);
+    opacity: 0.72;
+    z-index: 10;
+  }
+  75% {
+    transform: rotate(-270deg) translateZ(0px) scale(0.96);
+    opacity: 0.88;
+    z-index: 20;
+  }
+  100% {
+    transform: rotate(-360deg) translateZ(40px) scale(1.05);
+    opacity: 1;
+    z-index: 30;
+  }
+}
+
+
 
 /* ============================================================= */
 /* Counter / Stat animation                                       */

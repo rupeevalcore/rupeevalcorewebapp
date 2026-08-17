@@ -1,13 +1,21 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import HeroSection from "@/components/sections/HeroSection";
+import KnowledgeAssessmentSection from "@/components/sections/KnowledgeAssessmentSection";
 import TrustSection from "@/components/sections/TrustSection";
 import ProgramsSection from "@/components/sections/ProgramsSection";
 
 export const metadata: Metadata = {
   title: "Financial Literacy Workshops in Chennai | RupeeValcore",
   description: "Practical financial literacy workshops in Chennai for schools, colleges, companies and individuals. Learn money management, banking, investing basics, taxes and financial decision-making. MSME registered.",
-  keywords: ["financial literacy workshops Chennai", "financial education Chennai", "financial literacy programs for schools", "financial literacy workshops for college students", "corporate financial wellness Chennai", "personal finance education Chennai"],
+  keywords: [
+    "financial literacy workshops Chennai",
+    "financial education Chennai",
+    "financial literacy programs for schools",
+    "financial literacy workshops for college students",
+    "corporate financial wellness Chennai",
+    "personal finance education Chennai",
+  ],
   openGraph: {
     title: "Financial Literacy Workshops in Chennai | RupeeValcore",
     description: "Practical financial literacy workshops for schools, colleges, companies and individuals in Chennai and online. MSME registered.",
@@ -26,8 +34,6 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 const CurriculumSection = dynamic(() => import("@/components/sections/CurriculumSection"));
 const WorkshopGallery = dynamic(() => import("@/components/sections/WorkshopGallery"));
 const LearningDeliveryModels = dynamic(() => import("@/components/sections/LearningDeliveryModels"));
@@ -43,6 +49,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <KnowledgeAssessmentSection />
       <TrustSection />
       <ProgramsSection />
       <CurriculumSection />
